@@ -66,3 +66,16 @@ moves for the last third of the act.
 - Floating navigation, scroll animations, scroll-to-top, ultra-minimal, fancy.
 - Pages that "should be there and are not": About, Services, Consultancy,
   Projects, Clients, Journal (articles), Privacy Policy, Terms, Contact, 404.
+
+## Revision 2 — client direction (light brand theme, no AI imagery)
+
+Client feedback, applied verbatim: all AI-generated imagery removed; the dark
+steel theme replaced by a light theme in the company's own brand colours; the
+logo must read clearly. Palette is now white canvas / #F5F5F5 surface (the
+company's original site grey) / ink #131313 (logo black) / accent #B10B0E
+(the company's original site red, matching the M&M lockup). The old WOW-slider
+archive photos turned out to be watermarked stock, so they are out as well.
+The page keeps exactly one clean photograph from the client's own archive
+(archive-building-88.jpg) plus their two clean legacy graphics; every other
+former image slot is now a brand setting-out block reserved for the client's
+own photography, to be dropped in when supplied.

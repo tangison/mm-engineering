@@ -7,7 +7,7 @@ Built by studio.tangison.com. Scroll engine: scrollcraft (pinned/pan/flow acts).
 
 - [x] Full scrape of mmengineeringcc.com: main, about, services, consultancy-firm, contacts
 - [x] Real logo extracted from the client's own slider banners (cyan #009ED6, red M&M lockup), transparent + light variants + favicons
-- [x] 6 real archive photos recovered from the client's old WOW slider (roadworks, safety gear, grader, workers + crane, scaffolding, structure)
+- [x] Rev 2: all AI-generated and watermarked stock imagery removed; one clean client archive photo + two clean legacy graphics kept; remaining slots are branded setting-out blocks awaiting the client's own photos
 - [x] 3 legacy page images mirrored (building photo, about PNG, services PNG)
 - [x] Web research: company facts confirmed (est. 2013, Africa School of Engineering and Technology network, reg CC/2014/07916, tax 6536258-01-1, 15 staff, addresses, phone/email)
 - [x] No public project records or client logo list exist online, so projects/clients pages describe verified sectors and claims only. No invented clients, no fake logos, no fake statistics (counters only on real numbers: 2013, 15)
@@ -33,7 +33,7 @@ Built by studio.tangison.com. Scroll engine: scrollcraft (pinned/pan/flow acts).
 - [x] Floating contact dock: WhatsApp, WeChat (QR modal linked to the real cell number), email, phone + back-to-top button
 - [x] WhatsApp deep link (wa.me/264813275403), mailto contact form, OpenStreetMap embed
 - [x] studio.tangison.com credit in every footer and in the terms page
-- [x] Ultra-minimal dark steel theme, one accent (brand cyan), red reserved for the logo
+- [x] Ultra-minimal light brand theme: white / #F5F5F5 / ink #131313 / accent #B10B0E (logo red), logo-first chrome (Rev 2)
 - [x] Reduced-motion fallbacks, focus-visible states, skip link, semantic headings, real text over media (nothing baked into images)
 
 ## Verification (scrollcraft harness + crawl)
@@ -49,3 +49,14 @@ Built by studio.tangison.com. Scroll engine: scrollcraft (pinned/pan/flow acts).
 
 - Real-device iOS/Android video decode and touch feel (no scrub clips shipped, so risk is low)
 - The contact form opens the visitor's email client (no backend); a form endpoint can be wired later
+
+## Revision 2 (client direction)
+
+- [x] Every AI-generated image removed (hero-wide, hero-tall, windhoek, office, team, macro-hat, pipeline, electrical, telecom, civil-roads, structural, consult, fibre)
+- [x] Watermarked WOW-slider stock images removed (not the company's own work)
+- [x] Light theme in brand colours: white canvas, #F5F5F5 surface, #131313 ink, #B10B0E accent (matches M&M logo + original site)
+- [x] Logo enlarged and always the dark lockup on light ground (nav 44px, sheet 46px, footer 56px)
+- [x] Home hero: typographic + setting-out plate (survey grid, brand-red crosshair, real Windhoek coordinates)
+- [x] Peak act: typographic with ghost "15" (the real, verified crew number)
+- [x] Branded og-card.png (1200x630, logo + red rule, no photography)
+- [ ] Photo slots ready for client-supplied photography: disciplines 01-06, project sectors 01-06, journal cards 01-04, service figures x2, about figures x2
