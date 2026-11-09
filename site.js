@@ -5,6 +5,13 @@
   "use strict";
   var d = document, body = d.body;
 
+  /* ---- track record: value/duration columns -----------------------------
+     Withheld by default (open question Q6). Flip to true to publish. ----- */
+  var SHOW_PROJECT_VALUES = false;
+  if (SHOW_PROJECT_VALUES) {
+    d.querySelectorAll(".track .opt").forEach(function (c) { c.hidden = false; });
+  }
+
   /* ---- scrolled nav state --------------------------------------------- */
   var onScroll = function () {
     body.classList.toggle("scrolled", (window.scrollY || 0) > 32);
