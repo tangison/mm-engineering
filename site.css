@@ -457,3 +457,113 @@ body.cross-on .crosshair { opacity: 1; }
 /* 404 */
 .nf { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 24px; }
 .nf .code { font-family: var(--sc-font-display); font-weight: 800; font-size: clamp(6rem, 22vw, 14rem); letter-spacing: var(--sc-track-tight); line-height: 0.9; color: transparent; -webkit-text-stroke: 1.5px color-mix(in oklab, var(--sc-accent) 45%, var(--sc-hairline-strong)); }
+
+/* ------------------------------------------- v2 additions: clients, tables, slots, OHS -- */
+.nav__links a { padding: 7px 10px; font-size: 0.84rem; white-space: nowrap; }
+.nav__logo img { height: 42px; width: auto; }
+@media (max-width: 1020px) {
+  .nav__links, .nav__cta { display: none; }
+  .nav__burger {
+    display: inline-flex; margin-left: auto; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: var(--sc-r-pill); border: 1px solid var(--sc-hairline);
+    background: color-mix(in oklab, var(--sc-canvas) 70%, transparent); color: var(--sc-ink);
+    cursor: pointer;
+  }
+  .nav__logo img { height: 36px; }
+}
+
+.profile-cta {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sc-4);
+  background: var(--sc-surface-2); border: 1px solid var(--sc-hairline-strong);
+  border-left: 3px solid var(--sc-accent-solid); border-radius: var(--sc-r-lg);
+  padding: var(--sc-5) var(--sc-6);
+}
+.profile-cta h3 { margin: 0 0 4px; font-family: var(--sc-font-display); font-size: var(--sc-t-lg); }
+.profile-cta p { margin: 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); max-width: 58ch; }
+.profile-cta__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Verified client & consultant badge grid */
+.client-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sc-4); }
+@media (max-width: 980px) { .client-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .client-grid { grid-template-columns: 1fr; } }
+.client-card {
+  background: var(--sc-surface); border: 1px solid var(--sc-hairline); border-radius: var(--sc-r-lg);
+  padding: var(--sc-4); display: flex; flex-direction: column; gap: var(--sc-3);
+  transition: border-color var(--sc-d-fast) ease, transform var(--sc-d-fast) var(--sc-ease-out);
+}
+.client-card:hover { border-color: color-mix(in oklab, var(--sc-accent) 45%, var(--sc-hairline)); transform: translate3d(0, -2px, 0); }
+.client-card__logo {
+  background: #FFFFFF; border-radius: var(--sc-r-md); height: 112px;
+  display: flex; align-items: center; justify-content: center; padding: 14px;
+}
+.client-card__logo img { max-width: 100%; max-height: 82px; width: auto; height: auto; object-fit: contain; }
+.client-card__logo--compact img { max-height: 60px; }
+.client-card h3 { margin: 0; font-family: var(--sc-font-display); font-size: var(--sc-t-base); line-height: 1.25; }
+.client-card p { margin: 0; color: var(--sc-ink-soft); font-size: var(--sc-t-xs); line-height: 1.45; }
+
+/* Project visual drop-in placeholder slot */
+.slot-drop-web {
+  aspect-ratio: 16 / 10; width: 100%;
+  background: color-mix(in oklab, var(--sc-surface-2) 80%, var(--sc-canvas));
+  border-bottom: 1.5px dashed color-mix(in oklab, var(--sc-ink-soft) 38%, transparent);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: var(--sc-5); gap: 6px;
+}
+.slot-drop-web__title { font-family: var(--sc-font-display); font-weight: 700; font-size: var(--sc-t-sm); letter-spacing: 0.08em; text-transform: uppercase; color: var(--sc-ink); }
+.slot-drop-web__meta { font-family: var(--sc-font-mono); font-size: var(--sc-t-xs); color: var(--sc-ink-soft); }
+.slot-drop-web__tag { font-family: var(--sc-font-mono); font-size: var(--sc-t-xs); color: var(--sc-accent); font-weight: 600; }
+
+/* Filterable project & plant register tables */
+.filter-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sc-3); margin-bottom: var(--sc-4); }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip-btn {
+  background: var(--sc-surface); color: var(--sc-ink-soft); border: 1px solid var(--sc-hairline);
+  border-radius: var(--sc-r-pill); padding: 7px 14px; font-size: var(--sc-t-xs);
+  font-family: var(--sc-font-mono); letter-spacing: 0.04em; cursor: pointer;
+  transition: background var(--sc-d-fast) ease, color var(--sc-d-fast) ease, border-color var(--sc-d-fast) ease;
+}
+.chip-btn:hover { color: var(--sc-ink); border-color: var(--sc-hairline-strong); }
+.chip-btn.is-active { background: var(--sc-accent-solid); color: #FFFFFF; border-color: var(--sc-accent-solid); }
+.filter-search {
+  background: var(--sc-surface); border: 1px solid var(--sc-hairline); border-radius: var(--sc-r-pill);
+  color: var(--sc-ink); padding: 8px 16px; font-size: var(--sc-t-sm); min-width: min(280px, 100%);
+}
+.filter-search:focus { outline: none; border-color: var(--sc-accent); }
+.data-table-wrap {
+  border: 1px solid var(--sc-hairline); border-radius: var(--sc-r-lg);
+  overflow-x: auto; background: var(--sc-surface);
+}
+.data-table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: var(--sc-t-sm); }
+.data-table th {
+  text-align: left; padding: 13px 14px; font-family: var(--sc-font-mono); font-size: var(--sc-t-xs);
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--sc-ink-soft);
+  background: var(--sc-surface-2); border-bottom: 1px solid var(--sc-hairline-strong);
+}
+.data-table td { padding: 12px 14px; border-bottom: 1px solid var(--sc-hairline); color: var(--sc-ink-soft); vertical-align: top; }
+.data-table tr:last-child td { border-bottom: 0; }
+.data-table td strong { color: var(--sc-ink); }
+.data-table .num { font-family: var(--sc-font-mono); color: var(--sc-accent); font-weight: 600; width: 44px; text-align: center; }
+.data-table .money { font-family: var(--sc-font-mono); color: var(--sc-ink); font-weight: 600; text-align: right; white-space: nowrap; }
+.data-table tr.is-hidden { display: none; }
+
+/* 13 services numbered cards */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sc-4); }
+@media (max-width: 980px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* Safety Policy grid */
+.ohs-banner {
+  background: linear-gradient(135deg, color-mix(in oklab, var(--sc-accent-solid) 24%, var(--sc-surface)), var(--sc-surface));
+  border: 1px solid color-mix(in oklab, var(--sc-accent) 40%, var(--sc-hairline));
+  border-radius: var(--sc-r-lg); padding: var(--sc-6);
+}
+.policy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sc-4); }
+@media (max-width: 820px) { .policy-grid { grid-template-columns: 1fr; } }
+.policy-card {
+  background: var(--sc-surface); border: 1px solid var(--sc-hairline); border-top: 2px solid var(--sc-accent-solid);
+  border-radius: var(--sc-r-lg); padding: var(--sc-5);
+}
+.policy-card h3 { margin: 0 0 var(--sc-3); font-family: var(--sc-font-display); font-size: var(--sc-t-lg); }
+.policy-card ul, .policy-card ol { margin: 0; padding-left: 1.2em; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); display: flex; flex-direction: column; gap: 8px; }
+.policy-card p { margin: 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.55; }
+.policy-card strong { color: var(--sc-ink); }

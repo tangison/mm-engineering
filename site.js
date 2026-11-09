@@ -116,4 +116,54 @@
 
   /* ---- footer year ------------------------------------------------------- */
   d.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
+
+  /* ---- project register filter & search ---------------------------------- */
+  var filterWrap = d.querySelector("[data-project-register]");
+  if (filterWrap) {
+    var activeSector = "all";
+    var searchTerm = "";
+    var rows = Array.prototype.slice.call(filterWrap.querySelectorAll("tbody tr"));
+    var totalEl = d.querySelector("[data-project-count]");
+    var sumEl = d.querySelector("[data-project-sum]");
+
+    var applyProjectFilter = function () {
+      var count = 0;
+      var total = 0;
+      rows.forEach(function (tr) {
+        var sec = tr.getAttribute("data-sector") || "";
+        var txt = (tr.textContent || "").toLowerCase();
+        var matchSector = activeSector === "all" || sec.indexOf(activeSector) !== -1;
+        var matchQuery = !searchTerm || txt.indexOf(searchTerm) !== -1;
+        var show = matchSector && matchQuery;
+        tr.classList.toggle("is-hidden", !show);
+        if (show) {
+          count++;
+          total += parseFloat(tr.getAttribute("data-val") || "0");
+        }
+      });
+      if (totalEl) totalEl.textContent = count + (count === 1 ? " contract" : " contracts");
+      if (sumEl) {
+        sumEl.textContent = "N$ " + total.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+    };
+
+    filterWrap.querySelectorAll("[data-sector-btn]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        activeSector = btn.getAttribute("data-sector-btn") || "all";
+        filterWrap.querySelectorAll("[data-sector-btn]").forEach(function (b) {
+          b.classList.toggle("is-active", b === btn);
+        });
+        applyProjectFilter();
+      });
+    });
+
+    var qInput = filterWrap.querySelector("[data-project-search]");
+    if (qInput) {
+      qInput.addEventListener("input", function () {
+        searchTerm = (qInput.value || "").trim().toLowerCase();
+        applyProjectFilter();
+      });
+    }
+    applyProjectFilter();
+  }
 })();
