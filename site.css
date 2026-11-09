@@ -9,6 +9,7 @@
   --sc-surface:      #1C242D;
   --sc-surface-2:    #242E39;
   --sc-ink:          #F7F9FB;
+  --sc-ink-bright:   #FFFFFF;
   --sc-ink-soft:     #BFC9D4;
   --sc-accent:       #F25C4E;
   --sc-accent-solid: #D73B2E;
@@ -567,3 +568,53 @@ body.cross-on .crosshair { opacity: 1; }
 .policy-card ul, .policy-card ol { margin: 0; padding-left: 1.2em; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); display: flex; flex-direction: column; gap: 8px; }
 .policy-card p { margin: 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.55; }
 .policy-card strong { color: var(--sc-ink); }
+
+/* contact channels, offices & form layout */
+.channels { display: flex; flex-direction: column; gap: 10px; }
+.channel strong { display: block; font-weight: 600; font-size: var(--sc-t-sm); color: var(--sc-ink); }
+.office {
+  background: var(--sc-surface); border: 1px solid var(--sc-hairline);
+  border-left: 2px solid var(--sc-accent-solid); border-radius: var(--sc-r-lg);
+  padding: var(--sc-5); color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.55;
+}
+.office strong { color: var(--sc-ink); }
+.field { display: grid; gap: 6px; }
+.form__note { margin: 0; color: var(--sc-ink-soft); font-size: var(--sc-t-xs); line-height: 1.5; }
+.form__done {
+  margin: 0; padding: 12px 14px; border-radius: var(--sc-r-md);
+  background: color-mix(in oklab, var(--sc-accent-solid) 18%, var(--sc-surface));
+  border: 1px solid color-mix(in oklab, var(--sc-accent) 45%, var(--sc-hairline));
+  color: var(--sc-ink); font-size: var(--sc-t-sm);
+}
+
+/* journal index cards & article/legal layouts */
+.posts { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sc-4); }
+@media (max-width: 780px) { .posts { grid-template-columns: 1fr; } }
+.post-card {
+  background: var(--sc-surface); border: 1px solid var(--sc-hairline); border-top: 2px solid var(--sc-accent-solid);
+  border-radius: var(--sc-r-lg); padding: var(--sc-6); text-decoration: none; color: var(--sc-ink);
+  display: flex; flex-direction: column; gap: var(--sc-3);
+  transition: border-color var(--sc-d-fast) ease, transform var(--sc-d-base) var(--sc-ease-out);
+}
+.post-card:hover { border-color: color-mix(in oklab, var(--sc-accent) 55%, var(--sc-hairline)); transform: translate3d(0, -3px, 0); }
+.post-card .cat { font-family: var(--sc-font-mono); font-size: var(--sc-t-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--sc-accent); }
+.post-card h3 { margin: 0; font-family: var(--sc-font-display); font-size: var(--sc-t-xl); letter-spacing: var(--sc-track-snug); line-height: 1.15; }
+.post-card p { margin: 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); line-height: 1.55; }
+.post-card .more { margin-top: auto; padding-top: var(--sc-2); font-family: var(--sc-font-mono); font-size: var(--sc-t-xs); color: var(--sc-accent); letter-spacing: 0.06em; }
+
+.post-head {
+  max-width: 68ch; margin-inline: auto;
+  padding: calc(var(--nav-h) + var(--sc-8)) var(--sc-gutter) var(--sc-6);
+}
+.post-head h1 { margin: var(--sc-3) 0; }
+.post-head .meta { font-family: var(--sc-font-mono); font-size: var(--sc-t-xs); color: var(--sc-ink-soft); letter-spacing: 0.06em; margin: 0; }
+.post-body {
+  max-width: 68ch; margin-inline: auto;
+  padding: var(--sc-7) var(--sc-gutter) var(--sc-7);
+}
+.post-body h2 { font-family: var(--sc-font-display); font-size: var(--sc-t-xl); letter-spacing: var(--sc-track-snug); margin: var(--sc-7) 0 var(--sc-3); color: var(--sc-ink); }
+.post-body h2:first-child { margin-top: 0; }
+.post-body p { color: var(--sc-ink-soft); margin: 0 0 var(--sc-4); line-height: 1.68; }
+.post-body strong, .post-body b { color: var(--sc-ink); }
+.post-body a { color: var(--sc-accent); }
+

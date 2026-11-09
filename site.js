@@ -93,21 +93,33 @@
   }
 
   /* ---- contact form -> mailto ------------------------------------------- */
-  var form = d.getElementById("contact-form");
+  var form = d.getElementById("contact-form") || d.querySelector("[data-contact-form]");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var v = function (id) { var el = form.querySelector("#" + id); return el ? el.value.trim() : ""; };
-      var subject = "Website enquiry: " + (v("service") || "General") + " - " + (v("name") || "");
+      var v = function (selectors) {
+        for (var i = 0; i < selectors.length; i++) {
+          var el = form.querySelector(selectors[i]);
+          if (el && el.value) return el.value.trim();
+        }
+        return "";
+      };
+      var nameVal = v(["#f-name", "#name", '[name="name"]']);
+      var orgVal = v(["#f-org", "#company", '[name="org"]', '[name="company"]']);
+      var emailVal = v(["#f-email", "#email", '[name="email"]']);
+      var phoneVal = v(["#f-phone", "#phone", '[name="phone"]']);
+      var serviceVal = v(["#f-service", "#service", '[name="service"]']);
+      var msgVal = v(["#f-msg", "#message", '[name="message"]']);
+      var subject = "Website enquiry: " + (serviceVal || "General") + (nameVal ? " - " + nameVal : "");
       var bodyLines = [
-        "Name: " + v("name"),
-        "Company: " + v("company"),
-        "Email: " + v("email"),
-        "Phone: " + v("phone"),
-        "Service: " + v("service"),
+        "Name: " + nameVal,
+        "Organisation: " + orgVal,
+        "Email: " + emailVal,
+        phoneVal ? ("Phone: " + phoneVal) : "",
+        "Service: " + serviceVal,
         "",
-        v("message")
-      ].join("\n");
+        msgVal
+      ].filter(Boolean).join("\n");
       window.location.href = "mailto:info@mmengineeringcc.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyLines);
       var done = form.querySelector(".form__done");
       if (done) done.hidden = false;
