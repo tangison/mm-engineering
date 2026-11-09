@@ -85,10 +85,11 @@
   /* ---- rail settle (pan cards arrive in sequence) ------------------------ */
   var rail = d.querySelector(".rail");
   if (rail) {
+    var railTarget = rail.closest("[data-sc-act]") || rail;
     var io2 = new IntersectionObserver(function (es) {
       es.forEach(function (en) { if (en.isIntersecting) { rail.classList.add("settled"); io2.disconnect(); } });
-    }, { threshold: 0.35 });
-    io2.observe(rail);
+    }, { threshold: 0.08 });
+    io2.observe(railTarget);
   }
 
   /* ---- contact form -> mailto ------------------------------------------- */
