@@ -63,6 +63,16 @@
 
 html { scroll-padding-top: calc(var(--nav-h) + 16px); }
 
+/* Pre-reserve pinned-act heights so the engine's mount-time height write
+   (scrollcraft.js: a.el.style.height = span*100vh) causes no layout shift.
+   Keep this list in step with the data-sc-span values used on index.html. */
+section[data-sc-act="pin"][data-sc-span="2.2"] { height: 220vh; }
+section[data-sc-act="pin"][data-sc-span="2.6"] { height: 260vh; }
+section[data-sc-act="pin"][data-sc-span="3.6"] { height: 360vh; }
+section[data-sc-act="pin"][data-sc-span="2.9"] { height: 290vh; }
+section[data-sc-act="pin"][data-sc-span="1.2"] { height: 120vh; }
+
+
 ::selection { background: var(--mm-red); color: #FFFFFF; }
 
 /* ------------------------------------------------------------------ nav -- */
@@ -231,7 +241,7 @@ body.scrolled .nav {
   display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: var(--sc-6);
   max-width: var(--sc-maxw); margin-inline: auto; padding-inline: var(--sc-gutter);
 }
-.foot h4 { font-family: var(--sc-font-text); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; margin: 0 0 var(--sc-4); font-weight: 600; }
+.foot h3 { font-family: var(--sc-font-text); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; margin: 0 0 var(--sc-4); font-weight: 600; }
 .foot ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .foot a { color: var(--mm-night-soft); text-decoration: none; transition: color var(--sc-d-fast) ease; }
 .foot a:hover { color: var(--mm-red-bright); }
@@ -532,7 +542,7 @@ body.cross-on .crosshair { opacity: 1; }
 .close__channels { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 .close .foot { position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid color-mix(in oklab, var(--mm-night-ink) 16%, transparent); background: transparent; padding: var(--sc-4) 0; }
 .close .foot__grid { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between; padding-block: 0; }
-.close .foot h4, .close .foot ul { display: none; }
+.close .foot h3, .close .foot ul { display: none; }
 .close .foot__brand img { height: 34px; margin: 0; }
 .close .foot__legal { margin: 0; padding: 0; border: 0; width: 100%; justify-content: center; gap: 8px 18px; }
 .close .foot p, .close .foot a { color: var(--mm-night-soft); }
@@ -595,6 +605,9 @@ table.track { width: 100%; border-collapse: collapse; background: var(--mm-paper
 
 /* focus */
 :focus-visible { outline: 3px solid var(--mm-red); outline-offset: 2px; border-radius: var(--radius); }
+
+/* visually hidden (screen-reader-only headings) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* skip link */
 .skip { position: fixed; top: -60px; left: 16px; z-index: 999; background: var(--mm-black); color: #FFFFFF; padding: 10px 16px; border-radius: var(--radius); font-weight: 600; text-decoration: none; transition: top var(--sc-d-fast) ease; }
