@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-latin-wght-normal.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-latin-wght-italic.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --p-bg: #f5f4f1;
+  --p-surface: #e9e8e5;
+  --p-ink: #1b1a18;
+  --p-muted: #5c5b57;
+  --p-accent: #b91c1c;
+  --p-accent-ink: #f5f4f1;
+  --p-action: #b91c1c;
+  --p-action-ink: #f5f4f1;
+  --p-inv-bg: #1b1a18;
+  --p-inv-surface: #272624;
+  --p-inv-ink: #f5f4f1;
+  --p-inv-muted: #a8a6a1;
+  --p-inv-accent: #f5f4f1;
+  --p-inv-accent-ink: #1b1a18;
+  --p-inv-action: #f5f4f1;
+  --p-inv-action-ink: #1b1a18;
+
+  --font-display: "Newsreader", Georgia, serif;
+  --font-text: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.018em;
+  --display-tracking-xl: -0.025em;
+  --ly-scale: 1.06;
+}

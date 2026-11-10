@@ -1,0 +1,102 @@
+export const COMPANY = {
+  name: "M&M Engineering & Consultancy CC",
+  shortName: "M&M Engineering",
+  tagline: "Civil, electrical and mechanical engineering across Namibia",
+  registration: "CC/2013/6661",
+  taxId: "6140420-01-1",
+  founded: 2013,
+  totalContractsCount: 25,
+  totalValueFormatted: "N$ 152,768,801.37",
+  totalValueShort: "N$ 152.77M",
+  disciplinesCount: 13,
+  clientsCount: 16,
+  phone: "+264 61 234 349",
+  phoneHref: "tel:+26461234349",
+  whatsapp: "+264 81 3275 403",
+  whatsappHref: "https://wa.me/264813275403",
+  email: "info@mmengineeringcc.com",
+  emailHref: "mailto:info@mmengineeringcc.com",
+  url: "https://www.mmengineeringcc.com",
+  profilePdfHref: "/downloads/M_and_M_Company_Profile_and_Policies.pdf",
+  profilePdfSize: "6.6 MB",
+  headOffice: {
+    label: "Head Office (Kleine Kuppe)",
+    street: "Erf 454, Rietfontein Street",
+    district: "Kleine Kuppe, Windhoek",
+    postal: "P.O. Box 51121, Bachbrecht, Windhoek",
+    country: "Namibia",
+  },
+  operationsOffice: {
+    label: "Operations Office (Windhoek North)",
+    street: "23 John Simms Street",
+    district: "Windhoek North, Windhoek",
+    country: "Namibia",
+  },
+  officeHours: [
+    { days: "Mon to Fri", time: "08:00 to 17:00 CAT", dataDays: "mon-fri" },
+    { days: "Sat and Sun", time: "Site emergency dispatch on call", dataDays: "sat,sun" },
+  ],
+  regions: [
+    "Khomas",
+    "Kavango East",
+    "Kavango West",
+    "Oshana",
+    "Ohangwena",
+    "Oshikoto",
+    "Omusati",
+    "Zambezi",
+    "Otjozondjupa",
+    "Kunene",
+  ],
+  vision: "To provide engineering ingenuity and technical services.",
+  mission: "To be the primary provider of engineering and technical services for Namibia.",
+  merits: [
+    {
+      title: "Statutory engineering ethics",
+      detail: "Designs and site execution delivered to Namibian civil, electrical and building regulations.",
+    },
+    {
+      title: "Lifecycle scope value",
+      detail: "Material verification and constructability checks built in before site trenching or structural pours begin.",
+    },
+    {
+      title: "Remote regional mobilisation",
+      detail: "Proven delivery from Kunene veterinary housing to Zambezi defence power reticulation.",
+    },
+    {
+      title: "Cross-disciplinary coordination",
+      detail: "Architects, quantity surveyors, engineers and testing crews working under unified programme control.",
+    },
+    {
+      title: "Strategic consulting",
+      detail: "Competitive tender packs, programme audits, regional partnerships and Environmental Impact Assessments.",
+    },
+    {
+      title: "24/7 emergency dispatch",
+      detail: "Dedicated Windhoek technical support for essential hospital, power and municipal infrastructure.",
+    },
+  ],
+  csr: [
+    {
+      title: "CSR strategy preparation",
+      detail: "Baseline analysis, strategy and capacity building grounded in local Namibian conditions.",
+    },
+    {
+      title: "CSR project management",
+      detail: "Documented selection criteria, direct delivery and transparent public reporting.",
+    },
+    {
+      title: "CSR impact evaluation",
+      detail: "Measured post-handover outcomes so community investment leaves lasting civic value.",
+    },
+  ],
+  publicAffairs: [
+    "Liaison with ministerial, regional council and town council technical directorates",
+    "Technical support for public investment and capital works programmes",
+    "Structured CSR planning and public accountability reporting",
+  ],
+  credit: {
+    label: "Website by studio.tangison.com",
+    href: "https://studio.tangison.com",
+  },
+} as const;
