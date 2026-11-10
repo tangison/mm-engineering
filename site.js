@@ -1,180 +1,144 @@
-/* mmengineeringcc.com — bespoke page layer.
-   Chrome behaviour, surveyor crosshair, interactive project register & contact form.
-   The scroll engine (scrollcraft.js) stays untouched. */
+/* M&M Engineering & Consultancy — site.js
+   Page chrome (nav scrolled state, mobile drawer), interactive filters,
+   contact form handler, profile viewer switch, and ScrollCraft mount.
+*/
 (function () {
-  "use strict";
-  var d = document, body = d.body;
+  'use strict';
 
-  /* ---- track record: publish contract values & durations ----------------- */
-  d.querySelectorAll(".track .opt").forEach(function (c) { c.hidden = false; });
-
-  /* ---- scrolled nav state ----------------------------------------------- */
   var onScroll = function () {
-    body.classList.toggle("scrolled", (window.scrollY || 0) > 32);
-    var top = d.querySelector(".dock__btn--top");
-    if (top) top.classList.toggle("show", (window.scrollY || 0) > 640);
+    document.body.classList.toggle('scrolled', window.scrollY > 36);
   };
-  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---- mobile sheet ----------------------------------------------------- */
-  var burger = d.querySelector(".nav__burger");
-  var sheet = d.getElementById("sheet");
-  if (burger && sheet) {
-    var setSheet = function (open) {
-      sheet.classList.toggle("open", open);
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      body.style.overflow = open ? "hidden" : "";
+  var burger = document.querySelector('[data-nav-open]');
+  var drawer = document.getElementById('nav-drawer');
+  var closeBtn = document.querySelector('[data-nav-close]');
+  if (burger && drawer) {
+    drawer.inert = true;
+    var setOpen = function (open) {
+      drawer.classList.toggle('is-open', open);
+      drawer.setAttribute('aria-hidden', String(!open));
+      drawer.inert = !open;
+      burger.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('nav-open', open);
+      if (!open) burger.focus();
     };
-    burger.addEventListener("click", function () { setSheet(true); });
-    sheet.addEventListener("click", function (e) {
-      if (e.target.closest("[data-close]") || e.target.closest("a")) setSheet(false);
+    burger.addEventListener('click', function () { setOpen(true); if (closeBtn) closeBtn.focus(); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        drawer.classList.remove('is-open');
+        drawer.setAttribute('aria-hidden', 'true');
+        drawer.inert = true;
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      });
     });
-    d.addEventListener("keydown", function (e) { if (e.key === "Escape") setSheet(false); });
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) setOpen(false);
+    });
   }
 
-  /* ---- wechat modal ----------------------------------------------------- */
-  var modal = d.getElementById("wx-modal");
-  d.querySelectorAll("[data-wx-open]").forEach(function (b) {
-    b.addEventListener("click", function (e) { e.preventDefault(); if (modal) modal.classList.add("open"); });
-  });
-  if (modal) {
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal || e.target.closest("[data-close]")) modal.classList.remove("open");
-    });
-    d.addEventListener("keydown", function (e) { if (e.key === "Escape") modal.classList.remove("open"); });
-  }
-
-  /* ---- scroll to top ---------------------------------------------------- */
-  d.querySelectorAll("[data-top]").forEach(function (b) {
-    b.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    });
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
   });
 
-  /* ---- signature: the surveyor's crosshair ------------------------------ */
-  var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (fine && !reduce) {
-    var ch = d.querySelector(".crosshair");
-    if (ch) {
-      var tx = window.innerWidth / 2, ty = window.innerHeight / 2, cx = tx, cy = ty;
-      var raf = null;
-      var step = function () {
-        cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
-        ch.style.setProperty("--sx", cx.toFixed(1) + "px");
-        ch.style.setProperty("--sy", cy.toFixed(1) + "px");
-        var ro = ch.querySelector(".crosshair__readout");
-        if (ro) {
-          var e = (cx / window.innerWidth * 1000).toFixed(1);
-          var n = ((1 - cy / window.innerHeight) * 1000).toFixed(1);
-          ro.textContent = "E " + e + "\nN " + n + "\nRL +0.00";
-        }
-        if (Math.abs(tx - cx) > 0.2 || Math.abs(ty - cy) > 0.2) raf = requestAnimationFrame(step);
-        else raf = null;
-      };
-      window.addEventListener("pointermove", function (ev) {
-        tx = ev.clientX; ty = ev.clientY;
-        body.classList.add("cross-on");
-        if (!raf) raf = requestAnimationFrame(step);
-      }, { passive: true });
-      d.addEventListener("pointerleave", function () { body.classList.remove("cross-on"); });
-    }
-  }
+  // Projects ledger filter (/projects)
+  var table = document.getElementById('projects-ledger');
+  if (table) {
+    var chips = document.querySelectorAll('[data-filter-cat]');
+    var search = document.getElementById('projects-search');
+    var empty = document.getElementById('projects-empty');
+    var totalEl = document.getElementById('projects-visible-total');
+    var countEl = document.getElementById('projects-visible-count');
+    var activeCat = 'all';
 
-  /* ---- rail settle (pan cards arrive in sequence) ----------------------- */
-  var rail = d.querySelector(".rail");
-  if (rail) {
-    var railTarget = rail.closest("[data-sc-act]") || rail;
-    var io2 = new IntersectionObserver(function (es) {
-      es.forEach(function (en) { if (en.isIntersecting) { rail.classList.add("settled"); io2.disconnect(); } });
-    }, { threshold: 0.08 });
-    io2.observe(railTarget);
-  }
-
-  /* ---- interactive 25-project filter & sum ------------------------------ */
-  var reg = d.querySelector("[data-project-register]");
-  if (reg) {
-    var rows = Array.prototype.slice.call(reg.querySelectorAll("tbody tr[data-sector]"));
-    var btns = Array.prototype.slice.call(reg.querySelectorAll("[data-sector-btn]"));
-    var search = reg.querySelector("[data-project-search]");
-    var countEl = reg.querySelector("[data-project-count]");
-    var sumEl = reg.querySelector("[data-project-sum]");
-    var footCountEl = reg.querySelector("[data-project-foot-count]");
-    var footSumEl = reg.querySelector("[data-project-foot-sum]");
-    var activeSector = "all";
-
-    var formatNAD = function (num) {
-      return "N$ " + num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    };
-
-    var applyFilter = function () {
-      var q = search ? search.value.trim().toLowerCase() : "";
-      var visible = 0;
-      var total = 0;
+    var apply = function () {
+      var q = search ? search.value.trim().toLowerCase() : '';
+      var rows = table.querySelectorAll('tbody tr');
+      var shown = 0;
+      var sum = 0;
       rows.forEach(function (tr) {
-        var sectors = (tr.getAttribute("data-sector") || "").split(/\s+/);
-        var matchSector = activeSector === "all" || sectors.indexOf(activeSector) !== -1;
-        var matchQuery = !q || tr.textContent.toLowerCase().indexOf(q) !== -1;
-        var show = matchSector && matchQuery;
-        tr.hidden = !show;
-        if (show) {
-          visible += 1;
-          total += parseFloat(tr.getAttribute("data-val") || "0") || 0;
+        var cat = tr.getAttribute('data-cat') || '';
+        var text = tr.textContent.toLowerCase();
+        var ok = (activeCat === 'all' || cat === activeCat) && (!q || text.indexOf(q) !== -1);
+        tr.hidden = !ok;
+        if (ok) {
+          shown++;
+          sum += parseFloat(tr.getAttribute('data-val') || '0') || 0;
         }
       });
-      var label = visible === 1 ? "1 contract" : visible + " contracts";
-      var formatted = formatNAD(total);
-      if (countEl) countEl.textContent = label;
-      if (sumEl) sumEl.textContent = formatted;
-      if (footCountEl) footCountEl.textContent = "Showing " + label;
-      if (footSumEl) footSumEl.textContent = formatted;
+      if (totalEl) {
+        totalEl.textContent = 'N$ ' + sum.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+      if (countEl) countEl.textContent = String(shown);
+      if (empty) empty.classList.toggle('is-visible', shown === 0);
     };
 
-    btns.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        activeSector = btn.getAttribute("data-sector-btn") || "all";
-        btns.forEach(function (b) { b.classList.toggle("is-active", b === btn); });
-        applyFilter();
+    chips.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        activeCat = btn.getAttribute('data-filter-cat') || 'all';
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === btn)); });
+        apply();
       });
     });
-    if (search) search.addEventListener("input", applyFilter);
-    applyFilter();
+    if (search) search.addEventListener('input', apply);
   }
 
-  /* ---- contact form -> mailto ------------------------------------------- */
-  var form = d.getElementById("contact-form") || d.querySelector("[data-contact-form]");
+  // Contact form: validation feedback + mailto handoff
+  var form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener("submit", function (e) {
+    var done = document.getElementById('form-done');
+    var err = document.getElementById('form-error');
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var v = function (sel) {
-        var el = form.querySelector(sel);
-        return el ? el.value.trim() : "";
-      };
-      var nameVal = v("#name") || v("#f-name") || v("[name='name']");
-      var orgVal = v("#company") || v("#f-org") || v("[name='company']");
-      var emailVal = v("#email") || v("#f-email") || v("[name='email']");
-      var phoneVal = v("#phone") || v("[name='phone']");
-      var serviceVal = v("#service") || v("#f-service") || v("[name='service']");
-      var msgVal = v("#message") || v("#f-msg") || v("[name='message']");
+      var d = new FormData(form);
+      var name = String(d.get('name') || '').trim();
+      var org = String(d.get('org') || '').trim();
+      var email = String(d.get('email') || '').trim();
+      var service = String(d.get('service') || '').trim();
+      var message = String(d.get('message') || '').trim();
 
-      var subject = "Website enquiry: " + (serviceVal || "General") + (nameVal ? " - " + nameVal : "");
-      var bodyLines = [
-        "Name: " + nameVal,
-        "Company / Employer: " + orgVal,
-        "Email: " + emailVal,
-        phoneVal ? "Phone: " + phoneVal : null,
-        "Service: " + serviceVal,
-        "",
-        msgVal
-      ].filter(function (line) { return line !== null; }).join("\n");
+      if (!name || !email || email.indexOf('@') === -1 || !message) {
+        if (err) {
+          err.textContent = 'Please enter your name, a valid email address, and project details before opening the brief.';
+          err.classList.add('is-visible');
+        }
+        if (done) done.classList.remove('is-visible');
+        return;
+      }
+      if (err) err.classList.remove('is-visible');
 
-      window.location.href = "mailto:info@mmengineeringcc.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyLines);
-      var done = form.querySelector(".form__done");
-      if (done) done.hidden = false;
+      var subject = 'Project enquiry from ' + (org || name) + ' (' + (service || 'General') + ')';
+      var body = [
+        'Name: ' + name,
+        'Organisation: ' + (org || 'N/A'),
+        'Email: ' + email,
+        'Scope: ' + (service || 'General'),
+        '',
+        message
+      ].join('\n');
+      if (done) done.classList.add('is-visible');
+      window.location.href = 'mailto:info@mmengineeringcc.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     });
   }
 
-  /* ---- footer year ------------------------------------------------------ */
-  d.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
+  // Profile split view mode switcher (/profile)
+  var split = document.getElementById('profile-split');
+  var modeBtns = document.querySelectorAll('[data-profile-mode]');
+  if (split && modeBtns.length) {
+    modeBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.getAttribute('data-profile-mode') || 'split';
+        split.setAttribute('data-view', mode);
+        modeBtns.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      });
+    });
+  }
+
+  // Mount ScrollCraft after DOM parse
+  if (window.ScrollCraft && typeof window.ScrollCraft.mount === 'function') {
+    window.ScrollCraft.mount(document.body);
+  }
 })();
