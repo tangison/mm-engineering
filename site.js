@@ -1,11 +1,14 @@
 /* mmengineeringcc.com — bespoke page layer.
-   Chrome behaviour + the surveyor crosshair (signature move).
+   Chrome behaviour, surveyor crosshair, interactive project register & contact form.
    The scroll engine (scrollcraft.js) stays untouched. */
 (function () {
   "use strict";
   var d = document, body = d.body;
 
-  /* ---- scrolled nav state --------------------------------------------- */
+  /* ---- track record: publish contract values & durations ----------------- */
+  d.querySelectorAll(".track .opt").forEach(function (c) { c.hidden = false; });
+
+  /* ---- scrolled nav state ----------------------------------------------- */
   var onScroll = function () {
     body.classList.toggle("scrolled", (window.scrollY || 0) > 32);
     var top = d.querySelector(".dock__btn--top");
@@ -14,7 +17,7 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ---- mobile sheet ---------------------------------------------------- */
+  /* ---- mobile sheet ----------------------------------------------------- */
   var burger = d.querySelector(".nav__burger");
   var sheet = d.getElementById("sheet");
   if (burger && sheet) {
@@ -49,10 +52,7 @@
     });
   });
 
-  /* ---- signature: the surveyor's crosshair -------------------------------
-     A setting-out crosshair with a live coordinate readout follows the pointer.
-     Gated to fine pointers, off under reduced motion. Purely an interface
-     element: the grid is the page's own, no data leaves the browser. */
+  /* ---- signature: the surveyor's crosshair ------------------------------ */
   var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (fine && !reduce) {
@@ -82,7 +82,7 @@
     }
   }
 
-  /* ---- rail settle (pan cards arrive in sequence) ------------------------ */
+  /* ---- rail settle (pan cards arrive in sequence) ----------------------- */
   var rail = d.querySelector(".rail");
   if (rail) {
     var railTarget = rail.closest("[data-sc-act]") || rail;
@@ -92,90 +92,89 @@
     io2.observe(railTarget);
   }
 
+  /* ---- interactive 25-project filter & sum ------------------------------ */
+  var reg = d.querySelector("[data-project-register]");
+  if (reg) {
+    var rows = Array.prototype.slice.call(reg.querySelectorAll("tbody tr[data-sector]"));
+    var btns = Array.prototype.slice.call(reg.querySelectorAll("[data-sector-btn]"));
+    var search = reg.querySelector("[data-project-search]");
+    var countEl = reg.querySelector("[data-project-count]");
+    var sumEl = reg.querySelector("[data-project-sum]");
+    var footCountEl = reg.querySelector("[data-project-foot-count]");
+    var footSumEl = reg.querySelector("[data-project-foot-sum]");
+    var activeSector = "all";
+
+    var formatNAD = function (num) {
+      return "N$ " + num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
+    var applyFilter = function () {
+      var q = search ? search.value.trim().toLowerCase() : "";
+      var visible = 0;
+      var total = 0;
+      rows.forEach(function (tr) {
+        var sectors = (tr.getAttribute("data-sector") || "").split(/\s+/);
+        var matchSector = activeSector === "all" || sectors.indexOf(activeSector) !== -1;
+        var matchQuery = !q || tr.textContent.toLowerCase().indexOf(q) !== -1;
+        var show = matchSector && matchQuery;
+        tr.hidden = !show;
+        if (show) {
+          visible += 1;
+          total += parseFloat(tr.getAttribute("data-val") || "0") || 0;
+        }
+      });
+      var label = visible === 1 ? "1 contract" : visible + " contracts";
+      var formatted = formatNAD(total);
+      if (countEl) countEl.textContent = label;
+      if (sumEl) sumEl.textContent = formatted;
+      if (footCountEl) footCountEl.textContent = "Showing " + label;
+      if (footSumEl) footSumEl.textContent = formatted;
+    };
+
+    btns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        activeSector = btn.getAttribute("data-sector-btn") || "all";
+        btns.forEach(function (b) { b.classList.toggle("is-active", b === btn); });
+        applyFilter();
+      });
+    });
+    if (search) search.addEventListener("input", applyFilter);
+    applyFilter();
+  }
+
   /* ---- contact form -> mailto ------------------------------------------- */
   var form = d.getElementById("contact-form") || d.querySelector("[data-contact-form]");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var v = function (selectors) {
-        for (var i = 0; i < selectors.length; i++) {
-          var el = form.querySelector(selectors[i]);
-          if (el && el.value) return el.value.trim();
-        }
-        return "";
+      var v = function (sel) {
+        var el = form.querySelector(sel);
+        return el ? el.value.trim() : "";
       };
-      var nameVal = v(["#f-name", "#name", '[name="name"]']);
-      var orgVal = v(["#f-org", "#company", '[name="org"]', '[name="company"]']);
-      var emailVal = v(["#f-email", "#email", '[name="email"]']);
-      var phoneVal = v(["#f-phone", "#phone", '[name="phone"]']);
-      var serviceVal = v(["#f-service", "#service", '[name="service"]']);
-      var msgVal = v(["#f-msg", "#message", '[name="message"]']);
+      var nameVal = v("#name") || v("#f-name") || v("[name='name']");
+      var orgVal = v("#company") || v("#f-org") || v("[name='company']");
+      var emailVal = v("#email") || v("#f-email") || v("[name='email']");
+      var phoneVal = v("#phone") || v("[name='phone']");
+      var serviceVal = v("#service") || v("#f-service") || v("[name='service']");
+      var msgVal = v("#message") || v("#f-msg") || v("[name='message']");
+
       var subject = "Website enquiry: " + (serviceVal || "General") + (nameVal ? " - " + nameVal : "");
       var bodyLines = [
         "Name: " + nameVal,
-        "Organisation: " + orgVal,
+        "Company / Employer: " + orgVal,
         "Email: " + emailVal,
-        phoneVal ? ("Phone: " + phoneVal) : "",
+        phoneVal ? "Phone: " + phoneVal : null,
         "Service: " + serviceVal,
         "",
         msgVal
-      ].filter(Boolean).join("\n");
+      ].filter(function (line) { return line !== null; }).join("\n");
+
       window.location.href = "mailto:info@mmengineeringcc.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(bodyLines);
       var done = form.querySelector(".form__done");
       if (done) done.hidden = false;
     });
   }
 
-  /* ---- footer year ------------------------------------------------------- */
+  /* ---- footer year ------------------------------------------------------ */
   d.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
-
-  /* ---- project register filter & search ---------------------------------- */
-  var filterWrap = d.querySelector("[data-project-register]");
-  if (filterWrap) {
-    var activeSector = "all";
-    var searchTerm = "";
-    var rows = Array.prototype.slice.call(filterWrap.querySelectorAll("tbody tr"));
-    var totalEl = d.querySelector("[data-project-count]");
-    var sumEl = d.querySelector("[data-project-sum]");
-
-    var applyProjectFilter = function () {
-      var count = 0;
-      var total = 0;
-      rows.forEach(function (tr) {
-        var sec = tr.getAttribute("data-sector") || "";
-        var txt = (tr.textContent || "").toLowerCase();
-        var matchSector = activeSector === "all" || sec.indexOf(activeSector) !== -1;
-        var matchQuery = !searchTerm || txt.indexOf(searchTerm) !== -1;
-        var show = matchSector && matchQuery;
-        tr.classList.toggle("is-hidden", !show);
-        if (show) {
-          count++;
-          total += parseFloat(tr.getAttribute("data-val") || "0");
-        }
-      });
-      if (totalEl) totalEl.textContent = count + (count === 1 ? " contract" : " contracts");
-      if (sumEl) {
-        sumEl.textContent = "N$ " + total.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      }
-    };
-
-    filterWrap.querySelectorAll("[data-sector-btn]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        activeSector = btn.getAttribute("data-sector-btn") || "all";
-        filterWrap.querySelectorAll("[data-sector-btn]").forEach(function (b) {
-          b.classList.toggle("is-active", b === btn);
-        });
-        applyProjectFilter();
-      });
-    });
-
-    var qInput = filterWrap.querySelector("[data-project-search]");
-    if (qInput) {
-      qInput.addEventListener("input", function () {
-        searchTerm = (qInput.value || "").trim().toLowerCase();
-        applyProjectFilter();
-      });
-    }
-    applyProjectFilter();
-  }
 })();
