@@ -26,3 +26,19 @@ brand package. Photographer names are shown on each source page below.
 | /assets/windhoek.jpg (+srcset variants) | Tower crane, blue sky (used on About and Contact) | https://www.pexels.com/photo/red-tower-cranes-at-a-construction-site-30396647/ | Pexels Licence | 2026-11-09 |
 
 Note: photographer names are displayed on each source page (Pexels profile); automated retrieval of names was blocked by the source site, so they are recorded by reference to the source URL. Licence does not require attribution.
+
+## Project Site & Landmark References (`/assets/projects/`)
+
+The following real Namibian institutional, utility and town landmark photographs
+appear in the Projects and Services showcases alongside drop-in project slots
+(`assets/projects/slot-XX.jpg`):
+
+| Site file | Subject |
+|---|---|
+| `/assets/projects/unam-main-campus.jpg` | University of Namibia (UNAM) Main Campus, Windhoek |
+| `/assets/projects/unam-hp-ongwediva.jpg` | University of Namibia northern campus entrance |
+| `/assets/projects/unam-khomasdal.jpg` | Institutional campus courtyard, Windhoek |
+| `/assets/projects/ongwediva-civic.jpg` | Ongwediva civic infrastructure precinct |
+| `/assets/projects/oshakati-civic.jpg` | Oshakati civic infrastructure precinct |
+| `/assets/projects/mariental-solar-namibia.jpg` | Utility-scale solar generation facility, Namibia |
+| `/assets/projects/windhoek-railway-station.jpg` | Windhoek Railway Station & track corridor |
