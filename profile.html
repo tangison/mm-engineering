@@ -1,1206 +1,1095 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company Profile &amp; OHS Policy Manual 2026 — M &amp; M Engineering &amp; Consultancy CC</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon/favicon-32.png" />
-  <style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Company Profile &amp; OHS Policy Manual 2026 | M&amp;M Engineering</title>
+<meta name="description" content="M&amp;M Engineering &amp; Consultancy CC 15-page Company Profile, 25-contract register, plant schedule and OHS Policy Manual (PDF &amp; Web Edition).">
+<link rel="icon" href="/assets/brand/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/brand/favicon/apple-touch-icon.png">
+<meta property="og:title" content="Company Profile &amp; OHS Policy Manual 2026 | M&amp;M Engineering">
+<meta property="og:description" content="15-page Company Profile, 25 verified Namibian contracts (N$ 152.77M), equipment schedule and OHS Policy Manual.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mmengineeringcc.com/profile">
+<meta property="og:image" content="https://www.mmengineeringcc.com/assets/hero-wide.jpg">
+<link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/archivo-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/scrollcraft.css">
+<link rel="stylesheet" href="/site.css">
+<style>
+@font-face { font-family: "Archivo"; src: url("/assets/fonts/archivo-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("/assets/fonts/archivo-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("/assets/fonts/archivo-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("/assets/fonts/archivo-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
 
-        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap');
-        
-@page {
-  size: 595pt 842pt;
-  margin: 0;
+.profile-toolbar {
+  background: var(--mm-night);
+  background-image: url("/assets/brand/pattern-blueprint-grid.svg");
+  background-size: 48px 48px;
+  color: #FFFFFF;
+  padding: calc(var(--nav-h) + 28px) max(20px, 3.5vw) 26px;
+  border-bottom: 2px solid var(--mm-red);
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  font-family: "Archivo", "DejaVu Sans", sans-serif;
-  color: #1A2129;
-  font-size: 8.8pt;
-  line-height: 1.4;
-  background: #1B222B;
-  margin: 0; padding: 0;
+.profile-toolbar__inner {
+  max-width: 1480px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px;
 }
-.page {
-  width: 595pt;
-  height: 842pt;
-  margin: 0 auto 24px;
-  background: #F4F5F7;
-  position: relative;
-  page-break-after: always;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+.profile-toolbar h1 { margin: 0; font-family: var(--sc-font-display); font-size: clamp(1.75rem, 3.4vw, 2.75rem); color: #FFFFFF; line-height: 1.08; }
+.profile-toolbar__sub { margin: 8px 0 0; color: var(--mm-night-soft); font-size: var(--sc-t-sm); max-width: 62ch; }
+.profile-toolbar__controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.mode-btn {
+  appearance: none; background: rgba(255,255,255,0.08); color: #E2E8F0;
+  border: 1px solid rgba(255,255,255,0.22); border-radius: var(--radius);
+  padding: 10px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  cursor: pointer; transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
 }
-.page:last-child { page-break-after: auto; }
-.pad-in { padding: 20pt 28pt 16pt; width: 100%; }
-.cover-page { background: #F4F5F7; }
-.back-page { background: #141A21; color: #FFFFFF; }
-.phead {
-  width: 100%; border-bottom: 2pt solid #D73B2E;
-  padding-bottom: 7pt; margin-bottom: 11pt;
+.mode-btn:hover { background: rgba(255,255,255,0.16); color: #FFFFFF; }
+.mode-btn.is-active { background: var(--mm-red); border-color: var(--mm-red); color: #FFFFFF; }
+
+.profile-shell {
+  background: #DCE3EC;
+  padding: 28px max(16px, 2.5vw) 56px;
 }
-.phead-table { width: 100%; border-collapse: collapse; }
-.phead-kicker {
-  font-size: 7.2pt; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: #D73B2E; margin-bottom: 1.5pt;
+.profile-split {
+  max-width: 1480px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start;
 }
-.phead-title {
-  font-size: 16.5pt; font-weight: 800; letter-spacing: -0.02em;
-  color: #141A21; line-height: 1.12;
+@media (min-width: 1180px) {
+  .profile-split[data-view="split"] { grid-template-columns: minmax(0, 1.12fr) minmax(430px, 0.88fr); }
 }
-.pfoot {
-  margin-top: 8pt;
-  border-top: 0.75pt solid #CBD5E1; padding-top: 5pt;
-  font-size: 7pt; color: #64748B; width: 100%;
+.profile-split[data-view="web"] .pdf-pane { display: none; }
+.profile-split[data-view="pdf"] .brochure-pane { display: none; }
+
+.brochure-pane { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.pdf-pane {
+  background: #141A21; border: 1px solid #2A3542; border-radius: var(--radius);
+  overflow: hidden; box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
 }
-.h2 { font-size: 11pt; font-weight: 800; color: #141A21; margin-bottom: 5pt; }
-.p { font-size: 8.6pt; color: #334155; margin-bottom: 6pt; line-height: 1.44; }
-.small { font-size: 7.6pt; color: #475569; line-height: 1.38; }
-.card {
-  background: #FFFFFF; border: 0.75pt solid #D8DEE6;
-  padding: 9pt 11pt; margin-bottom: 7pt;
+@media (min-width: 1180px) {
+  .profile-split[data-view="split"] .pdf-pane { position: sticky; top: calc(var(--nav-h) + 18px); }
 }
-.card-dark {
-  background: #141A21; color: #FFFFFF; padding: 10pt 12pt; margin-bottom: 7pt;
+.pdf-pane__bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 12px 16px; background: #0F1419; border-bottom: 1px solid #2A3542; color: #E2E8F0; font-size: 12.5px;
 }
-.card-red {
-  background: #D73B2E; color: #FFFFFF; padding: 10pt 12pt; margin-bottom: 7pt;
+.pdf-pane__bar strong { color: #FFFFFF; }
+.pdf-pane__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.pdf-pane__actions a {
+  color: #FFFFFF; background: var(--mm-red); padding: 6px 12px; border-radius: 3px;
+  text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
 }
-.card-title {
-  font-size: 8.2pt; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.06em; color: #D73B2E; margin-bottom: 4pt;
+.pdf-pane__actions a.sec { background: transparent; border: 1px solid #475569; }
+.pdf-pane__frame { width: 100%; height: min(82vh, 880px); border: 0; display: block; background: #1E293B; }
+.profile-split[data-view="pdf"] .pdf-pane__frame { height: min(86vh, 960px); }
+
+.bp-page {
+  font-family: "Archivo", "Inter", sans-serif;
+  background: #F1F4F8; color: #1A2129;
+  border: 1px solid #CBD5E1; border-radius: 4px;
+  padding: 28px 32px 24px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+  display: flex; flex-direction: column; gap: 10px;
+  width: 100%; max-width: 800px; margin: 0 auto;
 }
-.card-dark .card-title { color: #F25C4E; }
-.card-red .card-title { color: #FFE4E1; }
-.lay { width: 100%; border-collapse: collapse; table-layout: fixed; }
-.lay > tbody > tr > td { vertical-align: top; }
-.tbl { width: 100%; border-collapse: collapse; font-size: 7.4pt; table-layout: fixed; }
-.tbl th {
-  background: #141A21; color: #FFFFFF; text-align: left;
-  padding: 4.5pt 5pt; font-weight: 700; font-size: 7pt;
-  letter-spacing: 0.03em; border: 0.5pt solid #141A21;
+.bp-cover { padding: 0; overflow: hidden; gap: 0; }
+.bp-cover-hero { position: relative; height: 340px; overflow: hidden; background: #141A21; }
+.bp-cover-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bp-cover-slants { position: absolute; inset: 0; pointer-events: none; }
+.bp-cover-slants .sl-navy { position: absolute; right: 24%; top: 18%; width: 78px; height: 110%; background: rgba(20,26,33,0.92); transform: skewX(-12deg); }
+.bp-cover-slants .sl-red { position: absolute; right: 11%; top: 0; width: 88px; height: 115%; background: rgba(215,59,46,0.88); transform: skewX(-12deg); }
+.bp-cover-body { padding: 28px 34px 32px; background: #F1F4F8; display: flex; flex-direction: column; gap: 12px; }
+.bp-cover-h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; display: flex; flex-direction: column; }
+.bp-cover-h1 .blk { color: #141A21; }
+.bp-cover-h1 .red { color: #D73B2E; }
+.bp-cover-sub { margin: 0; font-size: 13.5px; font-weight: 700; color: #334155; }
+.bp-cover-meta { margin: 4px 0 0; font-size: 11.5px; color: #475569; line-height: 1.6; }
+.bp-cover-rule { height: 5px; background: #D73B2E; width: 100%; margin-top: 8px; }
+
+.bp-back { background: #141A21; color: #FFFFFF; position: relative; overflow: hidden; padding: 40px 36px; min-height: 640px; }
+.bp-back-slants { position: absolute; right: 10%; top: -40px; bottom: -40px; width: 140px; background: linear-gradient(90deg, rgba(215,59,46,0.88) 0 58%, rgba(242,92,78,0.28) 58%); transform: skewX(-14deg); pointer-events: none; }
+
+.bp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; border-bottom: 2.5px solid #D73B2E; padding-bottom: 10px; margin-bottom: 6px; }
+.bp-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #D73B2E; margin-bottom: 2px; }
+.bp-title { margin: 0; font-size: clamp(18px, 2.2vw, 22px); font-weight: 800; letter-spacing: -0.02em; color: #141A21; line-height: 1.15; }
+.bp-foot {
+  margin-top: auto; padding-top: 10px; border-top: 1px solid #CBD5E1;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px;
+  font-size: 10.5px; color: #475569;
 }
-.tbl td {
-  padding: 4pt 5pt; border-bottom: 0.5pt solid #D8DEE6;
-  color: #1E293B; vertical-align: top; word-wrap: break-word;
+
+.bp-cols { display: grid; gap: 14px; align-items: start; }
+.bp-cols--44 { grid-template-columns: 1fr; }
+.bp-cols--46 { grid-template-columns: 1fr; }
+.bp-cols--50 { grid-template-columns: 1fr; }
+.bp-cols--3 { grid-template-columns: 1fr; }
+@media (min-width: 660px) {
+  .bp-cols--44 { grid-template-columns: 0.85fr 1.15fr; }
+  .bp-cols--46 { grid-template-columns: 0.92fr 1.08fr; }
+  .bp-cols--50 { grid-template-columns: 1fr 1fr; }
+  .bp-cols--3 { grid-template-columns: repeat(3, 1fr); }
 }
-.tbl tr:nth-child(even) td { background: #F8FAFC; }
-.val { font-weight: 700; color: #141A21; text-align: right; white-space: nowrap; }
-.idx { font-weight: 800; color: #D73B2E; text-align: center; }
-.svc-box {
-  background: #FFFFFF; border-left: 3pt solid #D73B2E;
-  border-top: 0.5pt solid #E2E8F0; border-right: 0.5pt solid #E2E8F0;
-  border-bottom: 0.5pt solid #E2E8F0;
-  padding: 5.5pt 8pt; margin-bottom: 5.5pt;
+
+.bp-h3 { margin: 0 0 6px; font-size: 15px; font-weight: 800; color: #141A21; }
+.bp-p { margin: 0 0 8px; font-size: 12px; color: #334155; line-height: 1.5; }
+.bp-card { background: #FFFFFF; border: 1px solid #D5DCE4; padding: 12px 14px; margin-bottom: 10px; }
+.bp-card-dark { background: #141A21; color: #FFFFFF; padding: 13px 15px; margin-bottom: 10px; }
+.bp-card-red { background: #D73B2E; color: #FFFFFF; padding: 13px 15px; margin-bottom: 10px; }
+.bp-ctitle { font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #D73B2E; margin-bottom: 6px; }
+.bp-card-dark .bp-ctitle { color: #F25C4E; }
+.bp-card-red .bp-ctitle { color: #FFE4E1; }
+
+.bp-kv { display: grid; grid-template-columns: 112px 1fr; gap: 5px 10px; margin: 0; font-size: 11.2px; }
+.bp-kv dt { color: #94A3B8; font-weight: 700; }
+.bp-kv dd { margin: 0; color: #FFFFFF; font-weight: 600; }
+.bp-kv--light dt { color: #475569; }
+.bp-kv--light dd { color: #141A21; }
+
+.bp-stat-photo { overflow: hidden; border: 1px solid #CBD5E1; background: #141A21; }
+.bp-stat-photo img { width: 100%; height: auto; display: block; }
+.bp-stat-bar { display: grid; grid-template-columns: 1fr 1fr; }
+.bp-stat-bar > div { padding: 12px 14px; color: #FFFFFF; display: flex; flex-direction: column; }
+.bp-stat-bar .sb-red { background: #D73B2E; }
+.bp-stat-bar .sb-dark { background: #141A21; }
+.bp-stat-bar strong { font-size: 20px; font-weight: 800; line-height: 1.1; }
+.bp-stat-bar span { font-size: 9.5px; font-weight: 700; letter-spacing: 0.05em; opacity: 0.9; margin-top: 4px; }
+
+.bp-banner { position: relative; overflow: hidden; border: 1px solid #D5DCE4; }
+.bp-banner img { width: 100%; height: auto; display: block; }
+.bp-banner-overlay {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 42%;
+  background: rgba(215,59,46,0.92); color: #FFFFFF; padding: 16px 18px;
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
 }
-.svc-num { font-size: 7pt; font-weight: 800; color: #D73B2E; letter-spacing: 0.06em; }
-.svc-name { font-size: 8.6pt; font-weight: 800; color: #141A21; margin: 1pt 0; }
-.svc-desc { font-size: 7.5pt; color: #475569; line-height: 1.32; }
-.logo-card {
-  background: #FFFFFF; border: 0.75pt solid #D8DEE6;
-  padding: 5.5pt; text-align: center;
+.bp-banner-overlay strong { font-size: 15px; font-weight: 800; }
+.bp-banner-overlay span { font-size: 11px; color: #FFE4E1; }
+
+.bp-merit { background: #FFFFFF; border: 1px solid #D5DCE4; border-left: 4px solid #D73B2E; padding: 9px 12px; margin-bottom: 8px; }
+.bp-merit strong { display: block; font-size: 10.5px; font-weight: 800; color: #D73B2E; letter-spacing: 0.05em; margin-bottom: 2px; }
+.bp-merit p { margin: 0; font-size: 11.2px; color: #334155; line-height: 1.42; }
+
+.bp-photo { margin: 0; }
+.bp-photo img { width: 100%; height: auto; display: block; border: 1px solid #D5DCE4; background: #141A21; }
+.bp-photo figcaption { font-size: 10.5px; font-weight: 700; color: #334155; padding-top: 5px; }
+
+.bp-ul { margin: 0; padding-left: 16px; font-size: 11.5px; color: #334155; line-height: 1.5; }
+.bp-ul li { margin-bottom: 4px; }
+.bp-ol { margin: 4px 0 0; padding-left: 18px; font-size: 11.5px; color: #334155; line-height: 1.5; }
+.bp-ol li { margin-bottom: 4px; }
+
+.bp-logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+@media (max-width: 620px) { .bp-logo-grid { grid-template-columns: repeat(2, 1fr); } }
+.bp-logo-card { background: #FFFFFF; border: 1px solid #D5DCE4; padding: 10px 8px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.bp-logo-wrap { height: 48px; display: flex; align-items: center; justify-content: center; }
+.bp-logo-wrap img { max-height: 44px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
+.bp-logo-card strong { font-size: 10.5px; font-weight: 800; color: #141A21; line-height: 1.2; }
+.bp-logo-card span { font-size: 9.2px; color: #475569; line-height: 1.25; }
+
+.bp-port-card { background: #FFFFFF; border: 1px solid #D5DCE4; overflow: hidden; display: flex; flex-direction: column; }
+.bp-port-card img { width: 100%; aspect-ratio: 262 / 146; object-fit: cover; display: block; background: #141A21; }
+.bp-port-body { padding: 10px 12px; }
+.bp-port-tag { display: block; font-size: 9.5px; font-weight: 800; color: #D73B2E; text-transform: uppercase; letter-spacing: 0.06em; }
+.bp-port-body h4 { margin: 3px 0 4px; font-size: 12.5px; font-weight: 800; color: #141A21; line-height: 1.25; }
+.bp-port-body p { margin: 0; font-size: 10.5px; color: #475569; line-height: 1.38; }
+
+.bp-table-wrap { overflow-x: auto; border: 1px solid #D5DCE4; background: #FFFFFF; }
+.bp-tbl { width: 100%; border-collapse: collapse; font-size: 10.8px; min-width: 520px; }
+.bp-tbl th { background: #141A21; color: #FFFFFF; text-align: left; padding: 7px 8px; font-size: 10px; font-weight: 700; }
+.bp-tbl td { padding: 7px 8px; border-bottom: 1px solid #D5DCE4; color: #1E293B; vertical-align: top; line-height: 1.32; }
+.bp-tbl tr:nth-child(even) td { background: #F8FAFC; }
+.bp-tbl .c-idx { font-weight: 800; color: #D73B2E; text-align: center; }
+.bp-tbl .c-val { font-weight: 700; color: #141A21; text-align: right; white-space: nowrap; }
+
+.bp-ohs { background: #FFFFFF; border: 1px solid #D5DCE4; margin-bottom: 10px; }
+.bp-ohs-hd { background: #141A21; color: #FFFFFF; padding: 7px 12px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+.bp-ohs-hd--red { background: #D73B2E; }
+.bp-ohs-bd { padding: 10px 13px; font-size: 11.5px; color: #334155; }
+
+@media print {
+  .nav, .profile-toolbar, .pdf-pane, .foot, .sheet { display: none !important; }
+  .profile-shell { background: #FFFFFF; padding: 0; }
+  .profile-split { display: block; }
+  .bp-page { box-shadow: none; border: 0; page-break-after: always; margin: 0 auto; max-width: 100%; }
+  .bp-page:last-child { page-break-after: auto; }
 }
-.logo-box { height: 62pt; text-align: center; vertical-align: middle; }
-.logo-box img { max-width: 105pt; max-height: 58pt; }
-.logo-cap { font-size: 7.2pt; font-weight: 700; color: #141A21; margin-top: 3pt; line-height: 1.15; }
-.logo-sub { font-size: 6.4pt; color: #64748B; margin-top: 1.5pt; line-height: 1.22; }
-.slot-card {
-  background: #FFFFFF; border: 0.75pt solid #D8DEE6; padding: 0; margin-bottom: 6pt;
-}
-.slot-img { width: 100%; height: 112pt; overflow: hidden; background: #E2E8F0; }
-.slot-img img { width: 100%; height: 112pt; object-fit: cover; display: block; }
-.slot-drop {
-  width: 100%; height: 112pt; background: #EBF0F5; border-bottom: 1.5pt dashed #94A3B8;
-  text-align: center; padding: 28pt 12pt 0;
-}
-.slot-drop-t { font-size: 8.2pt; font-weight: 800; color: #1E293B; letter-spacing: 0.05em; }
-.slot-drop-s { font-size: 6.8pt; color: #64748B; margin-top: 4pt; }
-.slot-body { padding: 6.5pt 9pt; }
-.slot-tag { font-size: 6.4pt; font-weight: 800; color: #D73B2E; text-transform: uppercase; letter-spacing: 0.06em; }
-.slot-title { font-size: 8.5pt; font-weight: 800; color: #141A21; margin: 1.5pt 0; line-height: 1.22; }
-.slot-meta { font-size: 7pt; color: #475569; line-height: 1.3; }
-.ohs-sec { background: #FFFFFF; border: 0.75pt solid #D8DEE6; margin-bottom: 7pt; }
-.ohs-hd {
-  background: #141A21; color: #FFFFFF; padding: 4.5pt 9pt;
-  font-size: 7.9pt; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
-}
-.ohs-hd-red { background: #D73B2E; }
-.ohs-bd { padding: 6.5pt 9.5pt; font-size: 7.7pt; color: #334155; line-height: 1.38; }
-.ohs-bd ul { margin-left: 11pt; margin-top: 1.5pt; }
-.ohs-bd li { margin-bottom: 2.5pt; }
-.pimgbox { background: #141A21; overflow: hidden; }
-.pimgbox img { width: 100%; display: block; object-fit: cover; }
-.cap-bar { font-size: 7pt; font-weight: 700; color: #475569; padding-top: 3pt; }
-.kv-tbl { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 7.6pt; }
-.kv-tbl td { padding: 2.8pt 2pt; vertical-align: top; word-wrap: break-word; }
-.kv-k-dark { width: 34%; color: #94A3B8; font-weight: 700; }
-.kv-v-dark { width: 66%; color: #FFFFFF; font-weight: 600; }
-.kv-k-lt { width: 29%; color: #475569; font-weight: 700; }
-.kv-v-lt { width: 71%; color: #141A21; font-weight: 600; }
 </style>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
+<span data-sc-progress aria-hidden="true"></span>
+<nav class="nav" aria-label="Main">
+<a class="nav__logo" href="/" aria-label="M&amp;M Engineering home">
+  <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy logo" width="183" height="44">
+</a>
+<ul class="nav__links"><li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/services">Services</a></li><li><a href="/consultancy">Consultancy</a></li><li><a href="/projects">Projects</a></li><li><a href="/clients">Clients</a></li><li><a href="/safety-policy">Safety</a></li><li><a href="/blog/">Journal</a></li><li><a href="/contact">Contact</a></li></ul>
+<a class="nav__cta" href="/contact">Start a project</a>
+<button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+</nav>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="sheet__head">
+    <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy logo" width="183" height="44">
+    <button class="sheet__close" aria-label="Close menu" data-close>&times;</button>
+  </div>
+  <nav><a href="/" data-close>Home</a><a href="/about" data-close>About</a><a href="/services" data-close>Services</a><a href="/consultancy" data-close>Consultancy</a><a href="/projects" data-close>Projects</a><a href="/clients" data-close>Clients</a><a href="/safety-policy" data-close>Safety</a><a href="/blog/" data-close>Journal</a><a href="/contact" data-close>Contact</a></nav>
+  <div class="sheet__foot">
+    <a class="btn btn--wa" href="https://wa.me/264813275403" target="_blank" rel="noopener">WhatsApp +264 81 3275 403</a>
+    <a class="btn" href="mailto:info@mmengineeringcc.com">info@mmengineeringcc.com</a>
+  </div>
+</div>
+
+<main id="main">
+  <header class="profile-toolbar">
+    <div class="profile-toolbar__inner">
+      <div>
+        <p class="eyebrow" style="color:var(--mm-red-bright);">Tender Pre-Qualification &amp; Statutory Pack</p>
+        <h1>Company Profile &amp; OHS Policy Manual 2026</h1>
+        <p class="profile-toolbar__sub">Inspect the complete 15-page web edition alongside the official downloadable PDF &middot; Reg. CC/2013/6661 &middot; 25 Verified Contracts (N$ 152,768,801.37).</p>
+      </div>
+      <div class="profile-toolbar__controls">
+        <button class="mode-btn is-active" type="button" data-profile-mode="split">Side-by-Side</button>
+        <button class="mode-btn" type="button" data-profile-mode="web">Web Pages</button>
+        <button class="mode-btn" type="button" data-profile-mode="pdf">PDF Reader</button>
+        <a class="btn btn--accent" href="/downloads/M_and_M_Company_Profile_and_Policies.pdf" download>Download PDF (4.3 MB)</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="profile-shell">
+    <div class="profile-split" id="profile-split" data-view="split">
+      <div class="brochure-pane">
+        
+<article class="bp-page bp-cover" id="page-01">
+  <div class="bp-cover-hero">
+    <img src="/assets/structural.jpg" alt="Concrete building and scaffolding structure under construction" width="1200" height="686" />
+    <div class="bp-cover-slants" aria-hidden="true">
+      <div class="sl-navy"></div>
+      <div class="sl-red"></div>
+    </div>
+  </div>
+  <div class="bp-cover-body">
+    <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="240" height="58" style="height:56px; width:auto;" />
+    <div class="bp-cover-h1">
+      <span class="blk">COMPANY</span>
+      <span class="red">PROFILE 2026</span>
+    </div>
+    <p class="bp-cover-sub">Multidisciplinary Engineering, Construction, Track Record &amp; OHS Policy Manual</p>
+    <p class="bp-cover-meta">Reg. CC/2013/6661 &nbsp;|&nbsp; Tax 6140420-01-1 &nbsp;|&nbsp; Windhoek, Republic of Namibia<br/>www.mmengineeringcc.com &nbsp;|&nbsp; info@mmengineeringcc.com &nbsp;|&nbsp; +264 61 234 349</p>
+    <div class="bp-cover-rule"></div>
+  </div>
+</article>
+
+<article class="bp-page" id="page-02">
   
-        <div class="web-bar">
-          <div>
-            <strong>M &amp; M Engineering &amp; Consultancy CC</strong> — Company Profile &amp; OHS Policy Manual (2026)
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a href="index.html">← Back to Website</a>
-            <a href="downloads/M_and_M_Company_Profile_and_Policies.pdf" download style="background:#D73B2E;">Download PDF (Print Edition)</a>
-          </div>
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">01 / Corporate Overview</div>
+        <h2 class="bp-title">Welcome to M &amp; M Engineering</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--44">
+    <div>
+      <div class="bp-stat-photo">
+        <img src="/assets/windhoek.jpg" alt="Tower cranes over structural works in Windhoek" width="1066" height="1600" style="aspect-ratio:222/340; object-fit:cover; object-position:50% 65%;" />
+        <div class="bp-stat-bar">
+          <div class="sb-red"><strong>25</strong><span>PUBLIC &amp; CIVIC CONTRACTS</span></div>
+          <div class="sb-dark"><strong>N$ 152.8M</strong><span>VERIFIED VALUE SINCE 2013</span></div>
         </div>
-        <style>
-          .web-bar {
-            position: sticky; top: 0; z-index: 99; background: #141A21; color: #fff;
-            border-bottom: 2px solid #D73B2E; padding: 12px 24px;
-            display: flex; align-items: center; justify-content: space-between; gap: 12px;
-            font-size: 13px; margin-bottom: 24px;
-          }
-          .web-bar a {
-            color: #fff; text-decoration: none; font-weight: 700; padding: 7px 14px;
-            border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;
-          }
-          @media screen and (max-width: 820px) { .web-bar { position: sticky; left: 0; max-width: 100vw; flex-wrap: wrap; padding: 10px 14px; font-size: 12px; margin-bottom: 12px; } }
-          @media print { .web-bar { display: none !important; } body { background: #fff !important; } .page { box-shadow: none !important; margin: 0 !important; } }
-        </style>
+      </div>
+      <div class="bp-card-dark" style="margin-top:14px;">
+        <div class="bp-ctitle">STATUTORY &amp; TENDER CREDENTIALS</div>
+        <dl class="bp-kv">
+          <dt>Close Corp Reg.</dt><dd>CC/2013/6661</dd>
+          <dt>Tax ID No.</dt><dd>6140420-01-1</dd>
+          <dt>Banking</dt><dd>Namibian Commercial Clearing</dd>
+          <dt>Bank Verification</dt><dd>Issued in tender submissions</dd>
+          <dt>Tax Clearance</dt><dd>Good Standing Certified</dd>
+          <dt>Established</dt><dd>2013 (Windhoek, Namibia)</dd>
+        </dl>
+      </div>
+    </div>
+    <div>
+      <h3 class="bp-h3">Engineering, Construction &amp; Technical Consultancy</h3>
+      <p class="bp-p">M &amp; M Engineering &amp; Consultancy CC is an independent Namibian engineering consultancy and multi-disciplinary contracting firm based in Windhoek. Established in 2013 and registered across Namibia and the Southern African region, our practice pairs practical site delivery with formal design coordination and procurement.</p>
+      <p class="bp-p">Our engineering and construction teams deliver complex civil structures, medium- and low-voltage power networks, hospitals, police stations, tertiary campus hostels, mass housing, air-conditioning plants and water pipelines for government ministries, regional councils, state enterprises and commercial developers.</p>
+      <p class="bp-p">Every project runs under named technical leadership&mdash;uniting registered engineers, quantity surveyors, technologists and vetted subcontractors&mdash;with strict adherence to the Labour Act, 2007 and Government Notice No. 156 occupational safety regulations.</p>
+      <div class="bp-card">
+        <div class="bp-ctitle">REGISTERED WINDHOEK OFFICES</div>
+        <dl class="bp-kv bp-kv--light">
+          <dt>Head Office</dt><dd>ERF 454 Rietfontein Street, Kleine Kuppe, Windhoek</dd>
+          <dt>Physical Office</dt><dd>23 John Simms Street, Windhoek North, Windhoek</dd>
+          <dt>Postal Address</dt><dd>P.O. Box 51121, Bachbrecht, Windhoek, Namibia</dd>
+          <dt>Telephone</dt><dd>+264 61 234 349 &middot; Cell: +264 81 327 5403</dd>
+          <dt>Digital</dt><dd>info@mmengineeringcc.com<br/>www.mmengineeringcc.com</dd>
+        </dl>
+      </div>
+      <div class="bp-card-red">
+        <div class="bp-ctitle">OPERATIONAL SCOPE</div>
+        <p style="margin:0; font-size:12px; font-weight:700; line-height:1.5;">13 Integrated Disciplines &middot; Direct Owned Fleet &amp; HV Testing Gear &middot; Zero-LTI Safety Focus Across All Namibian Regions</p>
+      </div>
+      <div class="bp-card">
+        <div class="bp-ctitle">REGIONAL &amp; TENDER READINESS</div>
+        <p class="bp-p" style="margin:0;">Active site mobilisation across Khomas, Kavango East &amp; West, Oshana, Ohangwena, Oshikoto, Omusati, Zambezi, Otjozondjupa and Kunene, backed by owned MAN 4x4 crane transport, 14-ton stringing gear and calibrated 10 kV instrumentation.</p>
+      </div>
+    </div>
+  </div>
   
-    <div class="page cover-page">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595pt" height="842pt" style="display:block;">
-        <rect x="0" y="0" width="595" height="842" fill="#F4F5F7"/>
-        <image href="assets/hero-wide.jpg" x="28" y="0" width="540" height="472" preserveAspectRatio="xMidYMid slice"/>
-        <polygon points="0,0 142,0 44,472 0,472" fill="#F4F5F7"/>
-        <polygon points="274,0 296,0 198,472 176,472" fill="#F4F5F7"/>
-        <polygon points="434,0 456,0 358,472 336,472" fill="#F4F5F7"/>
-        <polygon points="558,0 595,0 595,472 466,472" fill="#F4F5F7"/>
-        <rect x="0" y="470" width="595" height="372" fill="#F4F5F7"/>
-        <polygon points="315,342 406,342 350,620 259,620" fill="#182028" opacity="0.93"/>
-        <polygon points="416,170 526,170 442,548 332,548" fill="#D73B2E" opacity="0.88"/>
-        <polygon points="348,470 434,470 416,548 332,548" fill="#B52217" opacity="0.94"/>
-        <image href="assets/brand/png/mm-logo-lockup-1750.png" x="42" y="544" width="212" height="51"/>
-        <text x="44" y="646" font-family="Archivo, DejaVu Sans, sans-serif" font-size="33" font-weight="800" fill="#141A21" letter-spacing="-0.6">COMPANY</text>
-        <text x="44" y="684" font-family="Archivo, DejaVu Sans, sans-serif" font-size="33" font-weight="800" fill="#D73B2E" letter-spacing="-0.6">PROFILE 2026</text>
-        <text x="44" y="713" font-family="Archivo, DejaVu Sans, sans-serif" font-size="10.2" font-weight="700" fill="#334155">Multidisciplinary Engineering, Construction, Track Record &amp; OHS Policy Manual</text>
-        <text x="44" y="746" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.4" font-weight="600" fill="#475569">Reg. CC/2013/6661  |  Tax 6140420-01-1  |  Windhoek, Republic of Namibia</text>
-        <text x="44" y="762" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.4" font-weight="600" fill="#475569">www.mmengineeringcc.com  |  info@mmengineeringcc.com  |  +264 61 234 349</text>
-        <rect x="44" y="794" width="507" height="4" fill="#D73B2E"/>
-      </svg>
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 02 / 15</strong>
     </div>
+</article>
 
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">01 / Corporate Overview</div>
-              <div class="phead-title">Welcome to M &amp; M Engineering</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:45%; padding-right:10pt;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 232 308" width="232pt" height="308pt" style="display:block;">
-            <image href="assets/windhoek.jpg" x="6" y="10" width="220" height="270" preserveAspectRatio="xMidYMid slice"/>
-            <polygon points="0,0 232,0 232,6 0,24" fill="#F4F5F7"/>
-            <polygon points="0,288 232,262 232,308 0,308" fill="#F4F5F7"/>
-            <polygon points="0,0 10,0 10,308 0,308" fill="#F4F5F7"/>
-            <polygon points="222,0 232,0 232,308 222,308" fill="#F4F5F7"/>
-            <polygon points="18,220 120,220 104,296 18,296" fill="#D73B2E"/>
-            <polygon points="120,220 218,220 218,296 104,296" fill="#141A21"/>
-            <text x="30" y="250" font-family="Archivo, DejaVu Sans, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">25</text>
-            <text x="30" y="267" font-family="Archivo, DejaVu Sans, sans-serif" font-size="7.2" font-weight="700" fill="#FFE4E1">PUBLIC &amp; CIVIC</text>
-            <text x="30" y="279" font-family="Archivo, DejaVu Sans, sans-serif" font-size="7.2" font-weight="600" fill="#F8FAFC">PROJECTS</text>
-            <text x="122" y="250" font-family="Archivo, DejaVu Sans, sans-serif" font-size="16.5" font-weight="800" fill="#FFFFFF">N$ 152.8M</text>
-            <text x="122" y="267" font-family="Archivo, DejaVu Sans, sans-serif" font-size="7.2" font-weight="700" fill="#94A3B8">VERIFIED VALUE</text>
-            <text x="122" y="279" font-family="Archivo, DejaVu Sans, sans-serif" font-size="7.2" font-weight="600" fill="#CBD5E1">SINCE 2013</text>
-          </svg>
-          <div class="card-dark" style="margin-top:8pt;">
-            <div class="card-title">STATUTORY &amp; BANKING DETAILS</div>
-            <table class="kv-tbl">
-              <tr><td class="kv-k-dark">Close Corp Reg.</td><td class="kv-v-dark">CC/2013/6661</td></tr>
-              <tr><td class="kv-k-dark">Tax ID No.</td><td class="kv-v-dark">6140420-01-1</td></tr>
-              <tr><td class="kv-k-dark">Banking</td><td class="kv-v-dark">Namibian Commercial Clearing</td></tr>
-              <tr><td class="kv-k-dark">Bank Details</td><td class="kv-v-dark">Issued in tender submissions</td></tr>
-              <tr><td class="kv-k-dark">Tax Clearance</td><td class="kv-v-dark">Good Standing Certified</td></tr>
-              <tr><td class="kv-k-dark">Established</td><td class="kv-v-dark">2013 (Windhoek, Namibia)</td></tr>
-            </table>
-          </div>
-        </td>
-        <td style="width:55%; padding-left:6pt;">
-          <div class="h2" style="font-size:13pt;">Engineering, Construction &amp; Technical Consultancy</div>
-          <p class="p">M &amp; M Engineering &amp; Consultancy CC is an independent Namibian engineering consultancy and multi-disciplinary contracting firm based in Windhoek. Established in 2013 and registered across Namibia and the Southern African region, our practice pairs practical site delivery with formal design coordination and procurement.</p>
-          <p class="p">Our engineering and construction teams deliver complex civil structures, medium- and low-voltage power networks, hospitals, police stations, tertiary campus hostels, mass housing, air-conditioning plants and water pipelines for government ministries, regional councils, state enterprises and commercial developers.</p>
-          <p class="p">Every project runs under named technical leadership—uniting registered engineers, quantity surveyors, technologists and vetted subcontractors—with strict adherence to the Labour Act, 2007 and Government Notice No. 156 occupational safety regulations.</p>
-          <div class="card" style="margin-top:10pt;">
-            <div class="card-title">REGISTERED WINDHOEK OFFICES</div>
-            <table class="kv-tbl">
-              <tr><td class="kv-k-lt">Head Office</td><td class="kv-v-lt">ERF 454 Rietfontein Street, Kleine Kuppe, Windhoek</td></tr>
-              <tr><td class="kv-k-lt">Physical Office</td><td class="kv-v-lt">23 John Simms Street, Windhoek North, Windhoek</td></tr>
-              <tr><td class="kv-k-lt">Postal Address</td><td class="kv-v-lt">P.O. Box 51121, Bachbrecht, Windhoek, Namibia</td></tr>
-              <tr><td class="kv-k-lt">Telephone</td><td class="kv-v-lt">+264 61 234 349 · Cell: +264 81 327 5403</td></tr>
-              <tr><td class="kv-k-lt">Digital</td><td class="kv-v-lt">info@mmengineeringcc.com · www.mmengineeringcc.com</td></tr>
-            </table>
-          </div>
-          <div class="card-red" style="margin-top:8pt;">
-            <div class="card-title">OPERATIONAL SCOPE</div>
-            <div style="font-size:8.6pt; font-weight:700; line-height:1.45;">
-              13 Integrated Disciplines · Direct Owned Fleet &amp; HV Testing Gear · Zero-LTI Safety Focus Across All Namibian Regions
-            </div>
-          </div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 02 / 15</td>
-          </tr></table>
-        </div>
+<article class="bp-page" id="page-03">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">02 / Purpose &amp; Standards</div>
+        <h2 class="bp-title">Vision, Mission &amp; Operational Merits</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-banner">
+    <img src="/assets/site-crane.jpg" alt="Industrial piping and steel structure construction" width="1600" height="1066" style="aspect-ratio:537/154; object-fit:cover; object-position:50% 72%;" />
+    <div class="bp-banner-overlay">
+      <strong>ETHICAL DELIVERY</strong>
+      <span>On time, within budget &amp; built to regulatory standard.</span>
+    </div>
+  </div>
+  <div class="bp-cols bp-cols--46" style="margin-top:14px;">
+    <div>
+      <div class="bp-card-red">
+        <div class="bp-ctitle">OUR VISION</div>
+        <p style="margin:0; font-size:14px; font-weight:700; line-height:1.45;">To provide engineering ingenuity and technical services across every site and sector we serve.</p>
+      </div>
+      <div class="bp-card-dark">
+        <div class="bp-ctitle">OUR MISSION</div>
+        <p style="margin:0; font-size:14px; font-weight:700; line-height:1.45;">To be the most sought-after provider of engineering and technical services for Namibia and the SADC region.</p>
+      </div>
+      <div class="bp-card">
+        <div class="bp-ctitle">STRATEGIC CONSULTING</div>
+        <ul class="bp-ul">
+          <li>Competitive tendering &amp; tender compliance preparation</li>
+          <li>Project management effectiveness audits &amp; recovery plans</li>
+          <li>Identifying local and regional infrastructure partnerships</li>
+          <li>Environmental Impact Assessments (EIAs) &amp; site remediation</li>
+        </ul>
+      </div>
+      <div class="bp-card">
+        <div class="bp-ctitle">GOVERNANCE COMMITMENT</div>
+        <p class="bp-p" style="margin:0;">Transparent client reporting, verified BOQ valuation, statutory compliance and single-point leadership accountability from tender award to practical completion.</p>
       </div>
     </div>
+    <div>
+      <h3 class="bp-h3">Company Merits</h3>
+      <div class="bp-merit"><strong>01 &middot; STRICT ETHICS</strong><p>Tailored solutions meeting client business objectives while upholding civil, electrical and statutory codes.</p></div>
+      <div class="bp-merit"><strong>02 &middot; PROACTIVE VALUE</strong><p>Continuous review of site conditions to spot practical cost savings and resilience gains beyond baseline contract terms.</p></div>
+      <div class="bp-merit"><strong>03 &middot; BESPOKE ENGINEERING</strong><p>Adaptive field delivery engineered for remote Namibian terrains&mdash;from Kunene veterinary gates to Zambezi bases.</p></div>
+      <div class="bp-merit"><strong>04 &middot; CROSS-DISCIPLINARY</strong><p>Architects, quantity surveyors, engineers and testing technicians operating under unified programme control.</p></div>
+      <div class="bp-merit"><strong>05 &middot; CRISIS READINESS</strong><p>Direct leadership accountability, transparent ministry liaison and rapid turnaround when site conditions shift.</p></div>
+      <div class="bp-merit"><strong>06 &middot; 24/7 AVAILABILITY</strong><p>Dedicated Windhoek technical dispatch for essential hospital, power and municipal infrastructure works.</p></div>
+    </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 03 / 15</strong>
+    </div>
+</article>
 
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">02 / Purpose &amp; Standards</div>
-              <div class="phead-title">Vision, Mission &amp; Operational Merits</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 539 112" width="539pt" height="112pt" style="display:block; margin-bottom:10pt;">
-        <image href="assets/team.jpg" x="0" y="0" width="539" height="112" preserveAspectRatio="xMidYMid slice"/>
-        <polygon points="344,0 539,0 539,112 310,112" fill="#D73B2E" opacity="0.88"/>
-        <text x="366" y="48" font-family="Archivo, DejaVu Sans, sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">ETHICAL DELIVERY</text>
-        <text x="366" y="66" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.4" font-weight="600" fill="#FFE4E1">On time, within budget &amp;</text>
-        <text x="366" y="79" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.4" font-weight="600" fill="#FFE4E1">built to regulatory standard.</text>
-      </svg>
-      <table class="lay"><tr>
-        <td style="width:46%; padding-right:10pt;">
-          <div class="card-red">
-            <div class="card-title">OUR VISION</div>
-            <div style="font-size:9.8pt; font-weight:700; line-height:1.4;">
-              To provide engineering ingenuity and technical services across every site and sector we serve.
-            </div>
-          </div>
-          <div class="card-dark" style="margin-top:8pt;">
-            <div class="card-title">OUR MISSION</div>
-            <div style="font-size:9.8pt; font-weight:700; line-height:1.4;">
-              To be the most sought-after provider of engineering and technical services for Namibia and the SADC region.
-            </div>
-          </div>
-          <div class="card" style="margin-top:8pt;">
-            <div class="card-title">STRATEGIC CONSULTING</div>
-            <ul style="margin-left:12pt; font-size:8pt; color:#334155; line-height:1.48;">
-              <li>Competitive tendering &amp; tender compliance preparation</li>
-              <li>Project management effectiveness audits &amp; recovery plans</li>
-              <li>Identifying local and regional infrastructure partnerships</li>
-              <li>Environmental Impact Assessments (EIAs) &amp; site remediation</li>
-            </ul>
-          </div>
-        </td>
-        <td style="width:54%; padding-left:6pt;">
-          <div class="h2">Company Merits</div>
-          <div class="svc-box"><div class="svc-num">01 · STRICT ETHICS</div><div class="svc-desc">Tailored solutions meeting client business objectives while upholding civil, electrical and statutory codes.</div></div>
-          <div class="svc-box"><div class="svc-num">02 · PROACTIVE VALUE</div><div class="svc-desc">Continuous review of site conditions to spot practical cost savings and resilience gains beyond baseline contract terms.</div></div>
-          <div class="svc-box"><div class="svc-num">03 · BESPOKE ENGINEERING</div><div class="svc-desc">Adaptive field delivery engineered for remote Namibian terrains—from Kunene veterinary gates to Zambezi bases.</div></div>
-          <div class="svc-box"><div class="svc-num">04 · CROSS-DISCIPLINARY</div><div class="svc-desc">Architects, quantity surveyors, engineers and testing technicians operating under unified programme control.</div></div>
-          <div class="svc-box"><div class="svc-num">05 · CRISIS READINESS</div><div class="svc-desc">Direct leadership accountability, transparent ministry liaison and rapid turnaround when site conditions shift.</div></div>
-          <div class="svc-box"><div class="svc-num">06 · 24/7 AVAILABILITY</div><div class="svc-desc">Dedicated Windhoek technical dispatch for essential hospital, power and municipal infrastructure works.</div></div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 03 / 15</td>
-          </tr></table>
-        </div>
+<article class="bp-page" id="page-04">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">03 / Multidisciplinary Services</div>
+        <h2 class="bp-title">13 Integrated Engineering &amp; Construction Disciplines</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--50">
+    <div><div class="bp-merit"><strong>01 &middot; ELECTRICAL ENGINEERING</strong><p>HV/MV switchgear, transformer substations, power reticulation, lighting, backup generators, PLC/SCADA, fire detection and instrumentation.</p></div><div class="bp-merit"><strong>02 &middot; CIVIL ENGINEERING</strong><p>Underground and elevated concrete structures, silos, cooling towers, precast concrete, pipe racks, culverts, structural steel and industrial buildings.</p></div><div class="bp-merit"><strong>03 &middot; TELECOMMUNICATIONS ENGINEERING</strong><p>Carrier and campus fibre-optic backbones, splicing and OTDR testing, lattice towers, equipment shelters and structured network cabling.</p></div><div class="bp-merit"><strong>04 &middot; MINING ENGINEERING</strong><p>Surface and underground mine infrastructure support, plant electrical reticulation, earthworks and utility civil packages.</p></div><div class="bp-merit"><strong>05 &middot; INFORMATION TECHNOLOGY SYSTEMS</strong><p>Enterprise data networks, active telemetry, security and building management integration, and institutional IT infrastructure.</p></div><div class="bp-merit"><strong>06 &middot; ENERGY SERVICES (SOLAR / HYDROGEN)</strong><p>Grid-tied solar PV, hybrid microgrids, clean-energy substations and hydrogen-ready energy installations &mdash; design through construction.</p></div><div class="bp-merit"><strong>07 &middot; MECHANICAL ENGINEERING</strong><p>Static and rotary plant installation, process piping, fire-fighting networks, pipe gantries, cranes, HVAC, insulation and scaffolding.</p></div></div>
+    <div>
+      <div class="bp-merit"><strong>08 &middot; ROAD CONSTRUCTION &amp; HIGHWAYS</strong><p>Highways, paved urban roads, bridges, underpasses, major earthworks, street lighting, traffic signalisation and TSE pipelines.</p></div><div class="bp-merit"><strong>09 &middot; GEOLOGICAL SERVICES</strong><p>Geotechnical site investigations, ground condition verification and subsurface support for major infrastructure corridors.</p></div><div class="bp-merit"><strong>10 &middot; BUILDING CIVILS &amp; CONSTRUCTION</strong><p>Design coordination, 3D planning, site clearing, grading, general contracting and turnaround building refurbishments.</p></div><div class="bp-merit"><strong>11 &middot; ARCHITECTURAL SERVICES</strong><p>Functional architectural design, space planning, facade cladding, curtain walling and interior build coordination.</p></div><div class="bp-merit"><strong>12 &middot; PROJECT MANAGEMENT &amp; CONSULTING</strong><p>Overall planning, tendering, EPIC procurement, HAZOP subcontractor supervision, cost control and strategic advisory.</p></div><div class="bp-merit"><strong>13 &middot; RAILWAY INFRASTRUCTURE</strong><p>Trackside civils, station precincts, level-crossing civil/electrical interfaces and rail corridor support works.</p></div>
+      <figure class="bp-photo">
+        <img src="/assets/projects/mariental-solar-namibia.jpg" alt="Utility solar array in Namibia" width="500" height="333" style="aspect-ratio:262/96; object-fit:cover;" />
+        <figcaption>Namibian Clean Energy &amp; Utility Infrastructure (Solar / Hybrid Systems)</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="bp-cols bp-cols--3" style="margin-top:12px; padding-top:12px; border-top:1px solid #CBD5E1;">
+    <figure class="bp-photo"><img src="/assets/switchgear.jpg" alt="HV and MV switchgear panels" width="1376" height="768" style="aspect-ratio:172/96; object-fit:cover;" /><figcaption>HV/MV Switchgear &amp; Protection</figcaption></figure>
+    <figure class="bp-photo"><img src="/assets/projects/windhoek-railway-station.jpg" alt="Windhoek Railway Station building" width="1600" height="1042" style="aspect-ratio:172/96; object-fit:cover;" /><figcaption>Railway Infrastructure &amp; Civils</figcaption></figure>
+    <figure class="bp-photo"><img src="/assets/stock-desert-road.jpg" alt="Namibian graded trunk road corridor" width="1400" height="816" style="aspect-ratio:172/96; object-fit:cover;" /><figcaption>Highways, Grading &amp; Earthworks</figcaption></figure>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 04 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-05">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">04 / Scope Execution</div>
+        <h2 class="bp-title">Detailed Engineering, Construction &amp; EPIC Specifications</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--50">
+    <div class="bp-ohs">
+      <div class="bp-ohs-hd bp-ohs-hd--red">Electrical &amp; Instrumentation (E&amp;I)</div>
+      <div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Supply &amp; erection of transformers, switchgear &amp; generators</li>
+        <li>Power distribution, MV/LV reticulation &amp; street lighting</li>
+        <li>Lighting, internal small power &amp; earthing networks</li>
+        <li>Fire detection, alarm &amp; security access systems</li>
+        <li>Programmable Logic Control (PLC) &amp; SCADA supervision</li>
+        <li>Structured fibre-optic cabling &amp; process instrumentation</li>
+      </ul></div>
+    </div>
+    <div class="bp-ohs">
+      <div class="bp-ohs-hd">Highways, Roads &amp; Water Infrastructure</div>
+      <div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Highways, urban roads, underpasses, bridges &amp; interchanges</li>
+        <li>Major earthworks, land reclamation &amp; turnkey infrastructure</li>
+        <li>Industrial &amp; petrochemical plant site development</li>
+        <li>Water supply, sewage, drainage &amp; Treated Sewage Effluent (TSE)</li>
+        <li>Signalisation, traffic light controls &amp; corridor lighting</li>
+        <li>Tunnelling works with associated E&amp;M systems</li>
+      </ul></div>
+    </div>
+    <div class="bp-ohs">
+      <div class="bp-ohs-hd">Mechanical &amp; HVAC Works</div>
+      <div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Supply, fabrication &amp; erection of static process plant</li>
+        <li>Supply &amp; erection of rotary machinery &amp; cranes</li>
+        <li>Process piping, utility pipelines &amp; pipe gantries</li>
+        <li>Fire-fighting ring mains, hydrants &amp; sprinkler systems</li>
+        <li>Commercial/hospital HVAC &amp; mechanical ventilation</li>
+        <li>Industrial thermal insulation, coatings &amp; scaffolding</li>
+      </ul></div>
+    </div>
+    <div class="bp-ohs">
+      <div class="bp-ohs-hd bp-ohs-hd--red">Civil Works &amp; General Contracting</div>
+      <div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Underground &amp; elevated reinforced concrete structures</li>
+        <li>Silos, cooling towers, precast units, pipe racks &amp; culverts</li>
+        <li>Structural steelwork &amp; turn-key industrial buildings</li>
+        <li>Enabling works, underground utilities &amp; security fencing</li>
+        <li>Curtain wall facades, stone cladding &amp; interior finishes</li>
+        <li>Commercial centres, hostels, police stations &amp; hospitals</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="bp-cols bp-cols--50" style="margin-top:12px;">
+    <figure class="bp-photo"><img src="/assets/pipeline.jpg" alt="Trenched bulk water and drainage pipeline bedding" width="1376" height="768" style="aspect-ratio:262/134; object-fit:cover;" /><figcaption>Bulk Water, Sewage &amp; Drainage Reticulation</figcaption></figure>
+    <figure class="bp-photo"><img src="/assets/consult.jpg" alt="Total station survey instrument on construction site" width="1376" height="768" style="aspect-ratio:262/134; object-fit:cover;" /><figcaption>Design Coordination, HAZOP Review &amp; Quality Assurance</figcaption></figure>
+  </div>
+  <div class="bp-card-dark" style="margin-top:12px;">
+    <div class="bp-ctitle">PROJECT DELIVERY GOVERNANCE</div>
+    <p style="margin:0; font-size:11.5px; color:#E2E8F0; line-height:1.5;">Every contract follows structured project governance: scope scoping, site assessment, detailed BOQ costing, contractor &amp; specialist interface management, testing/commissioning witness certification and statutory handover documentation.</p>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 05 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-06">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">05 / Clients &amp; Partners</div>
+        <h2 class="bp-title">Verified Namibian Employers &amp; Consulting Associates</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <p class="bp-p">M &amp; M Engineering has delivered 25 major contracts across government ministries, regional councils, tertiary institutions and state enterprises alongside Namibia's leading consulting engineers and architects:</p>
+  <div class="bp-logo-grid">
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/namibia-coat-of-arms.png" alt="Republic of Namibia logo" loading="lazy"  width="960" height="1002" /></div>
+      <strong>Republic of Namibia</strong>
+      <span>Safety & Security, Works, Health, Education, Trade & Agriculture</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/nampol.png" alt="Namibian Police Force logo" loading="lazy"  width="500" height="500" /></div>
+      <strong>Namibian Police Force</strong>
+      <span>Nyae Nyae, Nkurenkuru & Simanya stations & barracks</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/namibia-defence-force.png" alt="Namibian Defence Force logo" loading="lazy"  width="250" height="192" /></div>
+      <strong>Namibian Defence Force</strong>
+      <span>Nukwa Military Base HV/LV electrical reticulation</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/mhss-namibia.jpg" alt="Ministry of Health (MoHSS) logo" loading="lazy"  width="160" height="160" /></div>
+      <strong>Ministry of Health (MoHSS)</strong>
+      <span>Okakarara, Rundu, Tsumeb & Okahandja hospital works</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/unam.png" alt="University of Namibia logo" loading="lazy"  width="500" height="548" /></div>
+      <strong>University of Namibia</strong>
+      <span>UNAM Main Campus Clinic & tertiary facility works</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/namcol.png" alt="NAMCOL logo" loading="lazy"  width="500" height="500" /></div>
+      <strong>NAMCOL</strong>
+      <span>Rundu Phase 2 Centre & regional HVAC installations</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/mva-fund.png" alt="MVA Fund Namibia logo" loading="lazy"  width="605" height="122" /></div>
+      <strong>MVA Fund Namibia</strong>
+      <span>Ongwediva Phase II electrical engineering & installation</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/nhe.jpg" alt="National Housing Enterprise logo" loading="lazy"  width="200" height="200" /></div>
+      <strong>National Housing Enterprise</strong>
+      <span>Kaisosi Rundu 63-house delivery & bulk reticulation</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/nida-ndc.png" alt="NIDA / NDC Namibia logo" loading="lazy"  width="253" height="199" /></div>
+      <strong>NIDA / NDC Namibia</strong>
+      <span>Omulunga Community Market & Ongenga Business Estate</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/ongwediva-town-council.png" alt="Ongwediva Town Council logo" loading="lazy"  width="600" height="551" /></div>
+      <strong>Ongwediva Town Council</strong>
+      <span>Ongwediva Social Housing Phase II on Erf 4797</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/oshakati-town-council.png" alt="Oshakati Town Council logo" loading="lazy"  width="92" height="91" /></div>
+      <strong>Oshakati Town Council</strong>
+      <span>Ekuku Township Phase 2 bulk electrical services</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/rundu-town-council.jpg" alt="Rundu Town Council logo" loading="lazy"  width="500" height="500" /></div>
+      <strong>Rundu Town Council</strong>
+      <span>Kaisosi NHE Phase I housing & township electricals</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/emcon.jpg" alt="Emcon Consulting Group logo" loading="lazy"  width="200" height="200" /></div>
+      <strong>Emcon Consulting Group</strong>
+      <span>Consulting partner on Rundu VTC & Nkurenkuru</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/wml.jpg" alt="WML Consulting Engineers logo" loading="lazy"  width="500" height="500" /></div>
+      <strong>WML Consulting Engineers</strong>
+      <span>Consulting partner on Omusati Regional HQ reticulation</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/aurecon.jpg" alt="Aurecon Consultancy logo" loading="lazy"  width="630" height="320" /></div>
+      <strong>Aurecon Consultancy</strong>
+      <span>Engineering partner on Simanya NAMPOL roads & works</span>
+    </div>
+    <div class="bp-logo-card">
+      <div class="bp-logo-wrap"><img src="/assets/clients/jacobs.png" alt="Jacobs Engineering logo" loading="lazy"  width="860" height="239" /></div>
+      <strong>Jacobs Engineering</strong>
+      <span>Consulting engineer on MVA Fund Ongwediva Phase II</span>
+    </div></div>
+  <div class="bp-card" style="margin-top:12px;">
+    <div class="bp-ctitle">FULL ROSTER OF ASSOCIATED ARCHITECTS, QUANTITY SURVEYORS &amp; CONSULTANTS</div>
+    <div class="bp-cols bp-cols--3" style="font-size:11px; color:#334155; line-height:1.6;">
+      <div>Barnard Mutua Architects<br/>Agustono Ferreira Architects<br/>Conselect Engineering<br/>AIJ Consulting / Project Cost<br/>Namibia Development Corp (NDC)</div>
+      <div>Kondjeni Kandji Architects<br/>Robert Lock Architect<br/>Consulting Services Africa<br/>RFPQS Quantity Surveyors<br/>Ministry of Defence / MAWF / MoHSS</div>
+      <div>Kenny McNamara Architects<br/>Richard Frankle &amp; Partners<br/>V Fischer-Buder Consulting<br/>Jacobs Engineering Consulting<br/>Tangi Trading Enterprise CC</div>
+    </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 06 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-07">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">06 / Selected Works Showcase</div>
+        <h2 class="bp-title">Namibian Civic, Tertiary &amp; Infrastructure Portfolio</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--50">
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/unam-main-campus.jpg" alt="University of Namibia Main Campus" loading="lazy"  width="1080" height="720" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">TERTIARY HEALTH &amp; EDUCATION</span>
+        <h4>UNAM Clinic Main Campus &amp; UNAM Ongwediva Facilities</h4>
+        <p><strong>Employer:</strong> University of Namibia (UNAM)<br/>Consultant: Agustono Ferreira Architects | 12 Months | N$ 8,000,000.00</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">03 / Multidisciplinary Services</div>
-              <div class="phead-title">13 Integrated Engineering &amp; Construction Disciplines</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:6pt;"><div class="svc-box"><div class="svc-num">01 · ELECTRICAL ENGINEERING</div><div class="svc-desc">HV/MV switchgear, transformer substations, power reticulation, lighting, backup generators, PLC/SCADA, fire detection and instrumentation.</div></div><div class="svc-box"><div class="svc-num">02 · CIVIL ENGINEERING</div><div class="svc-desc">Underground and elevated concrete structures, silos, cooling towers, precast concrete, pipe racks, culverts, structural steel and industrial buildings.</div></div><div class="svc-box"><div class="svc-num">03 · TELECOMMUNICATIONS ENGINEERING</div><div class="svc-desc">Carrier and campus fibre-optic backbones, splicing and OTDR testing, lattice towers, equipment shelters and structured network cabling.</div></div><div class="svc-box"><div class="svc-num">04 · MINING ENGINEERING</div><div class="svc-desc">Surface and underground mine infrastructure support, plant electrical reticulation, earthworks and utility civil packages.</div></div><div class="svc-box"><div class="svc-num">05 · INFORMATION TECHNOLOGY SYSTEMS</div><div class="svc-desc">Enterprise data networks, active telemetry, security and building management integration, and institutional IT infrastructure.</div></div><div class="svc-box"><div class="svc-num">06 · ENERGY SERVICES (SOLAR / HYDROGEN)</div><div class="svc-desc">Grid-tied solar PV, hybrid microgrids, clean-energy substations and hydrogen-ready energy installations — design through construction.</div></div><div class="svc-box"><div class="svc-num">07 · MECHANICAL ENGINEERING</div><div class="svc-desc">Static and rotary plant installation, process piping, fire-fighting networks, pipe gantries, cranes, HVAC, insulation and scaffolding.</div></div></td>
-        <td style="width:50%; padding-left:6pt;">
-          <div class="svc-box"><div class="svc-num">08 · ROAD CONSTRUCTION & HIGHWAYS</div><div class="svc-desc">Highways, paved urban roads, bridges, underpasses, major earthworks, street lighting, traffic signalisation and TSE pipelines.</div></div><div class="svc-box"><div class="svc-num">09 · GEOLOGICAL SERVICES</div><div class="svc-desc">Geotechnical site investigations, ground condition verification and subsurface support for major infrastructure corridors.</div></div><div class="svc-box"><div class="svc-num">10 · BUILDING CIVILS & CONSTRUCTION</div><div class="svc-desc">Design coordination, 3D planning, site clearing, grading, general contracting and turnaround building refurbishments.</div></div><div class="svc-box"><div class="svc-num">11 · ARCHITECTURAL SERVICES</div><div class="svc-desc">Functional architectural design, space planning, facade cladding, curtain walling and interior build coordination.</div></div><div class="svc-box"><div class="svc-num">12 · PROJECT MANAGEMENT & CONSULTING</div><div class="svc-desc">Overall planning, tendering, EPIC procurement, HAZOP subcontractor supervision, cost control and strategic advisory.</div></div><div class="svc-box"><div class="svc-num">13 · RAILWAY INFRASTRUCTURE</div><div class="svc-desc">Trackside civils, station precincts, level-crossing civil/electrical interfaces and rail corridor support works.</div></div>
-          <div class="pimgbox" style="margin-top:6pt; height:84pt;">
-            <img src="assets/projects/mariental-solar-namibia.jpg" alt="Namibia Solar Power Station" style="height:84pt;"/>
-          </div>
-          <div class="cap-bar">Namibian Clean Energy &amp; Utility Infrastructure (Solar / Hybrid Systems)</div>
-        </td>
-      </tr></table>
-      <table class="lay" style="margin-top:6pt; border-top:0.75pt solid #CBD5E1; padding-top:6pt;"><tr>
-        <td style="width:33.3%; padding-right:5pt;">
-          <div class="pimgbox" style="height:70pt;"><img src="assets/switchgear.jpg" alt="Switchgear" style="height:70pt;"/></div>
-          <div class="cap-bar">HV/MV Switchgear &amp; Protection</div>
-        </td>
-        <td style="width:33.3%; padding:0 3pt;">
-          <div class="pimgbox" style="height:70pt;"><img src="assets/projects/windhoek-railway-station.jpg" alt="Windhoek Railway Station" style="height:70pt;"/></div>
-          <div class="cap-bar">Railway Infrastructure &amp; Civils</div>
-        </td>
-        <td style="width:33.3%; padding-left:5pt;">
-          <div class="pimgbox" style="height:70pt;"><img src="assets/civil-roads.jpg" alt="Roads" style="height:70pt;"/></div>
-          <div class="cap-bar">Highways, Grading &amp; Earthworks</div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 04 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/namibia-hospital-clinic.jpg" alt="Divundu Institutional Hospital Complex" loading="lazy"  width="500" height="310" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">HEALTH &amp; CORRECTIONAL</span>
+        <h4>Divundu Correctional Facility Hospital &amp; Programme Areas</h4>
+        <p><strong>Employer:</strong> Ministry of Safety &amp; Security / Works<br/>Consultant: Barnard Mutua Architects | 18 Months | N$ 13,000,000.00</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">04 / Scope Execution</div>
-              <div class="phead-title">Detailed Engineering, Construction &amp; EPIC Specifications</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">Electrical &amp; Instrumentation (E&amp;I)</div>
-            <div class="ohs-bd"><ul>
-              <li>Supply &amp; erection of transformers, switchgear &amp; generators</li>
-              <li>Power distribution, MV/LV reticulation &amp; street lighting</li>
-              <li>Lighting, internal small power &amp; earthing networks</li>
-              <li>Fire detection, alarm &amp; security access systems</li>
-              <li>Programmable Logic Control (PLC) &amp; SCADA supervision</li>
-              <li>Structured fibre-optic cabling &amp; process instrumentation</li>
-            </ul></div>
-          </div>
-          <div class="ohs-sec" style="margin-top:7pt;">
-            <div class="ohs-hd">Mechanical &amp; HVAC Works</div>
-            <div class="ohs-bd"><ul>
-              <li>Supply, fabrication &amp; erection of static process plant</li>
-              <li>Supply &amp; erection of rotary machinery &amp; cranes</li>
-              <li>Process piping, utility pipelines &amp; pipe gantries</li>
-              <li>Fire-fighting ring mains, hydrants &amp; sprinkler systems</li>
-              <li>Commercial/hospital HVAC &amp; mechanical ventilation</li>
-              <li>Industrial thermal insulation, coatings &amp; scaffolding</li>
-            </ul></div>
-          </div>
-        </td>
-        <td style="width:50%; padding-left:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd">Highways, Roads &amp; Water Infrastructure</div>
-            <div class="ohs-bd"><ul>
-              <li>Highways, urban roads, underpasses, bridges &amp; interchanges</li>
-              <li>Major earthworks, land reclamation &amp; turnkey infrastructure</li>
-              <li>Industrial &amp; petrochemical plant site development</li>
-              <li>Water supply, sewage, drainage &amp; Treated Sewage Effluent (TSE)</li>
-              <li>Signalisation, traffic light controls &amp; corridor lighting</li>
-              <li>Tunnelling works with associated E&amp;M systems</li>
-            </ul></div>
-          </div>
-          <div class="ohs-sec" style="margin-top:7pt;">
-            <div class="ohs-hd ohs-hd-red">Civil Works &amp; General Contracting</div>
-            <div class="ohs-bd"><ul>
-              <li>Underground &amp; elevated reinforced concrete structures</li>
-              <li>Silos, cooling towers, precast units, pipe racks &amp; culverts</li>
-              <li>Structural steelwork &amp; turn-key industrial buildings</li>
-              <li>Enabling works, underground utilities &amp; security fencing</li>
-              <li>Curtain wall facades, stone cladding &amp; interior finishes</li>
-              <li>Commercial centres, hostels, police stations &amp; hospitals</li>
-            </ul></div>
-          </div>
-        </td>
-      </tr></table>
-      <table class="lay" style="margin-top:10pt;"><tr>
-        <td style="width:50%; padding-right:5pt;">
-          <div class="pimgbox" style="height:108pt;"><img src="assets/pipeline.jpg" alt="Water pipeline trench" style="height:108pt;"/></div>
-          <div class="cap-bar">Bulk Water, Sewage &amp; Drainage Reticulation</div>
-        </td>
-        <td style="width:50%; padding-left:5pt;">
-          <div class="pimgbox" style="height:108pt;"><img src="assets/consult.jpg" alt="Total station and engineering drawings" style="height:108pt;"/></div>
-          <div class="cap-bar">Design Coordination, HAZOP Review &amp; Quality Assurance</div>
-        </td>
-      </tr></table>
-      <div class="card-dark" style="margin-top:10pt;">
-        <div class="card-title">PROJECT DELIVERY GOVERNANCE</div>
-        <div style="font-size:8pt; color:#E2E8F0; line-height:1.42;">
-          Every contract follows structured project governance: scope scoping, site assessment, detailed BOQ costing, contractor &amp; specialist interface management, testing/commissioning witness certification and statutory handover documentation.
-        </div>
-      </div>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 05 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/oshakati-civic.jpg" alt="Oshakati Civic municipal complex" loading="lazy"  width="960" height="720" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">MUNICIPAL POWER</span>
+        <h4>Ekuku Township Phase 2 &mdash; Bulk Electrical Services</h4>
+        <p><strong>Employer:</strong> Oshakati Town Council<br/>Consultant: Consulting Services Africa | 8 Months | N$ 13,608,000.00</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">05 / Clients &amp; Partners</div>
-              <div class="phead-title">Verified Namibian Employers &amp; Consulting Associates</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <p class="p">M &amp; M Engineering has delivered 25 major contracts across government ministries, regional councils, tertiary institutions and state enterprises alongside Namibia's leading consulting engineers and architects:</p>
-      <table class="lay"><tr>
-            <td style="width:25%; padding-right:4pt; padding-left:0; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/namibia-coat-of-arms.png" alt="Republic of Namibia" style="width:44pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Republic of Namibia</div>
-                <div class="logo-sub">Ministries of Safety &amp; Security, Works, Health, Education, Trade &amp; Agriculture</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:4pt; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/nampol.png" alt="Namibian Police Force" style="width:46pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Namibian Police Force</div>
-                <div class="logo-sub">Police stations, charge offices, barracks &amp; Nkurenkuru / Simanya works</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:4pt; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/unam.png" alt="University of Namibia" style="width:42pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">University of Namibia</div>
-                <div class="logo-sub">UNAM Main Campus Clinic &amp; tertiary facility engineering</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:0; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/namcol.png" alt="NAMCOL" style="width:46pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">NAMCOL</div>
-                <div class="logo-sub">Rundu Phase 2 Centre &amp; regional air-conditioning works</div>
-              </div>
-            </td></tr><tr>
-            <td style="width:25%; padding-right:4pt; padding-left:0; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:16.0pt;">
-                  <img src="assets/clients/mva-fund.png" alt="MVA Fund Namibia" style="width:86pt; height:18pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">MVA Fund Namibia</div>
-                <div class="logo-sub">Ongwediva Phase II electrical engineering &amp; installation</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:4pt; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/nhe.jpg" alt="National Housing Enterprise" style="width:46pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">National Housing Enterprise</div>
-                <div class="logo-sub">Kaisosi Rundu 63-house delivery &amp; bulk electrical reticulation</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:4pt; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:3.0pt;">
-                  <img src="assets/clients/ongwediva-town-council.png" alt="Ongwediva Town Council" style="width:48pt; height:44pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Ongwediva Town Council</div>
-                <div class="logo-sub">Ongwediva Social Housing Phase II on Erf 4797</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:0; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.5pt;">
-                  <img src="assets/clients/oshakati-town-council.png" alt="Oshakati Town Council" style="width:46pt; height:45pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Oshakati Town Council</div>
-                <div class="logo-sub">Ekuku Township Phase 2 bulk electrical services</div>
-              </div>
-            </td></tr><tr>
-            <td style="width:25%; padding-right:4pt; padding-left:0; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/rundu-town-council.jpg" alt="Rundu Town Council" style="width:46pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Rundu Town Council</div>
-                <div class="logo-sub">Kaisosi NHE Phase I housing &amp; township electricals</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:4pt; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/emcon.jpg" alt="Emcon Consulting Group" style="width:46pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Emcon Consulting Group</div>
-                <div class="logo-sub">Consulting engineering partner on Rundu VTC &amp; Nkurenkuru</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:4pt; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:2.0pt;">
-                  <img src="assets/clients/wml.jpg" alt="WML Consulting Engineers" style="width:46pt; height:46pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">WML Consulting Engineers</div>
-                <div class="logo-sub">Consulting partner on Omusati Regional HQ reticulation</div>
-              </div>
-            </td>
-            <td style="width:25%; padding-right:0; padding-left:4pt; padding-bottom:6pt;">
-              <div class="logo-card">
-                <div style="height:50pt; text-align:center; padding-top:3.5pt;">
-                  <img src="assets/clients/aurecon.jpg" alt="Aurecon Consultancy" style="width:84pt; height:43pt; display:inline-block;"/>
-                </div>
-                <div class="logo-cap">Aurecon Consultancy</div>
-                <div class="logo-sub">Engineering partner on Simanya NAMPOL roads &amp; facilities</div>
-              </div>
-            </td></tr></table>
-      <div class="card" style="margin-top:4pt; padding:7pt 10pt;">
-        <div class="card-title" style="margin-bottom:3pt;">FULL ROSTER OF ASSOCIATED ARCHITECTS, QUANTITY SURVEYORS &amp; CONSULTANTS</div>
-        <table class="lay" style="font-size:7.2pt; color:#334155;"><tr>
-          <td style="width:33.3%; line-height:1.5;">
-            Barnard Mutua Architects<br/>
-            Agustono Ferreira Architects<br/>
-            Conselect Engineering<br/>
-            AIJ Consulting / Project Cost<br/>
-            Namibia Development Corp (NDC)
-          </td>
-          <td style="width:33.3%; line-height:1.5;">
-            Kondjeni Kandji Architects<br/>
-            Robert Lock Architect<br/>
-            Consulting Services Africa<br/>
-            RFPQS Quantity Surveyors<br/>
-            Ministry of Defence / MAWF / MoHSS
-          </td>
-          <td style="width:33.3%; line-height:1.5;">
-            Kenny McNamara Architects<br/>
-            Richard Frankle &amp; Partners<br/>
-            V Fischer-Buder Consulting<br/>
-            Jacobs Engineering Consulting<br/>
-            Tangi Trading Enterprise CC
-          </td>
-        </tr></table>
-      </div>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 06 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/namibia-police-station.jpg" alt="Namibian Police Station &amp; Barracks site" loading="lazy"  width="600" height="381" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">DEFENCE &amp; POLICE</span>
+        <h4>Nyae Nyae Police Station and Barracks Complex</h4>
+        <p><strong>Employer:</strong> Ministry of Safety &amp; Security / Works<br/>Consultant: Kondjeni Kandji Architects | 24 Months | N$ 43,000,000.00</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">06 / Selected Works Showcase</div>
-              <div class="phead-title">Namibian Civic, Tertiary &amp; Infrastructure Portfolio</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:5pt;">
-          
-        <div class="slot-card">
-          <div class="slot-img"><img src="assets/projects/unam-main-campus.jpg" alt="UNAM Clinic Main Campus &amp; UNAM Ongwediva Facilities"/></div>
-          <div class="slot-body">
-            <div class="slot-tag">TERTIARY HEALTH &amp; EDUCATION</div>
-            <div class="slot-title">UNAM Clinic Main Campus &amp; UNAM Ongwediva Facilities</div>
-            <div class="slot-meta"><strong>Employer:</strong> University of Namibia (UNAM)<br/>Consultant: Agustono Ferreira Architects | 12 Months | N$ 8,000,000.00</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          <div class="slot-img"><img src="assets/projects/oshakati-civic.jpg" alt="Ekuku Township Phase 2 — Bulk Electrical Services"/></div>
-          <div class="slot-body">
-            <div class="slot-tag">MUNICIPAL POWER</div>
-            <div class="slot-title">Ekuku Township Phase 2 — Bulk Electrical Services</div>
-            <div class="slot-meta"><strong>Employer:</strong> Oshakati Town Council<br/>Consultant: Consulting Services Africa | 8 Months | N$ 13,608,000.00</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          <div class="slot-img"><img src="assets/projects/ongwediva-civic.jpg" alt="Ongwediva Social Housing Phase II (Erf 4797)"/></div>
-          <div class="slot-body">
-            <div class="slot-tag">CIVIC SOCIAL HOUSING</div>
-            <div class="slot-title">Ongwediva Social Housing Phase II (Erf 4797)</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ongwediva Town Council<br/>Consultant: AIJ Consulting | 12 Months | N$ 3,400,000.00</div>
-          </div>
-        </div>
-        </td>
-        <td style="width:50%; padding-left:5pt;">
-          
-        <div class="slot-card">
-          
-            <div class="slot-drop">
-              <div class="slot-drop-t">DROP PROJECT PHOTO HERE</div>
-              <div class="slot-drop-s">16:10 photo · Drop into assets/projects/slot-01.jpg</div>
-              <div class="slot-drop-s" style="color:#D73B2E; font-weight:700; margin-top:4pt;">Project #01 Visual Slot</div>
-            </div>
-          <div class="slot-body">
-            <div class="slot-tag">HEALTH &amp; CORRECTIONAL</div>
-            <div class="slot-title">Divundu Correctional Facility Hospital &amp; Programme Areas</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Safety &amp; Security / Works<br/>Consultant: Barnard Mutua Architects | 18 Months | N$ 13,000,000.00</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          
-            <div class="slot-drop">
-              <div class="slot-drop-t">DROP PROJECT PHOTO HERE</div>
-              <div class="slot-drop-s">16:10 photo · Drop into assets/projects/slot-02.jpg</div>
-              <div class="slot-drop-s" style="color:#D73B2E; font-weight:700; margin-top:4pt;">Project #02 Visual Slot</div>
-            </div>
-          <div class="slot-body">
-            <div class="slot-tag">DEFENCE &amp; POLICE</div>
-            <div class="slot-title">Nyae Nyae Police Station and Barracks Complex</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Safety &amp; Security / Works<br/>Consultant: Kondjeni Kandji Architects | 24 Months | N$ 43,000,000.00</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          
-            <div class="slot-drop">
-              <div class="slot-drop-t">DROP PROJECT PHOTO HERE</div>
-              <div class="slot-drop-s">16:10 photo · Drop into assets/projects/slot-12.jpg</div>
-              <div class="slot-drop-s" style="color:#D73B2E; font-weight:700; margin-top:4pt;">Project #12 Visual Slot</div>
-            </div>
-          <div class="slot-body">
-            <div class="slot-tag">MASS HOUSING (63 UNITS)</div>
-            <div class="slot-title">Construction of 63 Houses at Kaisosi Rundu NHE Phase I</div>
-            <div class="slot-meta"><strong>Employer:</strong> Rundu Town Council / NHE<br/>Consultant: AIJ Project Cost Consultants | 24 Months | N$ 19,445,350.00</div>
-          </div>
-        </div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 07 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/ongwediva-civic.jpg" alt="Ongwediva Town municipal gateway" loading="lazy"  width="960" height="640" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">CIVIC SOCIAL HOUSING</span>
+        <h4>Ongwediva Social Housing Phase II (Erf 4797)</h4>
+        <p><strong>Employer:</strong> Ongwediva Town Council<br/>Consultant: AIJ Consulting | 12 Months | N$ 3,400,000.00</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">06 / Selected Works Showcase (Cont.)</div>
-              <div class="phead-title">Campus, Hospital, Electrical &amp; Drop-In Portfolio Slots</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:5pt;">
-          
-        <div class="slot-card">
-          <div class="slot-img"><img src="assets/projects/unam-hp-ongwediva.jpg" alt="Rundu Vocational Training Centre &amp; Campus Electricals"/></div>
-          <div class="slot-body">
-            <div class="slot-tag">EDUCATION &amp; TRAINING</div>
-            <div class="slot-title">Rundu Vocational Training Centre &amp; Campus Electricals</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Education / Higher Education<br/>Consultant: Emcon Consulting Engineers | Value: N$ 4,183,637.10</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          <div class="slot-img"><img src="assets/electrical.jpg" alt="Nukwa Military Base Reticulation (Zambezi) &amp; Omusati HQ"/></div>
-          <div class="slot-body">
-            <div class="slot-tag">DEFENCE RETICULATION</div>
-            <div class="slot-title">Nukwa Military Base Reticulation (Zambezi) &amp; Omusati HQ</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Defence / MAWF<br/>Consultants: V Fischer-Buder / WML | Combined Value: N$ 5,568,235.00</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          <div class="slot-img"><img src="assets/projects/unam-khomasdal.jpg" alt="Okakarara, Rundu, Tsumeb &amp; Okahandja Hospital Works"/></div>
-          <div class="slot-body">
-            <div class="slot-tag">REGIONAL HOSPITALS</div>
-            <div class="slot-title">Okakarara, Rundu, Tsumeb &amp; Okahandja Hospital Works</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Health &amp; Social Services<br/>Consultants: Richard Frankle / RFPQS / Tangi | Value: N$ 7.46M</div>
-          </div>
-        </div>
-        </td>
-        <td style="width:50%; padding-left:5pt;">
-          
-        <div class="slot-card">
-          
-            <div class="slot-drop">
-              <div class="slot-drop-t">DROP PROJECT PHOTO HERE</div>
-              <div class="slot-drop-s">16:10 photo · Drop into assets/projects/slot-17.jpg</div>
-              <div class="slot-drop-s" style="color:#D73B2E; font-weight:700; margin-top:4pt;">Project #17 Visual Slot</div>
-            </div>
-          <div class="slot-body">
-            <div class="slot-tag">POLICE INFRASTRUCTURE</div>
-            <div class="slot-title">Nkurenkuru Police Station &amp; Sub-Regional Office</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Safety &amp; Security — NAMPOL<br/>Consultants: Robert Lock Architect / Emcon | Combined Value: N$ 4,310,514.95</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          
-            <div class="slot-drop">
-              <div class="slot-drop-t">DROP PROJECT PHOTO HERE</div>
-              <div class="slot-drop-s">16:10 photo · Drop into assets/projects/slot-23.jpg</div>
-              <div class="slot-drop-s" style="color:#D73B2E; font-weight:700; margin-top:4pt;">Project #23 Visual Slot</div>
-            </div>
-          <div class="slot-body">
-            <div class="slot-tag">ROADS, PAVING &amp; CIVILS</div>
-            <div class="slot-title">Simanya Completion of Accommodation, Charge Office &amp; Roads</div>
-            <div class="slot-meta"><strong>Employer:</strong> Ministry of Safety &amp; Security — NAMPOL<br/>Consultant: Aurecon Consultancy | Value: N$ 4,843,162.03</div>
-          </div>
-        </div>
-          
-        <div class="slot-card">
-          
-            <div class="slot-drop">
-              <div class="slot-drop-t">DROP PROJECT PHOTO HERE</div>
-              <div class="slot-drop-s">16:10 photo · Drop into assets/projects/slot-19.jpg</div>
-              <div class="slot-drop-s" style="color:#D73B2E; font-weight:700; margin-top:4pt;">Project #19 Visual Slot</div>
-            </div>
-          <div class="slot-body">
-            <div class="slot-tag">RURAL ENTERPRISE</div>
-            <div class="slot-title">Omulunga Community Market (Onayena) &amp; Ongenga Estate</div>
-            <div class="slot-meta"><strong>Employer:</strong> Namibia Development Corporation (NDC)<br/>Consultant: Conselect Engineering | Combined Value: N$ 2,876,707.49</div>
-          </div>
-        </div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 08 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/namibia-nhe-housing.jpg" alt="Residential housing development in northern Namibia" loading="lazy"  width="1200" height="784" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">MASS HOUSING (63 UNITS)</span>
+        <h4>Construction of 63 Houses at Kaisosi Rundu NHE Phase I</h4>
+        <p><strong>Employer:</strong> Rundu Town Council / NHE<br/>Consultant: AIJ Project Cost Consultants | 24 Months | N$ 19,445,350.00</p>
       </div>
     </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 07 / 15</strong>
+    </div>
+</article>
 
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">07 / Verified Track Record</div>
-              <div class="phead-title">Complete Project Register — Contracts 01 to 13</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <p class="p">Verified contract schedule executed across Namibia for public authorities, parastatals and institutional employers (consultant firm references retained; personal contacts omitted for public privacy):</p>
-      
-        <table class="tbl">
-          <thead><tr>
-            <th style="width:5%; text-align:center;">#</th>
-            <th style="width:31%;">Project Name</th>
-            <th style="width:21%;">Principal Employer</th>
-            <th style="width:19%;">Consulting Firm</th>
-            <th style="width:9%;">Duration</th>
-            <th style="width:15%; text-align:right;">Value (NAD)</th>
-          </tr></thead>
-          <tbody><tr><td class="idx">01</td><td><strong>Divundu Correctional Facility Hospital and Programme Areas</strong></td><td>Ministry of Safety &amp; Security &amp; Ministry of Works</td><td>Barnard Mutua Architects</td><td>18 Months</td><td class="val">N$ 13,000,000.00</td></tr><tr><td class="idx">02</td><td><strong>Nyae Nyae Police Station and Barracks</strong></td><td>Ministry of Safety &amp; Security &amp; Ministry of Works</td><td>Kondjeni Kandji Architects</td><td>24 Months</td><td class="val">N$ 43,000,000.00</td></tr><tr><td class="idx">03</td><td><strong>NAMCOL Centre Rundu Phase 2</strong></td><td>NAMCOL</td><td>Kenny McNamara Architects</td><td>9 Months</td><td class="val">N$ 8,000,000.00</td></tr><tr><td class="idx">04</td><td><strong>UNAM Clinic Main Campus</strong></td><td>University of Namibia (UNAM)</td><td>Agustono Ferreira Architects</td><td>12 Months</td><td class="val">N$ 8,000,000.00</td></tr><tr><td class="idx">05</td><td><strong>Ongwediva Social Housing Phase II Centre on Erf 4797</strong></td><td>Ongwediva Town Council</td><td>AIJ Consulting</td><td>12 Months</td><td class="val">N$ 3,400,000.00</td></tr><tr><td class="idx">06</td><td><strong>Construction of Electrical Services (Ekuku Township Phase 2)</strong></td><td>Oshakati Town Council</td><td>Consulting Services Africa</td><td>8 Months</td><td class="val">N$ 13,608,000.00</td></tr><tr><td class="idx">07</td><td><strong>Electrical Services at Kaisosi Rundu NHE Phase 1</strong></td><td>Rundu Town Council (NHE)</td><td>AIJ Consulting</td><td>12 Months</td><td class="val">N$ 11,000,000.00</td></tr><tr><td class="idx">08</td><td><strong>Low Voltage Electrical Reticulation (Omusati Regional HQ)</strong></td><td>Ministry of Agriculture, Water &amp; Forestry</td><td>WML Consulting Engineers</td><td>Completed</td><td class="val">N$ 2,900,000.00</td></tr><tr><td class="idx">09</td><td><strong>New Electrical Reticulation of Nukwa Military Base (Zambezi Region)</strong></td><td>Ministry of Defence</td><td>V Fischer-Buder Consulting</td><td>12 Months</td><td class="val">N$ 2,668,235.00</td></tr><tr><td class="idx">10</td><td><strong>Renovation of Staff Houses at Verda Gate (Kunene Region)</strong></td><td>Ministry of Agriculture, Water &amp; Forestry (Vet)</td><td>MAWF Technical Services</td><td>12 Months</td><td class="val">N$ 2,970,450.00</td></tr><tr><td class="idx">11</td><td><strong>Alterations &amp; Additions to Rundu Hospital</strong></td><td>Ministry of Health &amp; Social Services</td><td>RFPQS</td><td>6 Months</td><td class="val">N$ 2,700,000.00</td></tr><tr><td class="idx">12</td><td><strong>Construction of 63 Houses at Kaisosi Rundu NHE Phase I</strong></td><td>Rundu Town Council (NHE)</td><td>AIJ Project Cost Consultants</td><td>24 Months</td><td class="val">N$ 19,445,350.00</td></tr><tr><td class="idx">13</td><td><strong>Electrical Installation at Omulunga Community Market, Onayena</strong></td><td>Ministry of Trade &amp; Industry</td><td>Conselect Engineering</td><td>Completed</td><td class="val">N$ 1,101,707.49</td></tr></tbody>
-        </table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 09 / 15</td>
-          </tr></table>
-        </div>
+<article class="bp-page" id="page-08">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">06 / Selected Works Showcase (Cont.)</div>
+        <h2 class="bp-title">Campus, Hospital, Electrical &amp; Regional Works</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--50">
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/unam-hp-ongwediva.jpg" alt="Northern Namibian tertiary campus" loading="lazy"  width="1920" height="1280" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">EDUCATION &amp; TRAINING</span>
+        <h4>Rundu Vocational Training Centre &amp; Campus Electricals</h4>
+        <p><strong>Employer:</strong> Ministry of Education / Higher Education<br/>Consultant: Emcon Consulting Engineers | Value: N$ 4,183,637.10</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">07 / Verified Track Record (Cont.)</div>
-              <div class="phead-title">Complete Project Register — Contracts 14 to 25</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      
-        <table class="tbl">
-          <thead><tr>
-            <th style="width:5%; text-align:center;">#</th>
-            <th style="width:31%;">Project Name</th>
-            <th style="width:21%;">Principal Employer</th>
-            <th style="width:19%;">Consulting Firm</th>
-            <th style="width:9%;">Duration</th>
-            <th style="width:15%; text-align:right;">Value (NAD)</th>
-          </tr></thead>
-          <tbody><tr><td class="idx">14</td><td><strong>Electrical Installation — Rundu Vocational Training Centre</strong></td><td>Ministry of Education</td><td>Emcon Consulting Engineers</td><td>Completed</td><td class="val">N$ 4,183,637.10</td></tr><tr><td class="idx">15</td><td><strong>Faulty Electrical Cable Replacement &amp; Generator, Okakarara Hospital</strong></td><td>Ministry of Health &amp; Social Services</td><td>Tangi Trading Enterprise CC</td><td>Completed</td><td class="val">N$ 1,045,713.53</td></tr><tr><td class="idx">16</td><td><strong>MVA Ongwediva Phase II Electrical Installation</strong></td><td>MVA Fund Namibia</td><td>Jacobs Engineering Consulting</td><td>Completed</td><td class="val">N$ 603,346.35</td></tr><tr><td class="idx">17</td><td><strong>Construction &amp; Electrical Installation of Nkurenkuru Police Station</strong></td><td>Ministry of Safety &amp; Security — NAMPOL</td><td>Robert Lock Architect</td><td>Completed</td><td class="val">N$ 4,000,000.00</td></tr><tr><td class="idx">18</td><td><strong>New Sub-Regional Office Nkurenkuru — Electrical Installation</strong></td><td>Ministry of Safety &amp; Security — NAMPOL</td><td>Emcon Consulting Engineers</td><td>Completed</td><td class="val">N$ 310,514.95</td></tr><tr><td class="idx">19</td><td><strong>Omulunga Community Market (Onayena, Oshikoto Region)</strong></td><td>Namibia Development Corp (NDC)</td><td>Conselect Engineering</td><td>Completed</td><td class="val">N$ 890,000.00</td></tr><tr><td class="idx">20</td><td><strong>Alterations &amp; Additions to Rundu Hospital Accommodation Phase 2</strong></td><td>Ministry of Health &amp; Social Services</td><td>Richard Frankle &amp; Partners</td><td>Completed</td><td class="val">N$ 1,621,642.60</td></tr><tr><td class="idx">21</td><td><strong>Supply, Installation &amp; Commissioning of Air Conditioning &amp; Ventilation</strong></td><td>NAMCOL</td><td>Conselect Engineering</td><td>Completed</td><td class="val">N$ 495,543.51</td></tr><tr><td class="idx">22</td><td><strong>Supply, Installation &amp; Servicing of Air Conditioners, Tsumeb Hospital</strong></td><td>Ministry of Health &amp; Social Services</td><td>Ministry of Health</td><td>Completed</td><td class="val">N$ 187,714.50</td></tr><tr><td class="idx">23</td><td><strong>Simanya Completion: Accommodation, Charge Office, Roads &amp; Walkways</strong></td><td>Ministry of Safety &amp; Security — NAMPOL</td><td>Aurecon Consultancy</td><td>Completed</td><td class="val">N$ 4,843,162.03</td></tr><tr><td class="idx">24</td><td><strong>Alterations and Additions to Existing Okahandja Hospital</strong></td><td>Ministry of Health &amp; Social Services</td><td>Richard Frankle &amp; Partners</td><td>Completed</td><td class="val">N$ 1,908,784.31</td></tr><tr><td class="idx">25</td><td><strong>Ongenga Business Estate (Ohangwena Region)</strong></td><td>Namibia Development Corp (NDC)</td><td>Conselect Engineering</td><td>Completed</td><td class="val">N$ 885,000.00</td></tr></tbody>
-        </table>
-      <table class="lay" style="margin-top:10pt;"><tr>
-        <td style="width:52%; padding-right:8pt;">
-          <div class="card-dark" style="margin-bottom:0;">
-            <div class="card-title">CUMULATIVE VERIFIED PORTFOLIO</div>
-            <div style="font-size:19pt; font-weight:800; color:#FFFFFF; margin:2pt 0;">N$ 152,768,801.37</div>
-            <div style="font-size:7.6pt; color:#CBD5E1;">Across 25 documented contracts spanning health, security, housing, tertiary education, vocational training and bulk electrical infrastructure.</div>
-          </div>
-        </td>
-        <td style="width:48%; padding-left:4pt;">
-          <div class="card" style="margin-bottom:0;">
-            <div class="card-title">REGIONAL COVERAGE</div>
-            <div style="font-size:8pt; color:#334155; line-height:1.48;">
-              Khomas · Kavango East &amp; West · Oshana · Ohangwena · Oshikoto · Omusati · Zambezi · Otjozondjupa · Kunene
-            </div>
-          </div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 10 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/namibia-civic-courtyard.jpg" alt="Breezeblock courtyard of modern Namibian civic station" loading="lazy"  width="690" height="460" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">POLICE INFRASTRUCTURE</span>
+        <h4>Nkurenkuru Police Station &amp; Sub-Regional Office</h4>
+        <p><strong>Employer:</strong> Ministry of Safety &amp; Security &mdash; NAMPOL<br/>Consultants: Robert Lock Architect / Emcon | Combined: N$ 4,310,514.95</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">08 / Plant &amp; Instrumentation</div>
-              <div class="phead-title">Owned Vehicles, Stringing Fleet &amp; Testing Equipment</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <p class="p">M &amp; M Engineering mobilises with company-owned heavy crane transport, 4x4 site utility vehicles, overhead tension stringing gear and calibrated 10 kV / 1,000V electrical testing instruments:</p>
-      <table class="tbl">
-        <thead><tr>
-          <th style="width:45%;">Equipment Description</th>
-          <th style="width:27%;">Classification</th>
-          <th style="width:19%;">VIN / Serial Reference</th>
-          <th style="width:9%; text-align:center;">Qty</th>
-        </tr></thead>
-        <tbody><tr><td><strong>2014 MAN TGM 18.240 Crane Truck (4x4 – 8 Ton)</strong></td><td>Heavy Load Vehicle</td><td style="font-family:monospace; font-size:7pt;">AHTH8CB003590536</td><td style="text-align:center; font-weight:700;">1</td></tr><tr><td><strong>2016 Toyota Hilux GD-6 2.8 4x4</strong></td><td>Light Load Vehicle</td><td style="font-family:monospace; font-size:7pt;">AAMN640562PX31209</td><td style="text-align:center; font-weight:700;">1</td></tr><tr><td><strong>2016 Nissan NP300</strong></td><td>Light Load Vehicle</td><td style="font-family:monospace; font-size:7pt;">Fleet Registry Verified</td><td style="text-align:center; font-weight:700;">1</td></tr><tr><td><strong>14 Ton Hydraulic Tension Stringing Equipment</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">2 Sets</td></tr><tr><td><strong>Run Out Pulleys</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">10</td></tr><tr><td><strong>Chain Block 2 Ton</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">5</td></tr><tr><td><strong>Cable Drum Stand</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Clamping Shoes</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">6 Pairs</td></tr><tr><td><strong>Major Tech High Voltage Insulation Tester 10,000V (K3123A)</strong></td><td>HV Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">#7029346</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Hellermann Tyton T1825 Loop / PSC / Load Tester (1000V)</strong></td><td>Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">1851635</td><td style="text-align:center; font-weight:700;">5</td></tr><tr><td><strong>Fluke 1000V AC/DC Clamp Meter</strong></td><td>Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">16739867</td><td style="text-align:center; font-weight:700;">4</td></tr><tr><td><strong>Major Tech Phase Rotation Meter (8031F, 600V)</strong></td><td>Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">15638903</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Major Tech K4105A Digital Earth Resistance Tester (2000 Ohm / 2mA)</strong></td><td>Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">1941723</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Major Tech TEL1TLB Polarity Tester (500mA)</strong></td><td>Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">1734468</td><td style="text-align:center; font-weight:700;">4</td></tr><tr><td><strong>Hellermann Analog Insulation Tester (100V)</strong></td><td>Testing Equipment</td><td style="font-family:monospace; font-size:7pt;">19234879</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Honda Generator 6kVA / 12000W</strong></td><td>Power Plant</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Hilti Jack Hammer</strong></td><td>Power Tool</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Hilti Hydraulic Crimping Tool</strong></td><td>Hand / Hydraulic Tool</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Makita Drill Machine 1250W</strong></td><td>Power Tool</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">6</td></tr><tr><td><strong>Bosch Angle Grinder 720W</strong></td><td>Power Tool</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">5</td></tr><tr><td><strong>Gedore Master Tool Box</strong></td><td>Hand Tools</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">4</td></tr><tr><td><strong>Major Tech Measuring Wheel</strong></td><td>Survey Hand Tool</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Hellermann Tyton Extension Ladder</strong></td><td>Access Equipment</td><td style="font-family:monospace; font-size:7pt;">–</td><td style="text-align:center; font-weight:700;">4</td></tr></tbody>
-      </table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 11 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/switchgear.jpg" alt="Industrial electrical switchgear cabinets" loading="lazy"  width="1600" height="897" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">DEFENCE RETICULATION</span>
+        <h4>Nukwa Military Base Reticulation (Zambezi) &amp; Omusati HQ</h4>
+        <p><strong>Employer:</strong> Ministry of Defence / MAWF<br/>Consultants: V Fischer-Buder / WML | Combined Value: N$ 5,568,235.00</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">09 / Health &amp; Safety Policy Manual</div>
-              <div class="phead-title">Statutory Mandate, Policy Statement &amp; Organisation</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <div class="card-red" style="margin-bottom:8pt;">
-        <div class="card-title">NAMIBIAN STATUTORY OHS COMPLIANCE FRAMEWORK</div>
-        <div style="font-size:8.1pt; line-height:1.42;">
-          <strong>Governing Legislation:</strong> The Constitution of the Republic of Namibia · Labour Act, 2007 (Act No. 11 of 2007) · Government Notice No. 156 of 1992 ("Regulations Relating to the Health and Safety of Employees at Work") · Presidential Proclamation No. 10 (Part XI, Section 101).
-        </div>
-      </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">1. Statement of General Policy</div>
-            <div class="ohs-bd"><ul>
-              <li>Provide adequate control of health and safety risks arising from all work activities.</li>
-              <li>Consult actively with employees and safety representatives on workplace health and safety.</li>
-              <li>Provide, inspect and maintain safe plant, lifting gear and calibrated equipment.</li>
-              <li>Control safe storage, handling and disposal of hazardous substances (COSHH).</li>
-              <li>Deliver documented induction, task instruction, supervision and competency training.</li>
-              <li>Prevent workplace accidents, industrial injuries and occupational diseases.</li>
-              <li>Review and update this policy annually or immediately after site/statutory changes.</li>
-            </ul></div>
-          </div>
-          <div class="ohs-sec">
-            <div class="ohs-hd">2. Safety Management &amp; Governance</div>
-            <div class="ohs-bd"><ul>
-              <li><strong>Directors &amp; MD:</strong> Hold overall legal responsibility; fund safety priorities annually.</li>
-              <li><strong>Safety Officer:</strong> Audits risk assessments, registers, PPE issue, permits and training.</li>
-              <li><strong>Line Managers &amp; Supervisors:</strong> Enforce safe method statements and daily housekeeping.</li>
-              <li><strong>Safety Representatives &amp; Committees:</strong> Conduct quarterly inspections; committee convened within 3 months of request.</li>
-            </ul></div>
-          </div>
-        </td>
-        <td style="width:50%; padding-left:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd">3. Risk Assessment &amp; Hierarchy of Control</div>
-            <div class="ohs-bd">
-              Written risk assessments cover routine and non-routine operations, contractors and members of the public using the five-tier control hierarchy:
-              <ol style="margin-left:12pt; margin-top:4pt;">
-                <li><strong>Eliminate</strong> hazardous activity wherever alternative work methods exist.</li>
-                <li><strong>Substitute</strong> equipment or materials for lower-hazard alternatives.</li>
-                <li><strong>Isolate or segregate</strong> hazards via physical barriers and interlocked guards.</li>
-                <li><strong>Apply engineering controls</strong> (LEV, enclosures, ergonomic station design).</li>
-                <li><strong>Issue compatible PPE</strong> as secondary protection where residual risk persists.</li>
-              </ol>
-            </div>
-          </div>
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">4. Right to Stop Unsafe Work</div>
-            <div class="ohs-bd">
-              All employees, subcontractors and visitors must stop any unsafe activity immediately if guarding is missing, electrical plant is defective or unsafe site conditions develop, reporting directly to the Safety Officer or Supervisor without delay. No employee is charged for mandatory OHS training or PPE.
-            </div>
-          </div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 12 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/namibia-roads-culvert.jpg" alt="Trunk road construction and culvert earthworks" loading="lazy"  width="700" height="466" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">ROADS, PAVING &amp; CIVILS</span>
+        <h4>Simanya Completion of Accommodation, Charge Office &amp; Roads</h4>
+        <p><strong>Employer:</strong> Ministry of Safety &amp; Security &mdash; NAMPOL<br/>Consultant: Aurecon Consultancy | Value: N$ 4,843,162.03</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">09 / Health &amp; Safety Policy Manual (Cont.)</div>
-              <div class="phead-title">Fire, Electrical, Machinery, Lifting &amp; Incident Reporting</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">5. Fire Safety &amp; Emergency Response</div>
-            <div class="ohs-bd"><ul>
-              <li>Means of escape, fire doors and exit routes kept unlocked and unobstructed at all times.</li>
-              <li>Weekly alarm checks; monthly user gauge/seal inspections on portable fire extinguishers; annual external certification (GN 156 Chapter 3).</li>
-              <li>Fire drills conducted during employment month 1, 3-monthly for night shift and 6-monthly for day teams.</li>
-              <li>Immediate isolation and emergency brigade dispatch for any gas leak or ignition event.</li>
-            </ul></div>
-          </div>
-          <div class="ohs-sec">
-            <div class="ohs-hd">6. Electrical Safety &amp; Lockout/Tagout</div>
-            <div class="ohs-bd"><ul>
-              <li>Complies with GN 156 Chapter 9; zero unqualified work on live electrical installations.</li>
-              <li>Portable tools protected by residual current circuit breakers (RCDs); trailing leads barred from walkways.</li>
-              <li>Machinery cleaning, maintenance or unguarded repair permitted only after electrical isolation, physical lock-off and tagging.</li>
-            </ul></div>
-          </div>
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">7. Lifting Equipment &amp; Machinery</div>
-            <div class="ohs-bd"><ul>
-              <li>Cranes, excavators, forklifts, telehandlers, HIAB lorry loaders and hoists carry stamped Safe Working Load (SWL) and valid test certificates.</li>
-              <li>Pre-service examination prior to initial deployment and after site re-assembly; statutory examinations at 6- or 12-month intervals.</li>
-            </ul></div>
-          </div>
-        </td>
-        <td style="width:50%; padding-left:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd">8. Accidents, Near Misses &amp; Statutory Reporting</div>
-            <div class="ohs-bd"><ul>
-              <li>All injuries, first-aid events and near misses logged on Company Accident Forms and investigated without delay.</li>
-              <li><strong>Ministry of Labour / Health Notification:</strong> Fatalities, major injuries (fractures other than digits, amputations, dislocations, loss of sight, electric shock/burns &gt;24h hospitalisation, acute toxic/biological illness), members of public hospitalised from site, &gt;7 consecutive lost-time injuries (reported within 15 working days), and dangerous occurrences (crane failure, overhead powerline contact, scaffold collapse &gt;5m, pipeline incident).</li>
-            </ul></div>
-          </div>
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">9. COSHH, Noise, Vibration &amp; Manual Handling</div>
-            <div class="ohs-bd"><ul>
-              <li><strong>COSHH:</strong> No unassessed chemicals permitted on site; SDS sheets kept on site; strict ban on mixing chemical products.</li>
-              <li><strong>Hand-Arm Vibration (HAV):</strong> Daily EAV 2.5 m/s² A(8); mandatory ELV cap 5.0 m/s² A(8).</li>
-              <li><strong>Whole-Body Vibration (WBV):</strong> Daily EAV 0.5 m/s² A(8); mandatory ELV cap 1.15 m/s² A(8).</li>
-              <li><strong>Manual Handling:</strong> Task, load, environment and individual capability assessed prior to lifts; hoists/trolleys prioritised.</li>
-            </ul></div>
-          </div>
-        </td>
-      </tr></table>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 13 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/unam-khomasdal.jpg" alt="Regional institutional facility in Namibia" loading="lazy"  width="800" height="533" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">REGIONAL HOSPITALS</span>
+        <h4>Okakarara, Rundu, Tsumeb &amp; Okahandja Hospital Works</h4>
+        <p><strong>Employer:</strong> Ministry of Health &amp; Social Services<br/>Consultants: Richard Frankle / RFPQS / Tangi | Combined: N$ 7.46M</p>
       </div>
     </div>
-
-    <div class="page">
-      <div class="pad-in">
-      
-        <div class="phead">
-          <table class="phead-table"><tr>
-            <td style="width:76%; vertical-align:bottom;">
-              <div class="phead-kicker">09 / Health &amp; Safety Policy Manual (Annex)</div>
-              <div class="phead-title">Workplace Welfare, PPE &amp; Site Safety Personnel Register</div>
-            </td>
-            <td style="width:24%; text-align:right; vertical-align:bottom;">
-              <img src="assets/brand/png/mm-logo-lockup-1750.png" alt="M &amp; M Engineering" style="height:26pt;"/>
-            </td>
-          </tr></table>
-        </div>
-      <table class="lay"><tr>
-        <td style="width:50%; padding-right:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd">10. Workplace Welfare, Signs &amp; Edge Protection</div>
-            <div class="ohs-bd"><ul>
-              <li>Minimum 11 m³ room volume per worker; clear pedestrian/vehicle segregated traffic routes and daily waste removal.</li>
-              <li>Guardrails at minimum 1,100 mm height plus mid-rail wherever falls ≥ 2 m (or over hazards) can occur; fragile roofs clearly signed.</li>
-              <li>Potable drinking water, hot/cold sanitary washing stations, lockable changing areas and clean meal facilities separated from dusty work areas.</li>
-              <li>Mandatory Prohibition, Warning, Mandatory and Emergency safety signage compliant with national colour standards.</li>
-            </ul></div>
-          </div>
-        </td>
-        <td style="width:50%; padding-left:6pt;">
-          <div class="ohs-sec">
-            <div class="ohs-hd ohs-hd-red">11. PPE Standards &amp; Contractor Permits</div>
-            <div class="ohs-bd"><ul>
-              <li>Issued PPE includes steel-toe footwear, high-visibility vests, task-rated gloves, eye/hearing protection, harnesses and weather gear.</li>
-              <li>Theoretical and practical fitting training documented before issue; defective or contaminated PPE removed from service immediately.</li>
-              <li>External contractors must submit OHS Policy, Risk Assessments, Chemical Assessments and Liability Insurance prior to arrival, plus obtain Permits to Work for hot, gas, electrical, height or confined-space entries.</li>
-            </ul></div>
-          </div>
-        </td>
-      </tr></table>
-      <div class="h2" style="margin-top:8pt;">Appendix 1: Project Site Appointed Health &amp; Safety Personnel</div>
-      <p class="small" style="margin-bottom:5pt;">Completed and posted visibly on every active M &amp; M construction notice board prior to site handover:</p>
-      <table class="tbl">
-        <thead><tr>
-          <th style="width:26%;">Statutory Role</th>
-          <th style="width:28%;">Appointed Person(s)</th>
-          <th style="width:24%;">Contact Telephone</th>
-          <th style="width:22%;">Site / Project Ref</th>
-        </tr></thead>
-        <tbody>
-          <tr><td><strong>Safety Officer(s)</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
-          <tr><td><strong>Safety Representative(s)</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
-          <tr><td><strong>First Aid Personnel</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
-          <tr><td><strong>Fire Safety Wardens</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
-          <tr><td><strong>Safety Committee Chair</strong></td><td>1. ________________________</td><td>______________________</td><td>Date: ___/___/20___</td></tr>
-        </tbody>
-      </table>
-      <div class="card-dark" style="margin-top:12pt;">
-        <div class="card-title">POLICY ENDORSEMENT &amp; STATUTORY REVIEW CYCLE</div>
-        <div style="font-size:8pt; color:#E2E8F0; line-height:1.48; margin-bottom:10pt;">
-          This Occupational Health &amp; Safety Policy Manual applies across all offices, plant yards and active construction sites operated by M &amp; M Engineering &amp; Consultancy CC under the Labour Act, 2007 (Act No. 11 of 2007) and Government Notice No. 156 of 1992. Reviewed annually and re-endorsed upon major legislative or site scope changes.
-        </div>
-        <table class="lay" style="font-size:7.6pt; color:#CBD5E1; border-top:0.5pt solid #334155; padding-top:8pt;"><tr>
-          <td style="width:40%;"><strong>Managing Member / Director:</strong> ________________________</td>
-          <td style="width:35%;"><strong>Appointed Safety Officer:</strong> ______________________</td>
-          <td style="width:25%; text-align:right;"><strong>Revision:</strong> 2026 / Rev 04</td>
-        </tr></table>
-      </div>
-      
-        <div class="pfoot">
-          <table style="width:100%; border-collapse:collapse;"><tr>
-            <td style="width:82%; color:#64748B;">M &amp; M Engineering &amp; Consultancy CC · Reg. CC/2013/6661 · Windhoek, Namibia · www.mmengineeringcc.com</td>
-            <td style="width:18%; text-align:right; font-weight:700; color:#334155;">Page 14 / 15</td>
-          </tr></table>
-        </div>
+    
+    <div class="bp-port-card">
+      <img src="/assets/projects/namibia-open-market.jpg" alt="Covered northern Namibian open market plaza and landmark tower" loading="lazy"  width="800" height="800" />
+      <div class="bp-port-body">
+        <span class="bp-port-tag">RURAL ENTERPRISE</span>
+        <h4>Omulunga Community Market (Onayena) &amp; Ongenga Estate</h4>
+        <p><strong>Employer:</strong> Namibia Development Corporation (NDC)<br/>Consultant: Conselect Engineering | Combined Value: N$ 2,876,707.49</p>
       </div>
     </div>
-
-    <div class="page back-page">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595pt" height="842pt" style="display:block;">
-        <rect x="0" y="0" width="595" height="842" fill="#141A21"/>
-        <polygon points="0,0 595,0 595,310 0,435" fill="#1B242F"/>
-        <polygon points="365,0 448,0 264,710 182,710" fill="#D73B2E" opacity="0.88"/>
-        <polygon points="452,0 538,0 356,710 270,710" fill="#F25C4E" opacity="0.32"/>
-
-        <image href="assets/brand/png/mm-logo-lockup-on-dark-1750.png" x="52" y="132" width="230" height="55"/>
-        <text x="54" y="255" font-family="Archivo, DejaVu Sans, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">BUILT FOR NAMIBIA</text>
-        <text x="54" y="285" font-family="Archivo, DejaVu Sans, sans-serif" font-size="24" font-weight="800" fill="#F25C4E">&amp; SOUTHERN AFRICA.</text>
-        <text x="54" y="325" font-family="Archivo, DejaVu Sans, sans-serif" font-size="10" font-weight="600" fill="#CBD5E1">Multidisciplinary Engineering &amp; Construction Practice</text>
-        <text x="54" y="343" font-family="Archivo, DejaVu Sans, sans-serif" font-size="10" font-weight="600" fill="#94A3B8">Fully registered in Namibia · Est. 2013 · 24/7 Site Support</text>
-
-        <rect x="52" y="454" width="490" height="236" rx="4" fill="#0F1419" opacity="0.92"/>
-        <text x="76" y="490" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.5" font-weight="800" fill="#F25C4E" letter-spacing="1">CORPORATE CONTACT &amp; BANKING</text>
-        <text x="76" y="518" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" font-weight="700" fill="#FFFFFF">Head Office:</text>
-        <text x="178" y="518" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" fill="#CBD5E1">ERF 454 Rietfontein Street, Kleine Kuppe, Windhoek</text>
-        <text x="76" y="540" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" font-weight="700" fill="#FFFFFF">Physical:</text>
-        <text x="178" y="540" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" fill="#CBD5E1">23 John Simms Street, Windhoek North, Windhoek</text>
-        <text x="76" y="562" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" font-weight="700" fill="#FFFFFF">Postal:</text>
-        <text x="178" y="562" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" fill="#CBD5E1">P.O. Box 51121, Bachbrecht, Windhoek, Namibia</text>
-        <text x="76" y="584" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" font-weight="700" fill="#FFFFFF">Tel / Cell:</text>
-        <text x="178" y="584" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" fill="#CBD5E1">+264 61 234 349  |  +264 81 327 5403 (WhatsApp / WeChat)</text>
-        <text x="76" y="606" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" font-weight="700" fill="#FFFFFF">Email / Web:</text>
-        <text x="178" y="606" font-family="Archivo, DejaVu Sans, sans-serif" font-size="9.2" fill="#CBD5E1">info@mmengineeringcc.com  |  www.mmengineeringcc.com</text>
-
-        <text x="76" y="638" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.6" font-weight="700" fill="#F25C4E">Registration: CC/2013/6661  |  Tax ID: 6140420-01-1</text>
-        <text x="76" y="658" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.6" fill="#94A3B8">Banking Verification: Issued directly in authenticated tender pre-qualification packs</text>
-
-        <text x="52" y="794" font-family="Archivo, DejaVu Sans, sans-serif" font-size="8.4" fill="#64748B">© 2013–2026 M &amp; M Engineering &amp; Consultancy CC. All rights reserved.</text>
-      </svg>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 08 / 15</strong>
     </div>
+</article>
+
+<article class="bp-page" id="page-09">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">07 / Verified Track Record</div>
+        <h2 class="bp-title">Complete Project Register &mdash; Contracts 01 to 13</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <p class="bp-p">Verified contract schedule executed across Namibia for public authorities, parastatals and institutional employers (consultant firm references retained; personal contacts omitted for public privacy):</p>
+  
+    <div class="bp-table-wrap"><table class="bp-tbl">
+      <thead><tr><th>#</th><th>Project Name</th><th>Principal Employer</th><th>Consulting Firm</th><th>Duration</th><th style="text-align:right;">Value (NAD)</th></tr></thead>
+      <tbody><tr><td class="c-idx">01</td><td><strong>Divundu Correctional Facility Hospital and Programme Areas</strong></td><td>Ministry of Safety & Security & Ministry of Works</td><td>Barnard Mutua Architects</td><td>18 Months</td><td class="c-val">N$ 13,000,000.00</td></tr><tr><td class="c-idx">02</td><td><strong>Nyae Nyae Police Station and Barracks</strong></td><td>Ministry of Safety & Security & Ministry of Works</td><td>Kondjeni Kandji Architects</td><td>24 Months</td><td class="c-val">N$ 43,000,000.00</td></tr><tr><td class="c-idx">03</td><td><strong>NAMCOL Centre Rundu Phase 2</strong></td><td>NAMCOL</td><td>Kenny McNamara Architects</td><td>9 Months</td><td class="c-val">N$ 8,000,000.00</td></tr><tr><td class="c-idx">04</td><td><strong>UNAM Clinic Main Campus</strong></td><td>University of Namibia (UNAM)</td><td>Agustono Ferreira Architects</td><td>12 Months</td><td class="c-val">N$ 8,000,000.00</td></tr><tr><td class="c-idx">05</td><td><strong>Ongwediva Social Housing Phase II Centre on Erf 4797</strong></td><td>Ongwediva Town Council</td><td>AIJ Consulting</td><td>12 Months</td><td class="c-val">N$ 3,400,000.00</td></tr><tr><td class="c-idx">06</td><td><strong>Construction of Electrical Services (Ekuku Township Phase 2)</strong></td><td>Oshakati Town Council</td><td>Consulting Services Africa</td><td>8 Months</td><td class="c-val">N$ 13,608,000.00</td></tr><tr><td class="c-idx">07</td><td><strong>Electrical Services at Kaisosi Rundu NHE Phase 1</strong></td><td>Rundu Town Council (NHE)</td><td>AIJ Consulting</td><td>12 Months</td><td class="c-val">N$ 11,000,000.00</td></tr><tr><td class="c-idx">08</td><td><strong>Low Voltage Electrical Reticulation (Omusati Regional HQ)</strong></td><td>Ministry of Agriculture, Water & Forestry</td><td>WML Consulting Engineers</td><td>Completed</td><td class="c-val">N$ 2,900,000.00</td></tr><tr><td class="c-idx">09</td><td><strong>New Electrical Reticulation of Nukwa Military Base (Zambezi Region)</strong></td><td>Ministry of Defence</td><td>V Fischer-Buder Consulting</td><td>12 Months</td><td class="c-val">N$ 2,668,235.00</td></tr><tr><td class="c-idx">10</td><td><strong>Renovation of Staff Houses at Verda Gate (Kunene Region)</strong></td><td>Ministry of Agriculture, Water & Forestry (Vet)</td><td>MAWF Technical Services</td><td>12 Months</td><td class="c-val">N$ 2,970,450.00</td></tr><tr><td class="c-idx">11</td><td><strong>Alterations & Additions to Rundu Hospital</strong></td><td>Ministry of Health & Social Services</td><td>RFPQS</td><td>6 Months</td><td class="c-val">N$ 2,700,000.00</td></tr><tr><td class="c-idx">12</td><td><strong>Construction of 63 Houses at Kaisosi Rundu NHE Phase I</strong></td><td>Rundu Town Council (NHE)</td><td>AIJ Project Cost Consultants</td><td>24 Months</td><td class="c-val">N$ 19,445,350.00</td></tr><tr><td class="c-idx">13</td><td><strong>Electrical Installation at Omulunga Community Market, Onayena</strong></td><td>Ministry of Trade & Industry</td><td>Conselect Engineering</td><td>Completed</td><td class="c-val">N$ 1,101,707.49</td></tr></tbody>
+    </table></div>
+  <div class="bp-card" style="margin-top:12px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; font-size:11px;">
+    <span><strong>Subtotal (01&ndash;13):</strong> N$ 131,793,742.49</span>
+    <span><strong>Next:</strong> Contracts 14&ndash;25</span>
+    <strong style="color:#D73B2E;">Full Register: N$ 152,768,801.37</strong>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 09 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-10">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">07 / Verified Track Record (Cont.)</div>
+        <h2 class="bp-title">Complete Project Register &mdash; Contracts 14 to 25</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  
+    <div class="bp-table-wrap"><table class="bp-tbl">
+      <thead><tr><th>#</th><th>Project Name</th><th>Principal Employer</th><th>Consulting Firm</th><th>Duration</th><th style="text-align:right;">Value (NAD)</th></tr></thead>
+      <tbody><tr><td class="c-idx">14</td><td><strong>Electrical Installation — Rundu Vocational Training Centre</strong></td><td>Ministry of Education</td><td>Emcon Consulting Engineers</td><td>Completed</td><td class="c-val">N$ 4,183,637.10</td></tr><tr><td class="c-idx">15</td><td><strong>Faulty Electrical Cable Replacement & Generator, Okakarara Hospital</strong></td><td>Ministry of Health & Social Services</td><td>Tangi Trading Enterprise CC</td><td>Completed</td><td class="c-val">N$ 1,045,713.53</td></tr><tr><td class="c-idx">16</td><td><strong>MVA Ongwediva Phase II Electrical Installation</strong></td><td>MVA Fund Namibia</td><td>Jacobs Engineering Consulting</td><td>Completed</td><td class="c-val">N$ 603,346.35</td></tr><tr><td class="c-idx">17</td><td><strong>Construction & Electrical Installation of Nkurenkuru Police Station</strong></td><td>Ministry of Safety & Security — NAMPOL</td><td>Robert Lock Architect</td><td>Completed</td><td class="c-val">N$ 4,000,000.00</td></tr><tr><td class="c-idx">18</td><td><strong>New Sub-Regional Office Nkurenkuru — Electrical Installation</strong></td><td>Ministry of Safety & Security — NAMPOL</td><td>Emcon Consulting Engineers</td><td>Completed</td><td class="c-val">N$ 310,514.95</td></tr><tr><td class="c-idx">19</td><td><strong>Omulunga Community Market (Onayena, Oshikoto Region)</strong></td><td>Namibia Development Corp (NDC)</td><td>Conselect Engineering</td><td>Completed</td><td class="c-val">N$ 890,000.00</td></tr><tr><td class="c-idx">20</td><td><strong>Alterations & Additions to Rundu Hospital Accommodation Phase 2</strong></td><td>Ministry of Health & Social Services</td><td>Richard Frankle & Partners</td><td>Completed</td><td class="c-val">N$ 1,621,642.60</td></tr><tr><td class="c-idx">21</td><td><strong>Supply, Installation & Commissioning of Air Conditioning & Ventilation</strong></td><td>NAMCOL</td><td>Conselect Engineering</td><td>Completed</td><td class="c-val">N$ 495,543.51</td></tr><tr><td class="c-idx">22</td><td><strong>Supply, Installation & Servicing of Air Conditioners, Tsumeb Hospital</strong></td><td>Ministry of Health & Social Services</td><td>Ministry of Health</td><td>Completed</td><td class="c-val">N$ 187,714.50</td></tr><tr><td class="c-idx">23</td><td><strong>Simanya Completion: Accommodation, Charge Office, Roads & Walkways</strong></td><td>Ministry of Safety & Security — NAMPOL</td><td>Aurecon Consultancy</td><td>Completed</td><td class="c-val">N$ 4,843,162.03</td></tr><tr><td class="c-idx">24</td><td><strong>Alterations and Additions to Existing Okahandja Hospital</strong></td><td>Ministry of Health & Social Services</td><td>Richard Frankle & Partners</td><td>Completed</td><td class="c-val">N$ 1,908,784.31</td></tr><tr><td class="c-idx">25</td><td><strong>Ongenga Business Estate (Ohangwena Region)</strong></td><td>Namibia Development Corp (NDC)</td><td>Conselect Engineering</td><td>Completed</td><td class="c-val">N$ 885,000.00</td></tr></tbody>
+    </table></div>
+  <div class="bp-cols bp-cols--50" style="margin-top:14px;">
+    <div class="bp-card-dark" style="margin:0;">
+      <div class="bp-ctitle">CUMULATIVE VERIFIED PORTFOLIO</div>
+      <div style="font-size:26px; font-weight:800; color:#FFFFFF; margin:4px 0;">N$ 152,768,801.37</div>
+      <p style="margin:0; font-size:11.5px; color:#CBD5E1;">Across 25 documented contracts spanning health, security, housing, tertiary education, vocational training and bulk electrical infrastructure.</p>
+    </div>
+    <div class="bp-card" style="margin:0;">
+      <div class="bp-ctitle">REGIONAL COVERAGE</div>
+      <p class="bp-p" style="margin-bottom:6px;">Khomas &middot; Kavango East &amp; West &middot; Oshana &middot; Ohangwena &middot; Oshikoto &middot; Omusati &middot; Zambezi &middot; Otjozondjupa &middot; Kunene</p>
+      <p style="margin:0; font-size:11px; color:#64748B;">25 documented awards &middot; 16 associated consulting &amp; architectural partners</p>
+    </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 10 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-11">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">08 / Plant &amp; Instrumentation</div>
+        <h2 class="bp-title">Owned Vehicles, Stringing Fleet &amp; Testing Equipment</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <p class="bp-p">M &amp; M Engineering mobilises with company-owned heavy crane transport, 4x4 site utility vehicles, overhead tension stringing gear and calibrated 10 kV / 1,000V electrical testing instruments:</p>
+  <div class="bp-table-wrap"><table class="bp-tbl">
+    <thead><tr><th>Equipment Description</th><th>Classification</th><th>VIN / Serial Reference</th><th style="text-align:center;">Qty</th></tr></thead>
+    <tbody><tr><td><strong>2014 MAN TGM 18.240 Crane Truck (4x4 – 8 Ton)</strong></td><td>Heavy Load Vehicle</td><td style="font-family:monospace;">AHTH8CB003590536</td><td style="text-align:center; font-weight:700;">1</td></tr><tr><td><strong>2016 Toyota Hilux GD-6 2.8 4x4</strong></td><td>Light Load Vehicle</td><td style="font-family:monospace;">AAMN640562PX31209</td><td style="text-align:center; font-weight:700;">1</td></tr><tr><td><strong>2016 Nissan NP300</strong></td><td>Light Load Vehicle</td><td style="font-family:monospace;">Fleet Registry Verified</td><td style="text-align:center; font-weight:700;">1</td></tr><tr><td><strong>14 Ton Hydraulic Tension Stringing Equipment</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">2 Sets</td></tr><tr><td><strong>Run Out Pulleys</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">10</td></tr><tr><td><strong>Chain Block 2 Ton</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">5</td></tr><tr><td><strong>Cable Drum Stand</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Clamping Shoes</strong></td><td>Overhead Powerline Equipment</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">6 Pairs</td></tr><tr><td><strong>Major Tech High Voltage Insulation Tester 10,000V (K3123A)</strong></td><td>HV Testing Equipment</td><td style="font-family:monospace;">#7029346</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Hellermann Tyton T1825 Loop / PSC / Load Tester (1000V)</strong></td><td>Testing Equipment</td><td style="font-family:monospace;">1851635</td><td style="text-align:center; font-weight:700;">5</td></tr><tr><td><strong>Fluke 1000V AC/DC Clamp Meter</strong></td><td>Testing Equipment</td><td style="font-family:monospace;">16739867</td><td style="text-align:center; font-weight:700;">4</td></tr><tr><td><strong>Major Tech Phase Rotation Meter (8031F, 600V)</strong></td><td>Testing Equipment</td><td style="font-family:monospace;">15638903</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Major Tech K4105A Digital Earth Resistance Tester (2000 Ohm / 2mA)</strong></td><td>Testing Equipment</td><td style="font-family:monospace;">1941723</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Major Tech TEL1TLB Polarity Tester (500mA)</strong></td><td>Testing Equipment</td><td style="font-family:monospace;">1734468</td><td style="text-align:center; font-weight:700;">4</td></tr><tr><td><strong>Hellermann Analog Insulation Tester (100V)</strong></td><td>Testing Equipment</td><td style="font-family:monospace;">19234879</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Honda Generator 6kVA / 12000W</strong></td><td>Power Plant</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Hilti Jack Hammer</strong></td><td>Power Tool</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">2</td></tr><tr><td><strong>Hilti Hydraulic Crimping Tool</strong></td><td>Hand / Hydraulic Tool</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Makita Drill Machine 1250W</strong></td><td>Power Tool</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">6</td></tr><tr><td><strong>Bosch Angle Grinder 720W</strong></td><td>Power Tool</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">5</td></tr><tr><td><strong>Gedore Master Tool Box</strong></td><td>Hand Tools</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">4</td></tr><tr><td><strong>Major Tech Measuring Wheel</strong></td><td>Survey Hand Tool</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">3</td></tr><tr><td><strong>Hellermann Tyton Extension Ladder</strong></td><td>Access Equipment</td><td style="font-family:monospace;">–</td><td style="text-align:center; font-weight:700;">4</td></tr></tbody>
+  </table></div>
+  <div class="bp-card-dark bp-cols bp-cols--3" style="margin-top:12px; margin-bottom:0; font-size:11.5px;">
+    <div><strong style="color:#F25C4E;">3 Owned Site Vehicles</strong><br/>MAN 8-Ton 4x4 Crane Truck + 4x4 Utility Fleet</div>
+    <div><strong style="color:#F25C4E;">14-Ton Stringing Sets</strong><br/>Pulleys, Chain Blocks, Drum Stands &amp; Clamping Shoes</div>
+    <div><strong style="color:#F25C4E;">10 kV / 1,000V Test Suite</strong><br/>Calibrated Insulation, Earth, Loop &amp; Phase Meters</div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 11 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-12">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">09 / Health &amp; Safety Policy Manual</div>
+        <h2 class="bp-title">Statutory Mandate, Policy Statement &amp; Organisation</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-card-red">
+    <div class="bp-ctitle">NAMIBIAN STATUTORY OHS COMPLIANCE FRAMEWORK</div>
+    <p style="margin:0; font-size:11.8px; line-height:1.5;"><strong>Governing Legislation:</strong> The Constitution of the Republic of Namibia &middot; Labour Act, 2007 (Act No. 11 of 2007) &middot; Government Notice No. 156 of 1992 ("Regulations Relating to the Health and Safety of Employees at Work") &middot; Presidential Proclamation No. 10 (Part XI, Section 101).</p>
+  </div>
+  <div class="bp-cols bp-cols--50">
+    <div>
+      <div class="bp-ohs"><div class="bp-ohs-hd bp-ohs-hd--red">1. Statement of General Policy</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Provide adequate control of health and safety risks arising from all work activities.</li>
+        <li>Consult actively with employees and safety representatives on workplace health and safety.</li>
+        <li>Provide, inspect and maintain safe plant, lifting gear and calibrated equipment.</li>
+        <li>Control safe storage, handling and disposal of hazardous substances (COSHH).</li>
+        <li>Deliver documented induction, task instruction, supervision and competency training.</li>
+        <li>Prevent workplace accidents, industrial injuries and occupational diseases.</li>
+        <li>Review and update this policy annually or immediately after site/statutory changes.</li>
+      </ul></div></div>
+      <div class="bp-ohs"><div class="bp-ohs-hd">2. Safety Management &amp; Governance</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li><strong>Directors &amp; MD:</strong> Hold overall legal responsibility; fund safety priorities annually.</li>
+        <li><strong>Safety Officer:</strong> Audits risk assessments, registers, PPE issue, permits and training.</li>
+        <li><strong>Line Managers &amp; Supervisors:</strong> Enforce safe method statements and daily housekeeping.</li>
+        <li><strong>Safety Representatives &amp; Committees:</strong> Conduct quarterly inspections; committee convened within 3 months of request.</li>
+      </ul></div></div>
+    </div>
+    <div>
+      <div class="bp-ohs"><div class="bp-ohs-hd">3. Risk Assessment &amp; Hierarchy of Control</div><div class="bp-ohs-bd">
+        <p class="bp-p">Written risk assessments cover routine and non-routine operations, contractors and members of the public using the five-tier control hierarchy:</p>
+        <ol class="bp-ol">
+          <li><strong>Eliminate</strong> hazardous activity wherever alternative work methods exist.</li>
+          <li><strong>Substitute</strong> equipment or materials for lower-hazard alternatives.</li>
+          <li><strong>Isolate or segregate</strong> hazards via physical barriers and interlocked guards.</li>
+          <li><strong>Apply engineering controls</strong> (LEV, enclosures, ergonomic station design).</li>
+          <li><strong>Issue compatible PPE</strong> as secondary protection where residual risk persists.</li>
+        </ol>
+      </div></div>
+      <div class="bp-ohs"><div class="bp-ohs-hd bp-ohs-hd--red">4. Right to Stop Unsafe Work</div><div class="bp-ohs-bd"><p class="bp-p" style="margin:0;">All employees, subcontractors and visitors must stop any unsafe activity immediately if guarding is missing, electrical plant is defective or unsafe site conditions develop, reporting directly to the Safety Officer or Supervisor without delay. No employee is charged for mandatory OHS training or PPE.</p></div></div>
+      <div class="bp-card-dark" style="margin:0;">
+        <div class="bp-ctitle">INDUCTION &amp; ZERO-CHARGE TRAINING MANDATE</div>
+        <p style="margin:0; font-size:11.5px; color:#CBD5E1; line-height:1.48;">Every employee and site subcontractor receives documented induction prior to site access, verified task competence certification and full employer-funded personal protective equipment.</p>
+      </div>
+    </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 12 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-13">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">09 / Health &amp; Safety Policy Manual (Cont.)</div>
+        <h2 class="bp-title">Fire, Electrical, Machinery, Lifting &amp; Incident Reporting</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--50">
+    <div>
+      <div class="bp-ohs"><div class="bp-ohs-hd bp-ohs-hd--red">5. Fire Safety &amp; Emergency Response</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Means of escape, fire doors and exit routes kept unlocked and unobstructed at all times.</li>
+        <li>Weekly alarm checks; monthly user gauge/seal inspections on portable fire extinguishers; annual external certification (GN 156 Chapter 3).</li>
+        <li>Fire drills conducted during employment month 1, 3-monthly for night shift and 6-monthly for day teams.</li>
+        <li>Immediate isolation and emergency brigade dispatch for any gas leak or ignition event.</li>
+      </ul></div></div>
+      <div class="bp-ohs"><div class="bp-ohs-hd">6. Electrical Safety &amp; Lockout/Tagout</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Complies with GN 156 Chapter 9; zero unqualified work on live electrical installations.</li>
+        <li>Portable tools protected by residual current circuit breakers (RCDs); trailing leads barred from walkways.</li>
+        <li>Machinery cleaning, maintenance or unguarded repair permitted only after electrical isolation, physical lock-off and tagging.</li>
+      </ul></div></div>
+      <div class="bp-ohs"><div class="bp-ohs-hd bp-ohs-hd--red">7. Lifting Equipment &amp; Machinery</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>Cranes, excavators, forklifts, telehandlers, HIAB lorry loaders and hoists carry stamped Safe Working Load (SWL) and valid test certificates.</li>
+        <li>Pre-service examination prior to initial deployment and after site re-assembly; statutory examinations at 6- or 12-month intervals.</li>
+      </ul></div></div>
+    </div>
+    <div>
+      <div class="bp-ohs"><div class="bp-ohs-hd">8. Accidents, Near Misses &amp; Statutory Reporting</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li>All injuries, first-aid events and near misses logged on Company Accident Forms and investigated without delay.</li>
+        <li><strong>Ministry of Labour / Health Notification:</strong> Fatalities, major injuries (fractures other than digits, amputations, dislocations, loss of sight, electric shock/burns &gt;24h hospitalisation, acute toxic/biological illness), members of public hospitalised from site, &gt;7 consecutive lost-time injuries (reported within 15 working days), and dangerous occurrences (crane failure, overhead powerline contact, scaffold collapse &gt;5m, pipeline incident).</li>
+      </ul></div></div>
+      <div class="bp-ohs"><div class="bp-ohs-hd bp-ohs-hd--red">9. COSHH, Noise, Vibration &amp; Manual Handling</div><div class="bp-ohs-bd"><ul class="bp-ul">
+        <li><strong>COSHH:</strong> No unassessed chemicals permitted on site; SDS sheets kept on site; strict ban on mixing chemical products.</li>
+        <li><strong>Hand-Arm Vibration (HAV):</strong> Daily EAV 2.5 m/s&sup2; A(8); mandatory ELV cap 5.0 m/s&sup2; A(8).</li>
+        <li><strong>Whole-Body Vibration (WBV):</strong> Daily EAV 0.5 m/s&sup2; A(8); mandatory ELV cap 1.15 m/s&sup2; A(8).</li>
+        <li><strong>Manual Handling:</strong> Task, load, environment and individual capability assessed prior to lifts; hoists/trolleys prioritised.</li>
+      </ul></div></div>
+      <div class="bp-card-dark" style="margin:0;">
+        <div class="bp-ctitle">STATUTORY INSPECTION CADENCE</div>
+        <p style="margin:0; font-size:11.5px; color:#CBD5E1; line-height:1.5;">Weekly alarm testing &middot; Monthly extinguisher &amp; RCD inspection &middot; Quarterly safety committee audits &middot; 6&ndash;12 monthly lifting &amp; HV calibration re-certification.</p>
+      </div>
+    </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 13 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page" id="page-14">
+  
+    <div class="bp-head">
+      <div>
+        <div class="bp-kicker">09 / Health &amp; Safety Policy Manual (Annex)</div>
+        <h2 class="bp-title">Workplace Welfare, PPE &amp; Site Safety Personnel Register</h2>
+      </div>
+      <img src="/assets/brand/mm-logo-lockup.svg" alt="M&amp;M Engineering Consultancy" width="144" height="35" style="height:34px; width:auto; flex:none;" />
+    </div>
+  <div class="bp-cols bp-cols--50">
+    <div class="bp-ohs"><div class="bp-ohs-hd">10. Workplace Welfare, Signs &amp; Edge Protection</div><div class="bp-ohs-bd"><ul class="bp-ul">
+      <li>Minimum 11 m&sup3; room volume per worker; clear pedestrian/vehicle segregated traffic routes and daily waste removal.</li>
+      <li>Guardrails at minimum 1,100 mm height plus mid-rail wherever falls &ge; 2 m (or over hazards) can occur; fragile roofs clearly signed.</li>
+      <li>Potable drinking water, hot/cold sanitary washing stations, lockable changing areas and clean meal facilities separated from dusty work areas.</li>
+      <li>Mandatory Prohibition, Warning, Mandatory and Emergency safety signage compliant with national colour standards.</li>
+    </ul></div></div>
+    <div class="bp-ohs"><div class="bp-ohs-hd bp-ohs-hd--red">11. PPE Standards &amp; Contractor Permits</div><div class="bp-ohs-bd"><ul class="bp-ul">
+      <li>Issued PPE includes steel-toe footwear, high-visibility vests, task-rated gloves, eye/hearing protection, harnesses and weather gear.</li>
+      <li>Theoretical and practical fitting training documented before issue; defective or contaminated PPE removed from service immediately.</li>
+      <li>External contractors must submit OHS Policy, Risk Assessments, Chemical Assessments and Liability Insurance prior to arrival, plus obtain Permits to Work for hot, gas, electrical, height or confined-space entries.</li>
+    </ul></div></div>
+  </div>
+  <h3 class="bp-h3" style="margin-top:14px;">Appendix 1: Project Site Appointed Health &amp; Safety Personnel</h3>
+  <p class="bp-p" style="margin-bottom:8px;">Completed and posted visibly on every active M &amp; M construction notice board prior to site handover:</p>
+  <div class="bp-table-wrap"><table class="bp-tbl">
+    <thead><tr><th>Statutory Role</th><th>Appointed Person(s)</th><th>Contact Telephone</th><th>Site / Project Ref</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Safety Officer(s)</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
+      <tr><td><strong>Safety Representative(s)</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
+      <tr><td><strong>First Aid Personnel</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
+      <tr><td><strong>Fire Safety Wardens</strong></td><td>1. ________________________<br/>2. ________________________</td><td>______________________<br/>______________________</td><td>__________________</td></tr>
+      <tr><td><strong>Safety Committee Chair</strong></td><td>1. ________________________</td><td>______________________</td><td>Date: ___/___/20___</td></tr>
+    </tbody>
+  </table></div>
+  <div class="bp-card-dark" style="margin-top:14px; margin-bottom:0;">
+    <div class="bp-ctitle">POLICY ENDORSEMENT &amp; STATUTORY REVIEW CYCLE</div>
+    <p style="margin:0 0 14px; font-size:11.5px; color:#E2E8F0; line-height:1.5;">This Occupational Health &amp; Safety Policy Manual applies across all offices, plant yards and active construction sites operated by M &amp; M Engineering &amp; Consultancy CC under the Labour Act, 2007 (Act No. 11 of 2007) and Government Notice No. 156 of 1992. Reviewed annually and re-endorsed upon major legislative or site scope changes.</p>
+    <div class="bp-cols bp-cols--3" style="padding-top:12px; border-top:1px solid #334155; font-size:11.5px; color:#CBD5E1;">
+      <div><strong>Managing Member / Director</strong><div style="margin-top:20px; border-bottom:1px solid #94A3B8; width:90%;"></div></div>
+      <div><strong>Appointed Safety Officer</strong><div style="margin-top:20px; border-bottom:1px solid #94A3B8; width:90%;"></div></div>
+      <div style="text-align:right; align-self:end;"><strong>Revision:</strong> 2026 / Rev 04</div>
+    </div>
+  </div>
+  
+    <div class="bp-foot">
+      <span>M &amp; M Engineering &amp; Consultancy CC &middot; Reg. CC/2013/6661 &middot; <strong style="color:#D73B2E;">www.mmengineeringcc.com</strong></span>
+      <strong>Page 14 / 15</strong>
+    </div>
+</article>
+
+<article class="bp-page bp-back" id="page-15">
+  <div class="bp-back-slants" aria-hidden="true"></div>
+  <div style="position:relative; z-index:2; display:flex; flex-direction:column; gap:24px; height:100%;">
+    <img src="/assets/brand/mm-logo-lockup-on-dark.svg" alt="M&amp;M Engineering Consultancy" width="240" height="58" style="height:56px; width:auto; align-self:flex-start;" />
+    <div>
+      <h2 style="font-size:32px; font-weight:800; line-height:1.15; margin:0 0 10px; color:#FFFFFF;">BUILT FOR NAMIBIA<br/><span style="color:#F25C4E;">&amp; SOUTHERN AFRICA.</span></h2>
+      <p style="margin:0; font-size:13px; color:#CBD5E1; font-weight:600;">Multidisciplinary Engineering &amp; Construction Practice<br/><span style="color:#94A3B8;">Fully registered in Namibia &middot; Est. 2013 &middot; 24/7 Site Support</span></p>
+    </div>
+    <div style="background:rgba(15,20,25,0.92); padding:22px; border-radius:4px; border:1px solid #2A3542;">
+      <div class="bp-ctitle" style="color:#F25C4E; margin-bottom:10px;">CORPORATE CONTACT &amp; BANKING</div>
+      <dl class="bp-kv">
+        <dt>Head Office</dt><dd>ERF 454 Rietfontein Street, Kleine Kuppe, Windhoek</dd>
+        <dt>Physical</dt><dd>23 John Simms Street, Windhoek North, Windhoek</dd>
+        <dt>Postal</dt><dd>P.O. Box 51121, Bachbrecht, Windhoek, Namibia</dd>
+        <dt>Tel / Cell</dt><dd>+264 61 234 349 &nbsp;|&nbsp; +264 81 327 5403 (WhatsApp / WeChat)</dd>
+        <dt>Email / Web</dt><dd>info@mmengineeringcc.com &nbsp;|&nbsp; www.mmengineeringcc.com</dd>
+      </dl>
+      <p style="margin:12px 0 4px; font-size:12px; font-weight:700; color:#F25C4E;">Registration: CC/2013/6661 &nbsp;|&nbsp; Tax ID: 6140420-01-1</p>
+      <p style="margin:0; font-size:12px; color:#94A3B8;">Banking Verification: Issued directly in authenticated tender pre-qualification packs</p>
+    </div>
+    <p style="margin:auto 0 0; font-size:11.5px; color:#64748B;">&copy; 2013&ndash;2026 M &amp; M Engineering &amp; Consultancy CC. All rights reserved.</p>
+  </div>
+</article>
+      </div>
+      <aside class="pdf-pane" aria-label="Embedded Company Profile PDF">
+        <div class="pdf-pane__bar">
+          <div><strong>M_and_M_Company_Profile_and_Policies.pdf</strong> &middot; 15 A4 Pages</div>
+          <div class="pdf-pane__actions">
+            <a class="sec" href="/downloads/M_and_M_Company_Profile_and_Policies.pdf" target="_blank" rel="noopener">Open Full Tab</a>
+            <a href="/downloads/M_and_M_Company_Profile_and_Policies.pdf" download>Download</a>
+          </div>
+        </div>
+        <iframe class="pdf-pane__frame" src="/downloads/M_and_M_Company_Profile_and_Policies.pdf#view=FitH" title="M&amp;M Engineering 2026 Company Profile &amp; OHS Policy Manual PDF"></iframe>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div class="foot__brand">
+      <img src="/assets/brand/mm-logo-lockup-on-dark.svg" alt="M&amp;M Engineering Consultancy logo" width="150" height="36">
+      <p>A contracting, construction, civil engineering and management company, fully registered in Namibia and Southern Africa (Reg. CC/2013/6661).</p>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <ul>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/projects">Projects (25)</a></li>
+        <li><a href="/clients">Clients &amp; Partners</a></li>
+        <li><a href="/safety-policy">Safety &amp; OHS Policy</a></li>
+        <li><a href="/profile">Company Profile (PDF)</a></li>
+        <li><a href="/blog/">Journal</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Services</h3>
+      <ul>
+        <li><a href="/services">13 Service Disciplines</a></li>
+        <li><a href="/services#equipment">Plant &amp; 10 kV Testing Fleet</a></li>
+        <li><a href="/consultancy">Engineering Consultancy</a></li>
+        <li><a href="/downloads/M_and_M_Company_Profile_and_Policies.pdf" download>Download Profile (4.3 MB)</a></li>
+      </ul>
+    </div>
+    <div class="foot__contact">
+      <h3>Windhoek Offices</h3>
+      <p><strong>Head Office:</strong> Erf 454, Rietfontein St, Kleine Kuppe</p>
+      <p><strong>Physical Office:</strong> 23 John Simms Street, Windhoek North</p>
+      <p><strong>Postal:</strong> P.O. Box 51121, Bachbrecht, Windhoek</p>
+      <p><a href="https://wa.me/264813275403" target="_blank" rel="noopener">WhatsApp +264 81 3275 403</a> &middot; <a href="tel:+26461234349">+264 61 234 349</a></p>
+      <p><a href="mailto:info@mmengineeringcc.com">info@mmengineeringcc.com</a></p>
+    </div>
+  </div>
+  <div class="foot__legal">
+    <p>&copy; 2013&ndash;<span data-year>2026</span> M&amp;M Engineering &amp; Consultancy CC. All rights reserved. Reg. CC/2013/6661 &middot; Tax ID 6140420-01-1.</p>
+    <p class="credit">Website by <a href="https://studio.tangison.com" target="_blank" rel="noopener">studio.tangison.com</a> &middot; <a href="/safety-policy">Safety Policy</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></p>
+  </div>
+</footer>
+
+<script src="/scrollcraft.js"></script>
+<script src="/site.js"></script>
+<script>
+(function () {
+  var split = document.getElementById("profile-split");
+  var btns = document.querySelectorAll("[data-profile-mode]");
+  if (!split || !btns.length) return;
+  btns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var m = b.getAttribute("data-profile-mode") || "split";
+      split.setAttribute("data-view", m);
+      btns.forEach(function (x) { x.classList.toggle("is-active", x === b); });
+    });
+  });
+})();
+ScrollCraft.mount(document.body);
+</script>
 </body>
 </html>

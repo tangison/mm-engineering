@@ -11,8 +11,6 @@
   /* ---- scrolled nav state ----------------------------------------------- */
   var onScroll = function () {
     body.classList.toggle("scrolled", (window.scrollY || 0) > 32);
-    var top = d.querySelector(".dock__btn--top");
-    if (top) top.classList.toggle("show", (window.scrollY || 0) > 640);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
