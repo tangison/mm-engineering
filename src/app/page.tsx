@@ -1,298 +1,385 @@
-import { AppLink as Link } from "@/components/AppLink";
-import { COMPANY } from "@/data/company";
-import { CORE_DIVISIONS, THIRTEEN_DISCIPLINES } from "@/data/services";
-import { FEATURED_PROJECTS } from "@/data/projects";
-import { CLIENT_PARTNERS } from "@/data/clients";
-import { Picture } from "@/components/Picture";
-import { SiteFooter } from "@/components/SiteFooter";
+import type { Metadata } from "next";
+import { AppLink } from "@/components/AppLink";
+import { ArrowRightIcon, WhatsAppIcon } from "@/components/Icons";
+import { ResponsivePicture } from "@/components/ResponsivePicture";
+import { SITE } from "@/data/site";
 
-const HOME_SERVICE_PEEK = [
-  {
-    key: "electrical",
-    name: "Electrical Engineering & Solar Systems",
-    value: "Up to 10 kV tested",
-    detail:
-      "MV/LV switchgear, township reticulation, standby generation and solar PV microgrids.",
-    photo: "site-crane",
-    alt: "Tower crane and concrete works supporting primary campus electrical substations",
+export const metadata: Metadata = {
+  title:
+    "M&M Engineering | Contracting, construction, civil engineering and management in Namibia",
+  description:
+    "M&M Engineering & Consultancy CC is a Windhoek-based contracting, construction, civil engineering and management company serving Namibia and Southern Africa.",
+  alternates: { canonical: `${SITE.url}/` },
+  openGraph: {
+    title:
+      "M&M Engineering | Contracting, construction, civil engineering and management in Namibia",
+    description:
+      "M&M Engineering & Consultancy CC is a Windhoek-based contracting, construction, civil engineering and management company serving Namibia and Southern Africa.",
+    type: "website",
+    url: `${SITE.url}/`,
+    images: [{ url: SITE.ogImage }],
   },
-  {
-    key: "civil",
-    name: "Civil Structures, Hospitals & Police Works",
-    value: "Design to handover",
-    detail:
-      "Reinforced concrete buildings, regional clinics, police barracks and mass housing.",
-    photo: "structural",
-    alt: "Multi-storey reinforced concrete structural engineering works on site",
-  },
-  {
-    key: "roads",
-    name: "Roads, Culverts & Water Reticulation",
-    value: "10 Namibian regions",
-    detail:
-      "Paved municipal streets, box culverts, water pipelines, TSE mains and street lighting.",
-    photo: "office",
-    alt: "Windhoek civil and municipal engineering coordination drawings desk",
-  },
-  {
-    key: "telecom",
-    name: "Telecoms Fibre, HVAC & Consultancy",
-    value: "OTDR & HAZOP",
-    detail:
-      "Optical fibre networks, hospital HVAC chillers, EIAs and statutory site supervision.",
-    photo: "fibre",
-    alt: "Terminated single-mode optical fibre patch enclosure in a utility room",
-  },
-] as const;
+};
 
 export default function HomePage() {
-  const topProjects = FEATURED_PROJECTS.slice(0, 3);
-  const keyPartners = CLIENT_PARTNERS.slice(0, 4);
-
   return (
     <>
-      <main id="main">
-        {/* Screen 1: Hero Split */}
-        <section className="hero hero--split" data-enter="">
-          <div className="wrap">
-            <div className="hero-text grid hero-split">
-              <div className="hero-copy span-6">
-                <p className="hero-notice">
-                  <b>Windhoek &amp; All Regions</b> · Registered {COMPANY.registration} since{" "}
-                  {COMPANY.founded}
-                </p>
-                <h1>Civil and electrical engineering in Namibia</h1>
-                <p className="hero__lead">
-                  Contracting, construction and multidisciplinary engineering consultancy across{" "}
-                  {THIRTEEN_DISCIPLINES.length} disciplines nationwide.
-                </p>
-                <div className="btn-row">
-                  <Link className="btn btn--primary" href="/contact">
-                    Request a quote
-                  </Link>
-                  <Link className="btn btn--secondary" href="/projects">
-                    View 25 projects
-                  </Link>
-                </div>
-                <dl className="hero-facts">
-                  <div>
-                    <dt>Registration</dt>
-                    <dd>{COMPANY.registration}</dd>
-                  </div>
-                  <div>
-                    <dt>Verified contracts</dt>
-                    <dd>{COMPANY.totalValueShort}</dd>
-                  </div>
-                  <div>
-                    <dt>Integrated trades</dt>
-                    <dd>{COMPANY.disciplinesCount} disciplines</dd>
-                  </div>
-                </dl>
-              </div>
+      <div className="crosshair" aria-hidden="true">
+        <div className="crosshair__dot" />
+        <div className="crosshair__readout" />
+      </div>
 
-              <div className="hero-visual frame frame--photo span-6 start-7">
-                <Picture
-                  bucket="photos"
-                  slug="civil-roads"
-                  minWidth={960}
-                  sizes="(min-width: 1024px) 48vw, 100vw"
-                  priority
-                  alt="Civil engineering works, reinforced concrete culverts and structural construction in Namibia"
+      <section data-sc-act="pin" data-sc-span="2.2" data-sc-drift="#FFFFFF">
+        <div data-sc-stage data-sc-spotlight>
+          <div data-sc-parallax="-0.45" className="hero-bed">
+            <ResponsivePicture
+              slug="hero-wide"
+              alt="Construction site with tower crane and scaffolding at sunset"
+              width={1360}
+              height={768}
+              sizes="100vw"
+              priority
+              has2400
+            />
+          </div>
+          <div className="scrim-hero" aria-hidden="true" />
+          <div className="sc-copy sc-copy--lead">
+            <h1 className="sc-display sc-display--xl" data-sc-cue="0 0.72 0" data-sc-kinetic="lines">
+              Built to keep Namibia moving.
+            </h1>
+            <p className="sc-body" data-sc-cue="0 0.72 0" style={{ marginTop: "var(--sc-4)" }}>
+              {SITE.name} is a contracting, construction, civil engineering and management company
+              undertaking the overall planning, coordination and control of projects across Namibia
+              and Southern Africa.
+            </p>
+            <p className="status" data-sc-cue="0 0.72 0" style={{ marginTop: "var(--sc-5)" }}>
+              <span>
+                Est. <b>2013</b>
+              </span>
+              <span>
+                Windhoek, <b>Namibia</b>
+              </span>
+              <span>
+                Reg. <b>{SITE.reg}</b>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section data-sc-act="pin" data-sc-span="2.6" data-sc-drift="#F4F5F7">
+        <div data-sc-stage className="who">
+          <p className="who__line sc-display sc-display--lg" data-sc-cue="0 0.30 0">
+            Contracting. Construction. Civil engineering. Management.
+          </p>
+          <p className="who__line sc-display sc-display--lg" data-sc-cue="0.26 0.58">
+            Hospitals. Police stations. Clinics. Housing and bulk electrical networks.
+          </p>
+          <p className="who__line sc-display sc-display--lg" data-sc-cue="0.54 0.86">
+            25 verified contracts totaling N$ 152.77 million across Namibia.
+          </p>
+          <p className="who__line sc-display sc-display--lg who__accent" data-sc-cue="0.84">
+            Public sector and private. The standard does not change.
+          </p>
+        </div>
+      </section>
+
+      <section data-sc-act="pan" data-sc-span="3.6" data-sc-drift="#FFFFFF">
+        <div data-sc-stage>
+          <div className="rail" data-sc-pan="0.06">
+            <div className="rail__lead">
+              <p className="eyebrow">Disciplines</p>
+              <h2 className="sc-display sc-display--md">Thirteen disciplines. One standard.</h2>
+              <p className="sc-body">
+                Proven engineering, technology and construction expertise tested across every corner
+                of Namibia and SADC.
+              </p>
+            </div>
+
+            <article className="disc">
+              <div className="disc__media" data-sc-tilt="5">
+                <ResponsivePicture
+                  slug="switchgear"
+                  alt="Switchgear cabinets in an industrial electrical control room"
+                  width={1376}
+                  height={768}
+                  sizes="340px"
                 />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Screens 2-3: Pinned Chapters Moment — 4 Core Divisions */}
-        <section
-          className="section"
-          id="divisions"
-          style={{ "--h": 2 } as React.CSSProperties}
-          data-moment="pinned-chapters"
-        >
-          <div className="wrap mo-pc__grid">
-            <div className="mo-pc__text">
-              <h2>4 engineering divisions across Namibia</h2>
-              <ol className="mo-pc__steps">
-                {CORE_DIVISIONS.map((div) => (
-                  <li key={div.key} className="mo-pc__step">
-                    <h3>{div.title} Engineering</h3>
-                    <p>{div.summary}</p>
-                    <figure className="mo-pc__visual">
-                      <Picture
-                        bucket="photos"
-                        slug={div.photo}
-                        minWidth={960}
-                        sizes="(min-width: 1024px) 45vw, 100vw"
-                        alt={div.alt}
-                      />
-                    </figure>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <div className="mo-pc__visuals frame" />
-          </div>
-        </section>
-
-        {/* Screen 4: Interactive Peek + Picture Develops Moment */}
-        <section className="section ground-surface" id="services">
-          <div className="wrap">
-            <div className="section-head">
-              <h2>13 integrated engineering services</h2>
+              <h3>Electrical Engineering</h3>
               <p>
-                One Windhoek contracting and consultancy desk covering all {THIRTEEN_DISCIPLINES.length}{" "}
-                disciplines, mobilised with owned crane transport and 10 kV test gear.{" "}
-                <Link className="link" href="/services">
-                  All 13 services
-                </Link>
+                MV/LV switchgear, power distribution, lighting, generators, fire detection,
+                PLC/SCADA and 10 kV instrumentation.
               </p>
+            </article>
+
+            <article className="disc">
+              <div className="disc__media" data-sc-tilt="5">
+                <ResponsivePicture
+                  slug="fibre"
+                  alt="Network cables plugged into a server rack"
+                  width={1376}
+                  height={768}
+                  sizes="340px"
+                />
+              </div>
+              <h3>Energy &amp; HV/Solar Systems</h3>
+              <p>
+                Solar PV, hybrid microgrids, hydrogen energy engineering, and grid-tied MV/LV
+                electrical reticulation.
+              </p>
+            </article>
+
+            <article className="disc">
+              <div className="disc__media" data-sc-tilt="5">
+                <ResponsivePicture
+                  slug="telecom"
+                  alt="Fibre-optic patch panel with neatly arranged cabling"
+                  width={2048}
+                  height={1152}
+                  sizes="340px"
+                />
+              </div>
+              <h3>Telecommunications &amp; IT</h3>
+              <p>
+                Carrier and campus fibre-optic networks, OTDR splicing, towers, equipment rooms and
+                structured cabling.
+              </p>
+            </article>
+
+            <article className="disc">
+              <div className="disc__media" data-sc-tilt="5">
+                <ResponsivePicture
+                  slug="structural"
+                  alt="Concrete building under construction against a bright sky"
+                  width={1200}
+                  height={686}
+                  sizes="340px"
+                />
+              </div>
+              <h3>Civil, Roads &amp; Rail</h3>
+              <p>
+                Buildings, reinforced concrete, structural steel, highways, earthworks, paving and
+                railway corridor infrastructure.
+              </p>
+            </article>
+
+            <article className="disc">
+              <div className="disc__media" data-sc-tilt="5">
+                <ResponsivePicture
+                  slug="office"
+                  alt="Modern office building exterior at dusk"
+                  width={1376}
+                  height={768}
+                  sizes="340px"
+                />
+              </div>
+              <h3>Mechanical, HVAC &amp; Mining</h3>
+              <p>
+                Static/rotary plant, process piping, commercial/hospital HVAC systems and mining
+                infrastructure support.
+              </p>
+            </article>
+
+            <article className="disc">
+              <div className="disc__media" data-sc-tilt="5">
+                <ResponsivePicture
+                  slug="consult"
+                  alt="Total station set up for surveying on a construction site"
+                  width={1376}
+                  height={768}
+                  sizes="340px"
+                />
+              </div>
+              <h3>Consultancy &amp; Management</h3>
+              <p>
+                Geological, architectural and independent consulting engineering for ministries,
+                councils and developers.
+              </p>
+            </article>
+
+            <div className="rail__note">
+              <p className="sc-body">
+                Each discipline stands alone, and each one holds up the others. Backed by owned
+                cranes, 4x4 field trucks and 10 kV test gear.
+              </p>
+              <AppLink className="btn btn--ghost" href="/services">
+                All 13 services <ArrowRightIcon />
+              </AppLink>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid--middle fill" data-peek="">
-              <ul className="rows span-6">
-                {HOME_SERVICE_PEEK.map((row) => (
-                  <li key={row.key} data-peek-to={row.key}>
-                    <span className="rows__name">{row.name}</span>
-                    <span className="rows__value">{row.value}</span>
-                    <p>{row.detail}</p>
-                  </li>
-                ))}
-              </ul>
+      <section
+        className="sc-section section--tight band--night band--blueprint"
+        data-sc-act="flow"
+        data-sc-drift="#101114"
+      >
+        <div className="wrap split">
+          <div className="sc-stack" data-sc-in data-sc-stagger="70">
+            <h2 className="sc-display sc-display--lg">The proof is in the paperwork.</h2>
+            <p className="sc-body">
+              Established in 2013 within the Africa School of Engineering and Technology network,
+              M&amp;M operates out of Kleine Kuppe and Windhoek North across all regions of Namibia
+              and SADC.
+            </p>
+            <p className="sc-body">
+              Everything we build carries full statutory governance under the Labour Act (2007) and
+              Government Notice No. 156, our registered tax standing and verifiable completion
+              certificates.
+            </p>
+            <div className="facts" style={{ marginTop: "var(--sc-5)" }}>
+              <div>
+                <span className="n">
+                  <span data-sc-count="0 2013">2013</span>
+                </span>
+                <span className="l">Year established</span>
+              </div>
+              <div>
+                <span className="n">
+                  <span data-sc-count="0 25">25</span>
+                </span>
+                <span className="l">Verified contracts</span>
+              </div>
+              <div>
+                <span className="n" style={{ fontSize: "var(--sc-t-lg)" }}>
+                  {SITE.reg}
+                </span>
+                <span className="l">Registration number</span>
+              </div>
+              <div>
+                <span className="n" style={{ fontSize: "var(--sc-t-lg)" }}>
+                  {SITE.taxId}
+                </span>
+                <span className="l">Tax identification</span>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: "var(--sc-3)" }}>
+              <a className="btn btn--accent" href={SITE.pdfHref} download>
+                Download Profile ({SITE.pdfSizeLabel})
+              </a>
+              <AppLink className="btn btn--ghost" href="/safety-policy">
+                OHS Safety Policy
+              </AppLink>
+            </div>
+          </div>
+          <figure className="fig" data-sc-reveal="left" data-sc-reveal-at="0.18 0.62">
+            <ResponsivePicture
+              slug="macro-hat"
+              alt="White hard hat and spirit level on a construction plan"
+              width={1152}
+              height={864}
+              sizes="(min-width: 860px) 45vw, 100vw"
+            />
+            <figcaption>
+              Signed construction drawings, OHS registers and 10 kV calibration records.
+            </figcaption>
+          </figure>
+        </div>
+        <div className="wrap" style={{ marginTop: "var(--sc-9)" }}>
+          <p className="sc-body" data-sc-in style={{ maxWidth: "48ch" }}>
+            Twenty-five completed contracts worth N$ 152,768,801.37 for Namibian ministries, town
+            councils, UNAM, NAMCOL, NHE and MVA Fund.
+          </p>
+        </div>
+      </section>
 
-              <figure
-                className="frame frame--photo frame--develops span-6 start-7"
-                data-moment="picture-develops"
+      <section data-sc-act="pin" data-sc-span="2.9" data-sc-drift="#FFFFFF">
+        <div data-sc-stage data-sc-spotlight>
+          <div data-sc-parallax="-0.5" className="hero-bed hero-bed--peak">
+            <ResponsivePicture
+              slug="team"
+              alt="White hard hat and rolled drawings on the site plan table"
+              width={2816}
+              height={1584}
+              sizes="100vw"
+            />
+          </div>
+          <div className="scrim-peak" aria-hidden="true" />
+          <div className="sc-copy sc-copy--trail peak-copy">
+            <h2
+              className="sc-display sc-display--xl"
+              data-sc-cue="0.10 0.88"
+              data-sc-kinetic="lines"
+            >
+              Own plant. Own test gear. One standard.
+            </h2>
+            <p
+              className="sc-body"
+              data-sc-cue="0.12 0.88"
+              style={{ marginTop: "var(--sc-4)", maxWidth: "38ch" }}
+            >
+              MAN 4x4 crane truck, 14-ton stringing gear and Major Tech 10 kV testing fleet — ready
+              24/7 across Namibia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="start"
+        className="band--night band--watermark"
+        data-sc-act="pin"
+        data-sc-span="1.2"
+        data-sc-drift="#101114"
+      >
+        <div data-sc-stage className="close" data-sc-spotlight>
+          <div className="close__inner">
+            <h2 className="sc-display sc-display--lg" data-sc-cue="0.06" data-sc-kinetic="lines">
+              Let&apos;s set it out.
+            </h2>
+            <p className="sc-body" data-sc-cue="0.10" style={{ maxWidth: "44ch" }}>
+              Tell us what you are building. We will bring the plan, the crew, the fleet and the
+              compliance pack.
+            </p>
+            <div className="close__channels" data-sc-cue="0.14">
+              <AppLink
+                className="btn btn--accent"
+                href="/contact"
+                data-sc-magnet="0.24"
+                data-sc-rise="0"
               >
-                {HOME_SERVICE_PEEK.map((row, idx) => (
-                  <Picture
-                    key={row.key}
-                    bucket="photos"
-                    slug={row.photo}
-                    minWidth={960}
-                    className="frame__img"
-                    data-peek-for={row.key}
-                    hidden={idx !== 0}
-                    sizes="(min-width: 1024px) 46vw, 100vw"
-                    alt={row.alt}
-                  />
-                ))}
-              </figure>
+                Start a project
+              </AppLink>
+              <a className="btn btn--wa" href={SITE.whatsappHref} target="_blank" rel="noopener">
+                <WhatsAppIcon /> WhatsApp
+              </a>
+              <AppLink className="btn btn--ghost" href="/profile">
+                View 2026 Profile
+              </AppLink>
             </div>
           </div>
-        </section>
 
-        {/* Screen 5: Dark Architectural Band — Verified Public Contracts */}
-        <section className="section ground-inverse" id="work">
-          <div className="wrap">
-            <div className="section-head">
-              <h2>25 verified Namibia contracts</h2>
+          <footer className="foot">
+            <div className="foot__grid">
+              <AppLink
+                className="foot__brand"
+                href="/"
+                style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}
+              >
+                <img
+                  src="/assets/brand/mm-logo-lockup-on-dark.svg"
+                  alt="M&M Engineering Consultancy"
+                  width={142}
+                  height={34}
+                />
+              </AppLink>
+              <p className="credit">
+                <AppLink href="/projects">Projects</AppLink> &middot;{" "}
+                <AppLink href="/safety-policy">Safety Policy</AppLink> &middot;{" "}
+                <AppLink href="/profile">Profile PDF</AppLink> &middot; Website by{" "}
+                <a href="https://studio.tangison.com" target="_blank" rel="noopener">
+                  studio.tangison.com
+                </a>
+              </p>
               <p>
-                Completed hospitals, police barracks, mass housing and municipal electrical works.{" "}
-                <Link className="link" href="/projects">
-                  All 25 contracts
-                </Link>
+                &copy; 2013&ndash;<span data-year>2026</span> {SITE.name} &middot; Reg. {SITE.reg}
               </p>
             </div>
-
-            <div className="grid">
-              {topProjects.map((proj, idx) => (
-                <Link key={proj.title} className="tile span-4" href="/projects">
-                  <div className="tile__media m-zoom">
-                    <Picture
-                      bucket={proj.photoType === "project" ? "projects" : "photos"}
-                      slug={proj.photoSlug}
-                      sizes={
-                        idx < 2
-                          ? "(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 44vw"
-                          : "(min-width: 1024px) 30vw, 100vw"
-                      }
-                      alt={proj.alt}
-                    />
-                  </div>
-                  <div className="tile__head">
-                    <h3>{proj.title}</h3>
-                    <span className="tile__price">{proj.value}</span>
-                  </div>
-                  <p className="tile__facts">
-                    {proj.client} · {proj.duration}
-                  </p>
-                  <p>{proj.consultant}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Screen 6: Institutional Employers, Owned Fleet & Safety */}
-        <section className="section" id="clients">
-          <div className="wrap">
-            <div className="grid grid--middle fill">
-              <div className="split-col span-5">
-                <div className="section-head" style={{ marginBottom: 0 }}>
-                  <h2>16 Namibian clients &amp; Windhoek plant fleet</h2>
-                  <p>
-                    Delivering public and commercial infrastructure under Namibia&apos;s Labour Act,
-                    2007 and Government Notice No. 156 of 1992 alongside 16 institutional employers.
-                  </p>
-                </div>
-
-                <div className="home-clients-strip">
-                  {keyPartners.map((partner) => (
-                    <div key={partner.slug} className="client-logo-box" title={partner.name}>
-                      <Picture
-                        bucket="clients"
-                        slug={partner.slug}
-                        sizes="180px"
-                        alt={`${partner.name} emblem`}
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                <div className="btn-row split-col__end">
-                  <Link className="btn btn--secondary" href="/clients">
-                    16 client partners
-                  </Link>
-                  <Link className="link" href="/safety-policy">
-                    Safety policy
-                  </Link>
-                </div>
-              </div>
-
-              <div className="span-6 start-7 stack-5">
-                <figure className="frame frame--photo">
-                  <Picture
-                    bucket="photos"
-                    slug="pipeline"
-                    minWidth={960}
-                    className="frame__img"
-                    sizes="(min-width: 1024px) 46vw, 100vw"
-                    alt="Water bulk pipeline and municipal infrastructure delivery in Namibia"
-                  />
-                </figure>
-                <div className="clients-pack">
-                  <h3>2026 Company Profile &amp; Safety Pack</h3>
-                  <p>
-                    15-page pre-qualification dossier covering all 25 contracts, 19 plant assets and
-                    Labour Act 2007 OHS compliance.
-                  </p>
-                  <div className="btn-row" style={{ marginTop: "var(--s-2)" }}>
-                    <Link className="link" href="/profile">
-                      Open web profile
-                    </Link>
-                    <a className="link" href={COMPANY.profilePdfHref} download>
-                      Download PDF ({COMPANY.profilePdfSize})
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <SiteFooter showClosingBand />
+          </footer>
+        </div>
+      </section>
     </>
   );
 }

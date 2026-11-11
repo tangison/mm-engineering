@@ -1,0 +1,52 @@
+export const SITE = {
+  name: "M&M Engineering & Consultancy CC",
+  shortName: "M&M Engineering",
+  url: "https://www.mmengineeringcc.com",
+  reg: "CC/2013/6661",
+  taxId: "6140420-01-1",
+  established: 2013,
+  phone: "+264 61 234 349",
+  phoneHref: "tel:+26461234349",
+  whatsappDisplay: "+264 81 3275 403",
+  whatsappHref: "https://wa.me/264813275403",
+  email: "info@mmengineeringcc.com",
+  emailHref: "mailto:info@mmengineeringcc.com",
+  pdfHref: "/downloads/M_and_M_Company_Profile_and_Policies.pdf",
+  pdfSizeLabel: "6.6 MB",
+  headOffice: "Erf 454, Rietfontein Street, Kleine Kuppe, Windhoek",
+  headOfficeShort: "Erf 454, Rietfontein St, Kleine Kuppe",
+  physicalOffice: "23 John Simms Street, Windhoek North, Windhoek",
+  postalAddress: "P.O. Box 51121, Bachbrecht, Windhoek",
+  ogImage: "https://www.mmengineeringcc.com/assets/hero-wide.jpg",
+} as const;
+
+export const NAV_ITEMS = [
+  { href: "/", label: "Home", sheetLabel: "Home" },
+  { href: "/about", label: "About", sheetLabel: "About" },
+  { href: "/services", label: "Services", sheetLabel: "Services" },
+  { href: "/consultancy", label: "Consultancy", sheetLabel: "Consultancy" },
+  { href: "/projects", label: "Projects", sheetLabel: "Projects" },
+  { href: "/clients", label: "Clients", sheetLabel: "Clients" },
+  { href: "/safety-policy", label: "Safety", sheetLabel: "Safety" },
+  { href: "/profile", label: "Profile", sheetLabel: "Company Profile" },
+  { href: "/blog", label: "Journal", sheetLabel: "Journal" },
+] as const;
+
+export const ORGANIZATION_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "M&M Engineering & Consultancy CC",
+  legalName: "M&M Engineering & Consultancy CC",
+  url: "https://www.mmengineeringcc.com/",
+  logo: "https://www.mmengineeringcc.com/assets/brand/png/mm-logo-512.png",
+  telephone: "+264 61 234 349",
+  email: "info@mmengineeringcc.com",
+  taxID: "6140420-01-1",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Erf 454, Rietfontein Street, Kleine Kuppe",
+    addressLocality: "Windhoek",
+    postalCode: "P.O. Box 51121, Bachbrecht",
+    addressCountry: "NA",
+  },
+} as const;

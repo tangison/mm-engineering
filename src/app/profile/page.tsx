@@ -1,43 +1,23 @@
 import type { Metadata } from "next";
-import { COMPANY } from "@/data/company";
+import "../../styles/profile.css";
 import { ProfileViewer } from "@/components/ProfileViewer";
-import { SiteFooter } from "@/components/SiteFooter";
+import { SITE } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Company Profile & OHS Policy Manual 2026",
+  title: "Company Profile & OHS Policy Manual 2026 | M&M Engineering",
   description:
-    "M&M Engineering & Consultancy CC 15-page Company Profile, 25-contract register, equipment schedule, and OHS Policy Manual in responsive web and PDF editions.",
+    "M&M Engineering & Consultancy CC 15-page Company Profile, 25-contract register, plant schedule, and OHS Policy Manual in interactive Web and PDF editions.",
+  alternates: { canonical: `${SITE.url}/profile` },
+  openGraph: {
+    title: "Company Profile & OHS Policy Manual 2026 | M&M Engineering",
+    description:
+      "15-page Company Profile, 25 verified Namibian contracts (N$ 152.77M), equipment schedule, and OHS Policy Manual.",
+    type: "website",
+    url: `${SITE.url}/profile`,
+    images: [{ url: SITE.ogImage }],
+  },
 };
 
 export default function ProfilePage() {
-  return (
-    <>
-      <link rel="stylesheet" href="/profile.css" />
-      <main id="main" className="page-flow">
-        <section className="subhero">
-          <div className="wrap">
-            <div className="section-head" style={{ marginBottom: 0 }}>
-              <p className="hero__kicker">
-                <span className="dot" aria-hidden="true" />
-                <span>Tender Pre-Qualification &amp; Statutory Pack</span>
-              </p>
-              <h1>Company Profile &amp; OHS Policy Manual 2026</h1>
-              <p className="t-lead">
-                Inspect all 15 brochure spreads in readable web layout alongside the print-ready PDF
-                · Reg. {COMPANY.registration} · {COMPANY.totalContractsCount} verified contracts (
-                {COMPANY.totalValueFormatted}).
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section ground-surface">
-          <div className="wrap">
-            <ProfileViewer />
-          </div>
-        </section>
-      </main>
-      <SiteFooter showClosingBand={false} />
-    </>
-  );
+  return <ProfileViewer />;
 }

@@ -1,7 +1,10 @@
+.vercel/
+.DS_Store
+*.log
+Thumbs.db
+.env*
 node_modules/
 .next/
 out/
-.taste-skill/
-/tmp/
 *.tsbuildinfo
 next-env.d.ts

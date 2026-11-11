@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { AppLink as Link } from "@/components/AppLink";
 import { notFound } from "next/navigation";
-import { BLOG_ARTICLES } from "@/data/blog";
-import { COMPANY } from "@/data/company";
-import { Picture } from "@/components/Picture";
-import { SiteFooter } from "@/components/SiteFooter";
+import { AppLink } from "@/components/AppLink";
+import { ResponsivePicture } from "@/components/ResponsivePicture";
+import { BLOG_ARTICLES, getBlogArticle } from "@/data/blog";
+import { SITE } from "@/data/site";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return BLOG_ARTICLES.map((post) => ({ slug: post.slug }));
@@ -16,11 +17,19 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = BLOG_ARTICLES.find((p) => p.slug === slug);
-  if (!article) return { title: "Article Not Found" };
+  const post = getBlogArticle(slug);
+  if (!post) return {};
   return {
-    title: article.title,
-    description: article.summary,
+    title: post.seoTitle,
+    description: post.description,
+    alternates: { canonical: `${SITE.url}/blog/${post.slug}` },
+    openGraph: {
+      title: post.seoTitle,
+      description: post.description,
+      type: "website",
+      url: `${SITE.url}/blog/${post.slug}`,
+      images: [{ url: SITE.ogImage }],
+    },
   };
 }
 
@@ -30,97 +39,85 @@ export default async function BlogArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = BLOG_ARTICLES.find((p) => p.slug === slug);
-  if (!article) notFound();
-
-  const related = BLOG_ARTICLES.filter((p) => p.slug !== article.slug);
+  const post = getBlogArticle(slug);
+  if (!post) notFound();
 
   return (
     <>
-      <main id="main" className="page-flow">
-        <section className="subhero">
-          <div className="wrap">
-            <div className="section-head" style={{ marginBottom: 0 }}>
-              <p className="hero__kicker">
-                <span className="dot" aria-hidden="true" />
-                <span>
-                  {article.topic} · {article.readTime}
-                </span>
-              </p>
-              <h1>{article.title}</h1>
-              <p className="t-small muted">By {COMPANY.shortName} · Windhoek, Namibia</p>
-            </div>
-          </div>
-        </section>
+      <section className="page-hero" style={{ minHeight: "52svh" }}>
+        <div className="page-hero__bg">
+          <ResponsivePicture
+            slug={post.heroSlug}
+            alt={post.heroAlt}
+            width={post.heroWidth}
+            height={post.heroHeight}
+            sizes="100vw"
+            priority
+          />
+        </div>
+        <div className="page-hero__inner sc-stack" data-sc-in data-sc-stagger="70">
+          <p className="eyebrow">{post.category}</p>
+          <h1 className="sc-display sc-display--lg" style={{ maxWidth: "24ch" }}>
+            {post.title}
+          </h1>
+        </div>
+      </section>
 
-        <section className="section ground-surface">
-          <div className="wrap grid">
-            <article className="span-8">
-              <div className="article-media">
-                <Picture
-                  bucket="photos"
-                  slug={article.photo}
-                  priority
-                  sizes="(min-width: 1024px) 62vw, 100vw"
-                  alt={article.alt}
-                />
-              </div>
+      <section className="section">
+        <div className="wrap article" data-sc-in data-sc-stagger="50">
+          <p className="article__meta">
+            <span>By {SITE.shortName}</span>
+            <span>Windhoek, Namibia</span>
+            <span>{post.readTime}</span>
+          </p>
 
-              <div className="article-body">
-                <p className="t-lead">{article.lead}</p>
-                {article.sections.map((sec) => (
-                  <section key={sec.heading}>
-                    <h2>{sec.heading}</h2>
-                    {sec.paragraphs?.map((para) => (
-                      <p key={para}>{para}</p>
-                    ))}
-                    {sec.bullets && (
-                      <ul>
-                        {sec.bullets.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </section>
+          <p>{post.lead}</p>
+
+          {post.sections.map((sec, idx) => {
+            if (sec.type === "h2") return <h2 key={idx}>{sec.text}</h2>;
+            if (sec.type === "p") return <p key={idx}>{sec.text}</p>;
+            return (
+              <ul key={idx}>
+                {sec.items.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
-              </div>
-            </article>
+              </ul>
+            );
+          })}
 
-            <aside className="span-4 stack-5">
-              <div className="card">
-                <h3>Tender or project enquiry</h3>
-                <p>
-                  Speak directly with our Windhoek engineering desk or open the 2026 Company Profile
-                  and OHS Policy Manual.
-                </p>
-                <div className="btn-row" style={{ marginTop: "var(--s-2)" }}>
-                  <Link className="btn btn--primary btn--sm" href="/contact">
-                    Request a quote
-                  </Link>
-                  <a className="btn btn--secondary btn--sm" href={COMPANY.profilePdfHref} download>
-                    Download PDF ({COMPANY.profilePdfSize})
-                  </a>
-                </div>
-              </div>
-
-              <div className="stack-3">
-                <h3>More from the site office</h3>
-                <ul className="rows">
-                  {related.map((r) => (
-                    <li key={r.slug}>
-                      <Link className="rows__name" href={`/blog/${r.slug}`}>
-                        {r.title}
-                      </Link>
-                      <span className="rows__value">{r.readTime}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
+          <div className="article-note" style={{ marginTop: "var(--sc-7)" }}>
+            <p style={{ margin: 0 }}>
+              Working on an upcoming tender or capital build?{" "}
+              <a href={SITE.whatsappHref} target="_blank" rel="noopener">
+                <strong>WhatsApp the office</strong>
+              </a>
+              , write to{" "}
+              <a href={SITE.emailHref}>
+                <strong>{SITE.email}</strong>
+              </a>{" "}
+              or{" "}
+              <a href={SITE.pdfHref} download>
+                <strong>download our 2026 Company Profile (PDF)</strong>
+              </a>
+              .
+            </p>
           </div>
-        </section>
-      </main>
-      <SiteFooter showClosingBand={false} />
+        </div>
+      </section>
+
+      <section
+        className="section--tight section"
+        style={{ background: "var(--sc-surface)", borderTop: "1px solid var(--sc-hairline)" }}
+      >
+        <div className="wrap sc-stack" data-sc-in>
+          <h2 className="sc-display sc-display--md">Keep reading</h2>
+          <p className="sc-body">
+            <AppLink href="/blog" style={{ color: "var(--mm-red-text)", fontWeight: 600 }}>
+              All journal entries
+            </AppLink>
+          </p>
+        </div>
+      </section>
     </>
   );
 }

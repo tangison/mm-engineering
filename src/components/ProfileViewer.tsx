@@ -1,102 +1,83 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { COMPANY } from "@/data/company";
+import { useState } from "react";
 import { PROFILE_PAGES_HTML } from "@/data/profilePages";
+import { SITE } from "@/data/site";
 
-type ViewMode = "split" | "web" | "pdf";
+type ProfileViewMode = "split" | "web" | "pdf";
 
 export function ProfileViewer() {
-  const [mode, setMode] = useState<ViewMode>("split");
+  const [view, setView] = useState<ProfileViewMode>("split");
 
-  useEffect(() => {
-    const v = new URLSearchParams(window.location.search).get("view");
-    if (v === "split" || v === "web" || v === "pdf") {
-      setMode(v);
-    }
-  }, []);
-
-  const chooseMode = (next: ViewMode) => {
-    setMode(next);
-    const params = new URLSearchParams(window.location.search);
-    if (next === "split") params.delete("view");
-    else params.set("view", next);
-    const qs = params.toString();
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${qs ? `?${qs}` : ""}${window.location.hash}`
-    );
-  };
+  const modes: { id: ProfileViewMode; label: string }[] = [
+    { id: "split", label: "Side-by-Side" },
+    { id: "web", label: "Web Pages" },
+    { id: "pdf", label: "PDF Reader" },
+  ];
 
   return (
-    <div>
-      <div className="profile-toolbar-bar">
-        <div className="tabs" role="group" aria-label="Choose Company Profile viewing mode">
-          <button
-            type="button"
-            className="tab"
-            aria-pressed={mode === "split"}
-            onClick={() => chooseMode("split")}
-          >
-            Side-by-Side
-          </button>
-          <button
-            type="button"
-            className="tab"
-            aria-pressed={mode === "web"}
-            onClick={() => chooseMode("web")}
-          >
-            Web Pages
-          </button>
-          <button
-            type="button"
-            className="tab"
-            aria-pressed={mode === "pdf"}
-            onClick={() => chooseMode("pdf")}
-          >
-            PDF Reader
-          </button>
-        </div>
-
-        <a className="btn btn--primary btn--sm" href={COMPANY.profilePdfHref} download>
-          Download Profile ({COMPANY.profilePdfSize} PDF)
-        </a>
-      </div>
-
-      <div className="profile-split-grid" data-view={mode}>
-        <div
-          className="profile-web-pane profile-pages-host"
-          dangerouslySetInnerHTML={{ __html: PROFILE_PAGES_HTML }}
-        />
-
-        <aside className="profile-pdf-pane" aria-label="Official PDF reader">
-          <div className="profile-pdf-bar">
-            <span>
-              <strong>Print Edition PDF</strong> · 15 Pages ({COMPANY.profilePdfSize})
-            </span>
-            <div className="btn-row">
-              <a
-                className="btn btn--secondary btn--sm"
-                href={COMPANY.profilePdfHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open Tab
-              </a>
-              <a className="btn btn--primary btn--sm" href={COMPANY.profilePdfHref} download>
-                Download
-              </a>
-            </div>
+    <>
+      <section className="profile-toolbar">
+        <div className="profile-toolbar__inner">
+          <div>
+            <p className="sc-eyebrow" style={{ color: "var(--mm-red-dark)" }}>
+              Tender Pre-Qualification &amp; Statutory Pack
+            </p>
+            <h1>Company Profile &amp; OHS Policy Manual 2026</h1>
+            <p className="profile-toolbar__sub">
+              Inspect the complete 15-page web edition alongside the official downloadable PDF
+              &middot; Reg. CC/2013/6661 &middot; 25 Verified Contracts (N$ 152,768,801.37).
+            </p>
           </div>
-          <iframe
-            className="profile-pdf-frame"
-            src={`${COMPANY.profilePdfHref}#view=FitH`}
-            title="M&M Engineering Company Profile and OHS Policy Manual 2026 PDF"
-            loading="lazy"
+          <div className="profile-toolbar__controls">
+            {modes.map((m) => (
+              <button
+                key={m.id}
+                className={`mode-btn${view === m.id ? " is-active" : ""}`}
+                type="button"
+                aria-pressed={view === m.id}
+                onClick={() => setView(m.id)}
+              >
+                {m.label}
+              </button>
+            ))}
+            <a className="btn" href={SITE.pdfHref} download>
+              Download Company Profile (PDF, {SITE.pdfSizeLabel})
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="profile-shell">
+        <div className="profile-split" id="profile-split" data-view={view}>
+          <div
+            className="brochure-pane"
+            dangerouslySetInnerHTML={{ __html: PROFILE_PAGES_HTML }}
           />
-        </aside>
-      </div>
-    </div>
+          <aside className="pdf-pane" aria-label="Embedded Company Profile PDF">
+            <div className="pdf-pane__bar">
+              <div>
+                <strong>M_and_M_Company_Profile_and_Policies.pdf</strong> &middot; 15 A4 Pages
+              </div>
+              <div className="pdf-pane__actions">
+                <a className="sec" href={SITE.pdfHref} target="_blank" rel="noopener">
+                  Open Full Tab
+                </a>
+                <a href={SITE.pdfHref} download>
+                  Download PDF
+                </a>
+              </div>
+            </div>
+            <iframe
+              className="pdf-pane__frame"
+              width={640}
+              height={880}
+              src={`${SITE.pdfHref}#view=FitH`}
+              title="M&M Engineering 2026 Company Profile & OHS Policy Manual PDF"
+            />
+          </aside>
+        </div>
+      </section>
+    </>
   );
 }

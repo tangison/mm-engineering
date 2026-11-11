@@ -1,15 +1,6 @@
-import Link, { type LinkProps } from "next/link";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import Link from "next/link";
+import type { ComponentProps } from "react";
 
-type AppLinkProps = LinkProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> & {
-    children: ReactNode;
-  };
-
-export function AppLink({ prefetch = false, children, ...rest }: AppLinkProps) {
-  return (
-    <Link prefetch={prefetch} {...rest}>
-      {children}
-    </Link>
-  );
+export function AppLink({ prefetch = false, ...props }: ComponentProps<typeof Link>) {
+  return <Link prefetch={prefetch} {...props} />;
 }

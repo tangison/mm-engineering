@@ -1,102 +1,151 @@
 import type { Metadata } from "next";
-import { AppLink as Link } from "@/components/AppLink";
-import { COMPANY } from "@/data/company";
-import { CONSULTANCY_SPECIALISTS } from "@/data/services";
-import { SubpageHero } from "@/components/SubpageHero";
-import { SiteFooter } from "@/components/SiteFooter";
+import { AppLink } from "@/components/AppLink";
+import { ArrowRightIcon } from "@/components/Icons";
+import { ResponsivePicture } from "@/components/ResponsivePicture";
+import { SITE } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Consultancy Firm",
+  title: "Consultancy Firm | M&M Engineering",
   description:
-    "Independent engineering, environmental impact assessment (EIA), tender management and HAZOP supervision for Namibian ministries, town councils and developers.",
+    "Independent engineering, environmental impact, strategic construction consulting and multi-disciplinary project leadership in Windhoek, Namibia.",
+  alternates: { canonical: `${SITE.url}/consultancy` },
+  openGraph: {
+    title: "Consultancy Firm | M&M Engineering",
+    description:
+      "Independent engineering, environmental impact, strategic construction consulting and multi-disciplinary project leadership in Windhoek, Namibia.",
+    type: "website",
+    url: `${SITE.url}/consultancy`,
+    images: [{ url: SITE.ogImage }],
+  },
 };
 
 export default function ConsultancyPage() {
   return (
     <>
-      <main id="main" className="page-flow">
-        <SubpageHero
-          kicker="Consultancy Practice"
-          title="Independent engineering judgement on your side of the table"
-          lead="Providing engineering, scientific review, environmental impact assessment and construction supervision to governments, industries, developers and contractors."
-          photoSlug="consult"
-          photoAlt="Senior consulting engineer reviewing structural schematics and tender documentation"
-        >
-          <div className="btn-row">
-            <Link className="btn btn--primary" href="/contact">
-              Request a proposal
-            </Link>
-            <a className="btn btn--secondary" href={COMPANY.profilePdfHref} download>
-              Download profile ({COMPANY.profilePdfSize} PDF)
-            </a>
-          </div>
-        </SubpageHero>
+      <section className="page-hero">
+        <div className="page-hero__bg">
+          <ResponsivePicture
+            slug="consult"
+            alt="Total station set up for surveying on a construction site"
+            width={1376}
+            height={768}
+            sizes="100vw"
+            priority
+          />
+        </div>
+        <div className="page-hero__inner sc-stack" data-sc-in data-sc-stagger="70">
+          <p className="eyebrow">Consultancy firm</p>
+          <h1 className="sc-display sc-display--xl">
+            Independent expertise, on your side of the table.
+          </h1>
+          <p className="sc-body lede">
+            Professional consulting services providing independent expertise in engineering, science
+            and related areas to governments, industries, developers and construction firms.
+          </p>
+        </div>
+      </section>
 
-        <section className="section ground-surface">
-          <div className="wrap grid">
-            <div className="span-6 stack-4">
-              <h2>Design, supervision and feasibility</h2>
-              <p>
-                Our consulting division designs and supervises infrastructure essential to
-                Namibia&apos;s civic, social and industrial resilience. Commissions are delivered by
-                multi-disciplinary teams combining engineers, technologists, quantity surveyors and
-                environmental specialists under a dedicated project lead.
-              </p>
-            </div>
-            <div className="span-6 stack-4">
-              <div className="card">
-                <h3>Environmental engineering</h3>
-                <p>
-                  Environmental Impact Assessments (EIAs), site remediation audits and sustainable
-                  resource planning aligned with Namibian statutory frameworks.
-                </p>
-              </div>
-              <div className="card">
-                <h3>Strategic engineering &amp; tender advisory</h3>
-                <p>
-                  Competitive tender preparation, programme effectiveness evaluations, cost control
-                  and regional joint-venture structuring.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="wrap">
-            <div className="section-head">
-              <h2>Engineers, technologists and specialist disciplines</h2>
-              <p>Every project pairs design verification with on-site commissioning control.</p>
-            </div>
-            <div className="grid">
-              <div className="card span-6">
-                <h3>Consulting engineers</h3>
-                <p>
-                  Covering civil, structural, electrical, mechanical and telecommunications design
-                  coordination across ministries, municipal councils and commercial builds.
-                </p>
-              </div>
-              <div className="card span-6">
-                <h3>Engineering technologists</h3>
-                <p>
-                  Translating design schematics into working site installations, overseeing calibrated
-                  10 kV / 1,000 V test protocols and handover dossiers.
-                </p>
-              </div>
-            </div>
-
-            <div style={{ marginTop: "var(--s-6)" }}>
-              <h3 style={{ marginBottom: "var(--s-4)" }}>The wider specialist bench</h3>
-              <ul className="checks">
-                {CONSULTANCY_SPECIALISTS.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
+      <section className="section">
+        <div className="wrap">
+          <div className="sc-stack" data-sc-in data-sc-stagger="70" style={{ maxWidth: "76ch" }}>
+            <h2 className="sc-display sc-display--md">What our consulting does</h2>
+            <p className="sc-body">
+              Our consulting is a professional service providing independent expertise in
+              engineering, science and related areas. Offered through our consulting engineering
+              division, these teams design and supervise infrastructure vital to Namibia&apos;s
+              social, economic and environmental quality of life.
+            </p>
+            <p className="sc-body">
+              Projects are executed by multi-disciplinary teams combining engineers, technologists,
+              quantity surveyors and environmental specialists under a dedicated professional team
+              lead assembled from within our ranks.
+            </p>
+            <div className="svc-cols" style={{ columns: 1, marginTop: "var(--sc-4)" }}>
+              <ul>
+                <li>
+                  <strong style={{ color: "var(--mm-ink)" }}>Environmental engineering.</strong>{" "}
+                  Environmental impact assessments (EIAs), remediation and sustainable development
+                </li>
+                <li>
+                  <strong style={{ color: "var(--mm-ink)" }}>
+                    Strategic engineering, technology and construction consulting.
+                  </strong>{" "}
+                  Competitive tendering, project management effectiveness and evaluation, and
+                  regional venture partnerships
+                </li>
               </ul>
             </div>
           </div>
-        </section>
-      </main>
-      <SiteFooter showClosingBand={false} />
+        </div>
+      </section>
+
+      <section
+        className="section"
+        style={{ background: "var(--sc-surface)", borderBlock: "1px solid var(--sc-hairline)" }}
+      >
+        <div className="wrap">
+          <div className="feature-grid" data-sc-in data-sc-stagger="80">
+            <div className="tile w7">
+              <p className="idx">Consulting engineers</p>
+              <h3>Every discipline, one team</h3>
+              <p>
+                Our engineers cover every core specialty—supporting clients in scientific, design,
+                coordination and project management roles across public and private commissions.
+              </p>
+            </div>
+            <div className="tile w5">
+              <p className="idx">Technologists</p>
+              <h3>Implementation, close to the site</h3>
+              <p>
+                Engineering technologists translate design drawings into working
+                infrastructure—managing calibration, testing and technical supervision alongside
+                project engineers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap split">
+          <div className="sc-stack" data-sc-in data-sc-stagger="70">
+            <h2 className="sc-display sc-display--md">The wider team</h2>
+            <p className="sc-body">
+              Consulting commissions draw together specialist engineers, technologists, planners,
+              CAD operators, surveyors, architects, environmental biologists, geoscientists,
+              economists and construction managers.
+            </p>
+            <div className="svc-cols" style={{ columns: 1 }}>
+              <ul>
+                <li>Technical specialisation &amp; design review</li>
+                <li>Business, financial and cost control expertise</li>
+                <li>Construction knowledge and site supervision</li>
+                <li>Managerial expertise &amp; programme scheduling</li>
+                <li>Tender &amp; procurement advisory</li>
+                <li>Dedicated project managers &amp; OHS officers</li>
+              </ul>
+            </div>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <AppLink className="btn btn--accent" href="/contact">
+                Request a proposal <ArrowRightIcon />
+              </AppLink>
+              <a className="btn btn--ghost" href={SITE.pdfHref} download>
+                Company Profile (PDF)
+              </a>
+            </div>
+          </div>
+          <figure className="fig" data-sc-in>
+            <ResponsivePicture
+              slug="macro-hat"
+              alt="White hard hat and spirit level on a construction plan"
+              width={1152}
+              height={864}
+              sizes="(min-width: 860px) 45vw, 100vw"
+            />
+            <figcaption>Drawing-first engineering and verified handover documentation.</figcaption>
+          </figure>
+        </div>
+      </section>
     </>
   );
 }

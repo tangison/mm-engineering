@@ -1,35 +1,30 @@
-import { AppLink as Link } from "@/components/AppLink";
-import { SiteFooter } from "@/components/SiteFooter";
+import type { Metadata } from "next";
+import { AppLink } from "@/components/AppLink";
+import { ArrowRightIcon } from "@/components/Icons";
+import { SITE } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "Page not found | M&M Engineering",
+  description: "The page you requested could not be found on mmengineeringcc.com.",
+  alternates: { canonical: `${SITE.url}/404` },
+};
 
 export default function NotFound() {
   return (
-    <>
-      <main id="main" className="page-flow">
-        <section className="subhero">
-          <div className="wrap">
-            <div className="section-head" style={{ marginBottom: 0 }}>
-              <p className="hero__kicker">
-                <span className="dot" aria-hidden="true" />
-                <span>404 · Page Not Found</span>
-              </p>
-              <h1>That route could not be found</h1>
-              <p className="t-lead">
-                The page you requested may have moved. Browse our engineering services, 25 verified
-                contracts, or return to the Windhoek front desk.
-              </p>
-              <div className="btn-row" style={{ marginTop: "var(--s-4)" }}>
-                <Link className="btn btn--primary" href="/">
-                  Return home
-                </Link>
-                <Link className="btn btn--secondary" href="/projects">
-                  View 25 projects
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <SiteFooter showClosingBand={false} />
-    </>
+    <div className="nf">
+      <div className="sc-stack" data-sc-in data-sc-stagger="70" style={{ alignItems: "center" }}>
+        <p className="code">404</p>
+        <h1 className="sc-display sc-display--md">Off the set-out line.</h1>
+        <p className="sc-body">This page does not exist. The rest of the site does.</p>
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
+          <AppLink className="btn btn--accent" href="/">
+            Back to the homepage <ArrowRightIcon />
+          </AppLink>
+          <AppLink className="btn btn--ghost" href="/projects">
+            View 25 projects
+          </AppLink>
+        </div>
+      </div>
+    </div>
   );
 }
