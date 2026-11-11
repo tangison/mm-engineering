@@ -1,7 +1,10 @@
 .vercel/
 .DS_Store
-node_modules/
 *.log
 Thumbs.db
-.vercel
 .env*
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
